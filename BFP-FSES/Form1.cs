@@ -27,5 +27,19 @@ namespace BFP_FSES
             Sidepanel1.BackColor = Color.FromArgb(39, 55, 70);
             Sidepanel2.BackColor = Color.FromArgb(120, 40, 31);
         }
+
+        private void btnREGISTER_Click_1(object sender, EventArgs e)
+        {
+            if (!panel.Controls.Contains(ucREGISTER.Instance))
+            {
+                panel.Controls.Add(ucREGISTER.Instance);
+                ucREGISTER.Instance.Dock = DockStyle.Fill;
+                ucREGISTER.Instance.BringToFront();
+            }
+            else
+            {
+                ucREGISTER.Instance.BringToFront();
+            }
+        }
     }
 }
