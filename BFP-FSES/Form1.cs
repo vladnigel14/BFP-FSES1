@@ -71,5 +71,42 @@ namespace BFP_FSES
 
         }
 
+        private void panel7_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panellogo_Click(object sender, EventArgs e)
+        {
+            btnREGISTER.Font = new Font("Bahnschrift", 9, FontStyle.Bold);
+            btnMASTERLIST.Font = new Font("Bahnschrift", 9, FontStyle.Bold);
+            btnREGISTER.BackColor = Color.FromArgb(39, 55, 70);
+            btnMASTERLIST.BackColor = Color.FromArgb(39, 55, 70);
+            Sidepanel1.BackColor = Color.FromArgb(39, 55, 70);
+            Sidepanel2.BackColor = Color.FromArgb(39, 55, 70);
+            panel.Controls.Remove(ucREGISTER.Instance);
+            panel.Controls.Remove(ucMASTERLIST.Instance);
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel8_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panellogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }
