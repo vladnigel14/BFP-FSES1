@@ -30,6 +30,7 @@ namespace BFP_FSES
 
         private void btnREGISTER_Click_1(object sender, EventArgs e)
         {
+
             if (!panel.Controls.Contains(ucREGISTER.Instance))
             {
                 panel.Controls.Add(ucREGISTER.Instance);
@@ -40,6 +41,26 @@ namespace BFP_FSES
             {
                 ucREGISTER.Instance.BringToFront();
             }
+            Sidepanel1.BackColor = Color.FromArgb(120, 40, 31);
+            Sidepanel2.BackColor = Color.FromArgb(39, 55, 70);
+            
+
+        }
+
+        private void btnMASTERLIST_Click_1(object sender, EventArgs e)
+        {
+            if (!panel.Controls.Contains(ucREGISTER.Instance))
+            {
+                panel.Controls.Add(ucREGISTER.Instance);
+                ucREGISTER.Instance.Dock = DockStyle.Fill;
+                ucREGISTER.Instance.BringToFront();
+            }
+            else
+            {
+                ucREGISTER.Instance.BringToFront();
+            }
+            Sidepanel1.BackColor = Color.FromArgb(39, 55, 70);
+            Sidepanel2.BackColor = Color.FromArgb(120, 40, 31);
         }
     }
 }

@@ -51,15 +51,16 @@
             this.btnMASTERLIST.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMASTERLIST.FlatAppearance.BorderSize = 0;
             this.btnMASTERLIST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMASTERLIST.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMASTERLIST.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMASTERLIST.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnMASTERLIST.Location = new System.Drawing.Point(13, 237);
+            this.btnMASTERLIST.Location = new System.Drawing.Point(10, 237);
             this.btnMASTERLIST.Name = "btnMASTERLIST";
-            this.btnMASTERLIST.Size = new System.Drawing.Size(207, 55);
+            this.btnMASTERLIST.Size = new System.Drawing.Size(210, 55);
             this.btnMASTERLIST.TabIndex = 3;
             this.btnMASTERLIST.Text = "MASTERLIST";
             this.btnMASTERLIST.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMASTERLIST.UseVisualStyleBackColor = true;
+            this.btnMASTERLIST.Click += new System.EventHandler(this.btnMASTERLIST_Click_1);
             // 
             // panel1
             // 
@@ -80,11 +81,11 @@
             this.btnREGISTER.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnREGISTER.FlatAppearance.BorderSize = 0;
             this.btnREGISTER.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnREGISTER.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnREGISTER.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnREGISTER.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnREGISTER.Location = new System.Drawing.Point(13, 182);
+            this.btnREGISTER.Location = new System.Drawing.Point(10, 182);
             this.btnREGISTER.Name = "btnREGISTER";
-            this.btnREGISTER.Size = new System.Drawing.Size(207, 55);
+            this.btnREGISTER.Size = new System.Drawing.Size(210, 55);
             this.btnREGISTER.TabIndex = 2;
             this.btnREGISTER.Text = "REGISTER";
             this.btnREGISTER.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,7 +99,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel4.Location = new System.Drawing.Point(0, 182);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(13, 319);
+            this.panel4.Size = new System.Drawing.Size(10, 319);
             this.panel4.TabIndex = 1;
             // 
             // Sidepanel2
@@ -106,7 +107,7 @@
             this.Sidepanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.Sidepanel2.Location = new System.Drawing.Point(0, 55);
             this.Sidepanel2.Name = "Sidepanel2";
-            this.Sidepanel2.Size = new System.Drawing.Size(13, 55);
+            this.Sidepanel2.Size = new System.Drawing.Size(10, 55);
             this.Sidepanel2.TabIndex = 1;
             // 
             // Sidepanel1
@@ -115,7 +116,7 @@
             this.Sidepanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.Sidepanel1.Location = new System.Drawing.Point(0, 0);
             this.Sidepanel1.Name = "Sidepanel1";
-            this.Sidepanel1.Size = new System.Drawing.Size(13, 55);
+            this.Sidepanel1.Size = new System.Drawing.Size(10, 55);
             this.Sidepanel1.TabIndex = 0;
             // 
             // panel3
