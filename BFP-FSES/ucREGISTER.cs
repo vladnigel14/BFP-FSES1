@@ -26,9 +26,6 @@ namespace BFP_FSES
             InitializeComponent();
         }
 
-        private void ucREGISTER_Load(object sender, EventArgs e)
-        {
-           
-        }
+      
     }
 }
