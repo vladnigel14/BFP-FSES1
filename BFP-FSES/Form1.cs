@@ -30,7 +30,10 @@ namespace BFP_FSES
 
         private void btnREGISTER_Click_1(object sender, EventArgs e)
         {
-
+            btnREGISTER.BackColor = Color.FromArgb(46, 64, 83);
+            btnMASTERLIST.BackColor = Color.FromArgb(39, 55, 70);
+            btnREGISTER.Font = new Font("Bahnschrift", 10, FontStyle.Bold);
+            btnMASTERLIST.Font = new Font("Bahnschrift", 9, FontStyle.Bold);
             if (!panel.Controls.Contains(ucREGISTER.Instance))
             {
                 panel.Controls.Add(ucREGISTER.Instance);
@@ -43,24 +46,30 @@ namespace BFP_FSES
             }
             Sidepanel1.BackColor = Color.FromArgb(120, 40, 31);
             Sidepanel2.BackColor = Color.FromArgb(39, 55, 70);
-            
+
 
         }
 
         private void btnMASTERLIST_Click_1(object sender, EventArgs e)
         {
-            if (!panel.Controls.Contains(ucREGISTER.Instance))
+            Sidepanel1.BackColor = Color.FromArgb(39, 55, 70);
+            Sidepanel2.BackColor = Color.FromArgb(120, 40, 31);
+            btnREGISTER.Font = new Font("Bahnschrift", 9, FontStyle.Bold);
+            btnMASTERLIST.Font = new Font("Bahnschrift", 10, FontStyle.Bold);
+            btnREGISTER.BackColor = Color.FromArgb(39, 55, 70);
+            btnMASTERLIST.BackColor = Color.FromArgb(46, 64, 83);
+            if (!panel.Controls.Contains(ucMASTERLIST.Instance))
             {
-                panel.Controls.Add(ucREGISTER.Instance);
-                ucREGISTER.Instance.Dock = DockStyle.Fill;
-                ucREGISTER.Instance.BringToFront();
+                panel.Controls.Add(ucMASTERLIST.Instance);
+                ucMASTERLIST.Instance.Dock = DockStyle.Fill;
+                ucMASTERLIST.Instance.BringToFront();
             }
             else
             {
-                ucREGISTER.Instance.BringToFront();
+                ucMASTERLIST.Instance.BringToFront();
             }
-            Sidepanel1.BackColor = Color.FromArgb(39, 55, 70);
-            Sidepanel2.BackColor = Color.FromArgb(120, 40, 31);
+
         }
+
     }
 }

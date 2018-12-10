@@ -148,6 +148,7 @@
             // 
             // panel
             // 
+            this.panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel.BackgroundImage")));
             this.panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel.Dock = System.Windows.Forms.DockStyle.Fill;

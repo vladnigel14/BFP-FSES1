@@ -356,9 +356,9 @@
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.bunifuCustomTextbox1);
             this.groupBox3.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(596, 129);
+            this.groupBox3.Location = new System.Drawing.Point(592, 129);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(530, 569);
+            this.groupBox3.Size = new System.Drawing.Size(510, 569);
             this.groupBox3.TabIndex = 13;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ADDITIONAL INFORMATION";
@@ -611,7 +611,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucREGISTER";
-            this.Size = new System.Drawing.Size(1129, 708);
+            this.Size = new System.Drawing.Size(1128, 708);
             this.Load += new System.EventHandler(this.ucREGISTER_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
