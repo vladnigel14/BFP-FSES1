@@ -32,19 +32,16 @@ namespace BFP_FSES
         {
             try
             {
-                //if ((txtBIN.Text == "" || txtname.Text == "" || txtaddress.Text == "" || txtowner.Text == "" || txtstatus.Text == ""))
-                //{
-                //    MessageBox.Show("Please Fill up the blank!", "System", MessageBoxButtons.OK);
-                //}
-                //else
-                //{
+                if ((txtBIN.Text == "" || txtname.Text == "" || txtaddress.Text == "" || txtowner.Text == "" || txtstatus.Text == ""))
+                {
+                    MessageBox.Show("Please Fill up the blank!", "System", MessageBoxButtons.OK);
+                }
+                else
+                {
                     con.Open();
-                   // string query = "INSERT INTO Table1 (BIN, est_name, est_address, est_owner, est_status) values ('" + txtBIN.Text + "', '" + txtname.Text + "', '" + txtaddress.Text + "', '" + txtowner.Text + "', '" + txtstatus.Text + "', '" + txtFSIC.Text + "', '" + txtNOB.Text + "', '" + txtOID.Text + "', '" + txtSTONUM.Text + "', '" + txtPOROCC.Text + "', '" + txtFLAREA.Text + "', '" + txtNOV.Text + "', '" + txtFSI.Text + "', '" + txtCONMAT.Text + "', '" + txtOR.Text + "', '" + txtIO.Text + "', '" + dtpDATE + "', '" + txtAPPSTATUS.Text + "', '" + dtpINSPECTED + "', '" + txtAMOUNT.Text + "')";
-                  //  OleDbCommand cmd = new OleDbCommand(query, con);
-                  //  cmd.ExecuteNonQuery();
 
                     OleDbCommand x = new OleDbCommand("insert into establishment_table(BIN,establishment_name,establishment_address,establishment_owner,establishment_status,nob,occupancy_id,storey_no,portion_occupied,floor_area,violation_id) values (@bin,@establishment_name,@establishment_address,@establishment_owner,@establishment_status,@nob,@occupancy_id,@storey_no,@portion_occupied,@floor_area,@violation_id)", con);
-                    x.Parameters.AddWithValue("@bin",txtBIN.Text);
+                    x.Parameters.AddWithValue("@bin", txtBIN.Text);
                     x.Parameters.AddWithValue("@establishment_name", txtname.Text);
                     x.Parameters.AddWithValue("@establishment_address", txtaddress.Text);
                     x.Parameters.AddWithValue("@establishment_owner", txtowner.Text);
@@ -56,19 +53,31 @@ namespace BFP_FSES
                     x.Parameters.AddWithValue("@floor_area", txtFLAREA.Text);
                     x.Parameters.AddWithValue("@violation_id", txtNOV.Text);
 
-                    con.Close();
+                    x.ExecuteNonQuery();
 
-                    con.Open();
-                    OleDbCommand y = new OleDbCommand("insert into fire_inspector_table(fsiid,inspectors)values(@fsiid,@inspectors)",con);
-                    x.Parameters.AddWithValue("@fsiid", txtFSIC.Text);
-                    x.Parameters.AddWithValue("@inspectors", txtFSI.Text);
-                    con.Close();
-
-                    //x.ExecuteNonQuery();   
-                    //MessageBox.Show("Create Successfully!", "System", MessageBoxButtons.OK)
-                //}
+                    OleDbCommand y = new OleDbCommand("insert into fire_inspector_table(fsiid,inspectors)values(@fsiid,@inspectors)", con);
+                    y.Parameters.AddWithValue("@fsiid", txtFSIC.Text);
+                    y.Parameters.AddWithValue("@inspectors", txtFSI.Text);
+                    y.ExecuteNonQuery();
 
 
+                    DateTime date = DateTime.Parse(dtpDATE.Text);
+                    DateTime dateInspected = DateTime.Parse(dtpINSPECTED.Text);
+
+                    String queryToFsic = "INSERT INTO fsic_table (`BIN`,`date`,`application_status`,`amount`,`date_inspected`) VALUES (@BIN,@date,@as,@amt,@datei)";
+                    OleDbCommand toFsic = new OleDbCommand(queryToFsic, con);
+                    toFsic.Parameters.AddWithValue("@BIN", txtBIN.Text);
+                    toFsic.Parameters.AddWithValue("@date", date);
+                    toFsic.Parameters.AddWithValue("@as", txtAPPSTATUS.Text);
+                    toFsic.Parameters.AddWithValue("@amt", txtAMOUNT.Text);
+                    toFsic.Parameters.AddWithValue("@datei",dateInspected);
+
+                    toFsic.ExecuteNonQuery();
+
+                MessageBox.Show("Create Successfully!", "System", MessageBoxButtons.OK);
+
+              
+                }
             }
             catch (Exception ex)
             {

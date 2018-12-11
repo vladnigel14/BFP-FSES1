@@ -309,6 +309,7 @@
             // dtpINSPECTED
             // 
             this.dtpINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpINSPECTED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpINSPECTED.Location = new System.Drawing.Point(197, 97);
             this.dtpINSPECTED.Name = "dtpINSPECTED";
             this.dtpINSPECTED.Size = new System.Drawing.Size(319, 23);
@@ -317,6 +318,7 @@
             // dtpDATE
             // 
             this.dtpDATE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDATE.Location = new System.Drawing.Point(197, 39);
             this.dtpDATE.Name = "dtpDATE";
             this.dtpDATE.Size = new System.Drawing.Size(319, 23);
