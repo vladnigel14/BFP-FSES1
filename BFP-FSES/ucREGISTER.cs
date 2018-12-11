@@ -32,12 +32,12 @@ namespace BFP_FSES
         {
             try
             {
-                if (txtBIN.Text == "" || txtname.Text == "" || txtaddress.Text == "" || txtowner.Text == "" || txtstatus.Text == "")
-                {
-                    MessageBox.Show("Please Fill up the blank!", "System", MessageBoxButtons.OK);
-                }
-                else
-                {
+                //if ((txtBIN.Text == "" || txtname.Text == "" || txtaddress.Text == "" || txtowner.Text == "" || txtstatus.Text == ""))
+                //{
+                //    MessageBox.Show("Please Fill up the blank!", "System", MessageBoxButtons.OK);
+                //}
+                //else
+                //{
                     con.Open();
                    // string query = "INSERT INTO Table1 (BIN, est_name, est_address, est_owner, est_status) values ('" + txtBIN.Text + "', '" + txtname.Text + "', '" + txtaddress.Text + "', '" + txtowner.Text + "', '" + txtstatus.Text + "', '" + txtFSIC.Text + "', '" + txtNOB.Text + "', '" + txtOID.Text + "', '" + txtSTONUM.Text + "', '" + txtPOROCC.Text + "', '" + txtFLAREA.Text + "', '" + txtNOV.Text + "', '" + txtFSI.Text + "', '" + txtCONMAT.Text + "', '" + txtOR.Text + "', '" + txtIO.Text + "', '" + dtpDATE + "', '" + txtAPPSTATUS.Text + "', '" + dtpINSPECTED + "', '" + txtAMOUNT.Text + "')";
                   //  OleDbCommand cmd = new OleDbCommand(query, con);
@@ -56,9 +56,17 @@ namespace BFP_FSES
                     x.Parameters.AddWithValue("@floor_area", txtFLAREA.Text);
                     x.Parameters.AddWithValue("@violation_id", txtNOV.Text);
 
-                    x.ExecuteNonQuery();   
-                    MessageBox.Show("Create Successfully!", "System", MessageBoxButtons.OK);
-                }
+                    con.Close();
+
+                    con.Open();
+                    OleDbCommand y = new OleDbCommand("insert into fire_inspector_table(fsiid,inspectors)values(@fsiid,@inspectors)",con);
+                    x.Parameters.AddWithValue("@fsiid", txtFSIC.Text);
+                    x.Parameters.AddWithValue("@inspectors", txtFSI.Text);
+                    con.Close();
+
+                    //x.ExecuteNonQuery();   
+                    //MessageBox.Show("Create Successfully!", "System", MessageBoxButtons.OK)
+                //}
 
 
             }
