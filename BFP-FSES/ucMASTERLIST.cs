@@ -6,13 +6,13 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Data.OleDb;
 
 namespace BFP_FSES
 {
     public partial class ucMASTERLIST : UserControl
     {
-        MySqlConnection conn = new MySqlConnection("datasource=127.0.0.1;port=3306;uid=root;pwd=;database=db_librarysystem");
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\BFP-FSES\\BFP-FSES.accdb;Persist Security Info=False;");
         public static ucMASTERLIST _instance;
         public static ucMASTERLIST Instance
         {
@@ -30,7 +30,17 @@ namespace BFP_FSES
 
         private void ucMASTERLIST_Load(object sender, EventArgs e)
         {
-            showdata();
+            showData();
+        }
+        public void showData()
+        {
+
+            String query = "Select * from establishment_table ";
+            OleDbDataAdapter x = new OleDbDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            x.Fill(ds, "establishment_table");
+            dataGRID.DataSource = ds.Tables[0];
+
         }
 
         private void txtSEARCH_TextChanged(object sender, EventArgs e)
@@ -46,18 +56,9 @@ namespace BFP_FSES
             }
         }
 
-        public void showdata() 
+        private void button1_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM tbl_returnbook";
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-            conn.Open();
-
-            DataSet ds = new DataSet();
-            adapter.Fill(ds, "tbl_returnbook");
-            dataGRID.DataSource = ds.Tables["tbl_returnbook"];
-            conn.Close();
+            dataGRID.Refresh();
         }
-
-
     }
 }

@@ -68,7 +68,7 @@ namespace BFP_FSES
             {
                 ucMASTERLIST.Instance.BringToFront();
             }
-
+            
         }
 
         private void panel7_Click(object sender, EventArgs e)
@@ -104,6 +104,11 @@ namespace BFP_FSES
         }
 
         private void panellogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_Paint(object sender, PaintEventArgs e)
         {
 
         }

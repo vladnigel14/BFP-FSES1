@@ -31,23 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnMASTERLIST = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnREGISTER = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panellogo = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.Sidepanel1 = new System.Windows.Forms.Panel();
-            this.Sidepanel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnREGISTER = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Sidepanel2 = new System.Windows.Forms.Panel();
+            this.Sidepanel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panellogo = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMASTERLIST
@@ -81,6 +81,62 @@
             this.panel1.Size = new System.Drawing.Size(220, 501);
             this.panel1.TabIndex = 4;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(10, 464);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(210, 37);
+            this.panel6.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label2.Location = new System.Drawing.Point(74, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "-FSES SYSTEM";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(30, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "EXIT";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // panel8
+            // 
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(36, 27);
+            this.panel8.TabIndex = 6;
+            this.panel8.Click += new System.EventHandler(this.panel8_Click);
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(0, 27);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(210, 10);
+            this.panel7.TabIndex = 0;
+            // 
             // btnREGISTER
             // 
             this.btnREGISTER.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -98,6 +154,32 @@
             this.btnREGISTER.UseVisualStyleBackColor = true;
             this.btnREGISTER.Click += new System.EventHandler(this.btnREGISTER_Click_1);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Sidepanel2);
+            this.panel4.Controls.Add(this.Sidepanel1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 182);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(10, 319);
+            this.panel4.TabIndex = 1;
+            // 
+            // Sidepanel2
+            // 
+            this.Sidepanel2.Location = new System.Drawing.Point(0, 55);
+            this.Sidepanel2.Name = "Sidepanel2";
+            this.Sidepanel2.Size = new System.Drawing.Size(10, 55);
+            this.Sidepanel2.TabIndex = 1;
+            // 
+            // Sidepanel1
+            // 
+            this.Sidepanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
+            this.Sidepanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Sidepanel1.Location = new System.Drawing.Point(0, 0);
+            this.Sidepanel1.Name = "Sidepanel1";
+            this.Sidepanel1.Size = new System.Drawing.Size(10, 55);
+            this.Sidepanel1.TabIndex = 0;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panellogo);
@@ -107,13 +189,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(220, 182);
             this.panel3.TabIndex = 0;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(220, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 100);
-            this.panel5.TabIndex = 0;
             // 
             // panellogo
             // 
@@ -129,87 +204,12 @@
             this.panellogo.Click += new System.EventHandler(this.panellogo_Click);
             this.panellogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panellogo_Paint);
             // 
-            // panel6
+            // panel5
             // 
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(10, 464);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(210, 37);
-            this.panel6.TabIndex = 4;
-            // 
-            // Sidepanel1
-            // 
-            this.Sidepanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
-            this.Sidepanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Sidepanel1.Location = new System.Drawing.Point(0, 0);
-            this.Sidepanel1.Name = "Sidepanel1";
-            this.Sidepanel1.Size = new System.Drawing.Size(10, 55);
-            this.Sidepanel1.TabIndex = 0;
-            // 
-            // Sidepanel2
-            // 
-            this.Sidepanel2.Location = new System.Drawing.Point(0, 55);
-            this.Sidepanel2.Name = "Sidepanel2";
-            this.Sidepanel2.Size = new System.Drawing.Size(10, 55);
-            this.Sidepanel2.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.Sidepanel2);
-            this.panel4.Controls.Add(this.Sidepanel1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 182);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 319);
-            this.panel4.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(30, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 19);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "EXIT";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7.Location = new System.Drawing.Point(0, 27);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(210, 10);
-            this.panel7.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(36, 27);
-            this.panel8.TabIndex = 6;
-            this.panel8.Click += new System.EventHandler(this.panel8_Click);
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift SemiBold Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label2.Location = new System.Drawing.Point(111, 4);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 19);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "-FSES SYSTEM";
+            this.panel5.Location = new System.Drawing.Point(220, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 100);
+            this.panel5.TabIndex = 0;
             // 
             // panel
             // 
@@ -220,6 +220,7 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(700, 498);
             this.panel.TabIndex = 5;
+            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
             // MainForm
             // 
@@ -233,10 +234,10 @@
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
