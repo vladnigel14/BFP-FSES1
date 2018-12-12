@@ -113,5 +113,29 @@ namespace BFP_FSES
 
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+
+
+
+            time.Text = DateTime.Now.ToLongTimeString();
+            Timer timez = new Timer();
+            timez.Interval = 1000;
+            timez.Start();
+            timez.Tick += new EventHandler(timer);
+        }
+
+        void timer(object sender, EventArgs e)
+        {
+            
+            time.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void panel29_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }

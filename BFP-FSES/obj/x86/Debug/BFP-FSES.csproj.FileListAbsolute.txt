@@ -8,4 +8,4 @@ D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.pdb
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.ucREGISTER.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.ucMASTERLIST.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.csprojResolveAssemblyReference.cache
-D:\BFP-FSES\BFP-FSES\bin\Debug\Bunifu_UI_v1.4.dll
+D:\BFP-FSES\BFP-FSES\bin\Debug\MySql.Data.dll

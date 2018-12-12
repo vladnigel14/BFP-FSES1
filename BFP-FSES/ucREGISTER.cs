@@ -74,6 +74,13 @@ namespace BFP_FSES
 
                     toFsic.ExecuteNonQuery();
 
+                    con.Close();
+                    String query = "Select * from establishment_table ";
+                    OleDbDataAdapter xz = new OleDbDataAdapter(query, con);
+                     DataSet ds = new DataSet();
+                     xz.Fill(ds, "establishment_table");
+                     new ucMASTERLIST().dataGRID.DataSource = ds;
+
                 MessageBox.Show("Create Successfully!", "System", MessageBoxButtons.OK);
 
               

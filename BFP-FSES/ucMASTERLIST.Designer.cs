@@ -81,7 +81,6 @@
             this.dataGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGRID.Size = new System.Drawing.Size(1129, 671);
             this.dataGRID.TabIndex = 1;
-           // this.dataGRID.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGRID_CellContentClick);
             // 
             // panel1
             // 
@@ -100,7 +99,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
+            this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "MASTER LIST:";
             // 
@@ -134,20 +133,20 @@
             this.panel2.Controls.Add(this.txtSEARCH);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(595, 27);
+            this.panel2.Location = new System.Drawing.Point(595, 23);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(251, 25);
+            this.panel2.Size = new System.Drawing.Size(251, 29);
             this.panel2.TabIndex = 5;
             // 
             // txtSEARCH
             // 
             this.txtSEARCH.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSEARCH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSEARCH.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSEARCH.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSEARCH.Location = new System.Drawing.Point(34, 3);
             this.txtSEARCH.Multiline = true;
             this.txtSEARCH.Name = "txtSEARCH";
-            this.txtSEARCH.Size = new System.Drawing.Size(215, 20);
+            this.txtSEARCH.Size = new System.Drawing.Size(215, 24);
             this.txtSEARCH.TabIndex = 2;
             this.txtSEARCH.Text = "Search";
             this.txtSEARCH.Click += new System.EventHandler(this.txtSEARCH_Click);
@@ -169,7 +168,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(34, 23);
+            this.panel3.Size = new System.Drawing.Size(34, 27);
             this.panel3.TabIndex = 0;
             // 
             // button3
@@ -197,7 +196,7 @@
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(868, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "SORT BY:";
             // 
