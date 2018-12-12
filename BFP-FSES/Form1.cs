@@ -103,11 +103,6 @@ namespace BFP_FSES
             Application.Exit();
         }
 
-        private void panellogo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void panel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -115,10 +110,6 @@ namespace BFP_FSES
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-
-
-
             time.Text = DateTime.Now.ToLongTimeString();
             Timer timez = new Timer();
             timez.Interval = 1000;

@@ -32,8 +32,8 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbeststatus = new System.Windows.Forms.ComboBox();
             this.txtBIN = new System.Windows.Forms.TextBox();
-            this.txtstatus = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.txtowner = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbappstatus = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@
             this.txtAMOUNT = new System.Windows.Forms.TextBox();
             this.dtpINSPECTED = new System.Windows.Forms.DateTimePicker();
             this.dtpDATE = new System.Windows.Forms.DateTimePicker();
-            this.txtAPPSTATUS = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtIO = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -118,8 +118,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbeststatus);
             this.groupBox1.Controls.Add(this.txtBIN);
-            this.groupBox1.Controls.Add(this.txtstatus);
             this.groupBox1.Controls.Add(this.txtowner);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
@@ -136,6 +136,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ESTABLISHMENT INFORMATION";
             // 
+            // cbeststatus
+            // 
+            this.cbeststatus.FormattingEnabled = true;
+            this.cbeststatus.Location = new System.Drawing.Point(197, 203);
+            this.cbeststatus.Name = "cbeststatus";
+            this.cbeststatus.Size = new System.Drawing.Size(319, 27);
+            this.cbeststatus.TabIndex = 16;
+            this.cbeststatus.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // txtBIN
             // 
             this.txtBIN.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,15 +152,6 @@
             this.txtBIN.Name = "txtBIN";
             this.txtBIN.Size = new System.Drawing.Size(319, 23);
             this.txtBIN.TabIndex = 10;
-            // 
-            // txtstatus
-            // 
-            this.txtstatus.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtstatus.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstatus.Location = new System.Drawing.Point(197, 202);
-            this.txtstatus.Name = "txtstatus";
-            this.txtstatus.Size = new System.Drawing.Size(319, 23);
-            this.txtstatus.TabIndex = 13;
             // 
             // txtowner
             // 
@@ -238,6 +238,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbappstatus);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label18);
@@ -245,7 +246,6 @@
             this.groupBox2.Controls.Add(this.txtAMOUNT);
             this.groupBox2.Controls.Add(this.dtpINSPECTED);
             this.groupBox2.Controls.Add(this.dtpDATE);
-            this.groupBox2.Controls.Add(this.txtAPPSTATUS);
             this.groupBox2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(33, 405);
             this.groupBox2.Name = "groupBox2";
@@ -253,6 +253,15 @@
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "STATUS";
+            // 
+            // cbappstatus
+            // 
+            this.cbappstatus.FormattingEnabled = true;
+            this.cbappstatus.Location = new System.Drawing.Point(197, 66);
+            this.cbappstatus.Name = "cbappstatus";
+            this.cbappstatus.Size = new System.Drawing.Size(319, 27);
+            this.cbappstatus.TabIndex = 21;
+            this.cbappstatus.SelectedIndexChanged += new System.EventHandler(this.cbstatus_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -323,14 +332,6 @@
             this.dtpDATE.Name = "dtpDATE";
             this.dtpDATE.Size = new System.Drawing.Size(319, 23);
             this.dtpDATE.TabIndex = 12;
-            // 
-            // txtAPPSTATUS
-            // 
-            this.txtAPPSTATUS.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAPPSTATUS.Location = new System.Drawing.Point(197, 68);
-            this.txtAPPSTATUS.Name = "txtAPPSTATUS";
-            this.txtAPPSTATUS.Size = new System.Drawing.Size(319, 23);
-            this.txtAPPSTATUS.TabIndex = 11;
             // 
             // groupBox3
             // 
@@ -614,6 +615,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucREGISTER";
             this.Size = new System.Drawing.Size(1128, 708);
+            this.Load += new System.EventHandler(this.ucREGISTER_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -632,7 +634,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBIN;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtstatus;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtowner;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
@@ -649,7 +650,6 @@
         private System.Windows.Forms.TextBox txtAMOUNT;
         private System.Windows.Forms.DateTimePicker dtpINSPECTED;
         private System.Windows.Forms.DateTimePicker dtpDATE;
-        private System.Windows.Forms.TextBox txtAPPSTATUS;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label17;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtIO;
@@ -675,6 +675,8 @@
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtFSIC;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cbeststatus;
+        private System.Windows.Forms.ComboBox cbappstatus;
 
 
 

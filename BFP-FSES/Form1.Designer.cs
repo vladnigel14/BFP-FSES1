@@ -273,7 +273,7 @@
             this.panellogo.Size = new System.Drawing.Size(220, 182);
             this.panellogo.TabIndex = 11;
             this.panellogo.Click += new System.EventHandler(this.panellogo_Click);
-            this.panellogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panellogo_Paint);
+          //  this.panellogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panellogo_Paint);
             // 
             // panel5
             // 

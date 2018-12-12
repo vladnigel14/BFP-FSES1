@@ -26,13 +26,14 @@ namespace BFP_FSES
         public ucREGISTER()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                if ((txtBIN.Text == "" || txtname.Text == "" || txtaddress.Text == "" || txtowner.Text == "" || txtstatus.Text == ""))
+                if ((txtBIN.Text == "" || txtname.Text == "" || txtaddress.Text == "" || txtowner.Text == "" || cbappstatus.Text == ""))
                 {
                     MessageBox.Show("Please Fill up the blank!", "System", MessageBoxButtons.OK);
                 }
@@ -45,7 +46,7 @@ namespace BFP_FSES
                     x.Parameters.AddWithValue("@establishment_name", txtname.Text);
                     x.Parameters.AddWithValue("@establishment_address", txtaddress.Text);
                     x.Parameters.AddWithValue("@establishment_owner", txtowner.Text);
-                    x.Parameters.AddWithValue("@establishment_status", txtstatus.Text);
+                    x.Parameters.AddWithValue("@establishment_status", cbeststatus.Text);
                     x.Parameters.AddWithValue("@nob", txtNOB.Text);
                     x.Parameters.AddWithValue("@occupancy_id", txtOID.Text);
                     x.Parameters.AddWithValue("@storey_no", txtSTONUM.Text);
@@ -68,7 +69,7 @@ namespace BFP_FSES
                     OleDbCommand toFsic = new OleDbCommand(queryToFsic, con);
                     toFsic.Parameters.AddWithValue("@BIN", txtBIN.Text);
                     toFsic.Parameters.AddWithValue("@date", date);
-                    toFsic.Parameters.AddWithValue("@as", txtAPPSTATUS.Text);
+                    toFsic.Parameters.AddWithValue("@as", cbappstatus.Text);
                     toFsic.Parameters.AddWithValue("@amt", txtAMOUNT.Text);
                     toFsic.Parameters.AddWithValue("@datei",dateInspected);
 
@@ -94,6 +95,27 @@ namespace BFP_FSES
             {
                 con.Close();
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string comboquery = "Select status from establisments_status_table";
+            //OleDbCommand combo = new OleDbCommand(comboquery,con);
+            OleDbDataAdapter adapter = new OleDbDataAdapter(comboquery,con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds);
+        }
+
+        private void ucREGISTER_Load(object sender, EventArgs e)
+        {
+            cbappstatus.DisplayMember = "Bababa";
+            cbappstatus.ValueMember = "aad";
+            cbappstatus.Refresh();
+        }
+
+        private void cbstatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }   
     }
 }

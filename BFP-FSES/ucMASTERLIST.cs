@@ -14,6 +14,7 @@ namespace BFP_FSES
     {
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\BFP-FSES\\BFP-FSES.accdb;Persist Security Info=False;");
         public static ucMASTERLIST _instance;
+        Timer x = new Timer();
         public static ucMASTERLIST Instance
         {
             get
@@ -31,17 +32,65 @@ namespace BFP_FSES
         private void ucMASTERLIST_Load(object sender, EventArgs e)
         {
             showData();
+            RowsColor();
+           
         }
         public void showData()
         {
 
-            String query = "Select * from establishment_table ";
+            String query = "Select fsic_table.fsic_no as  `FSIC`,establishment_table.BIN, establishment_name as  `ESTABLISHMENT NAME`,establishment_address as `ADDRESS`,establishment_owner as `OWNER`, establishment_status as `STATUS`, nob as `NATURE`, storey_no as `STOREY`, portion_occupied as `PORTION OCCUPIED`, floor_area as `FLOOR AREA`, inspected as `INSPECTED` from establishment_table INNER JOIN fsic_table on establishment_table.BIN = fsic_table.BIN";
             OleDbDataAdapter x = new OleDbDataAdapter(query, con);
-            DataSet ds = new DataSet();
-            x.Fill(ds, "establishment_table");
-            dataGRID.DataSource = ds.Tables[0];
+            DataTable dt = new DataTable();
+            x.Fill(dt);
+            dataGRID.DataSource = dt;
+          
 
         }
+
+        public void RowsColor()
+        {
+            Timer y = new Timer();
+            y.Interval = 100;
+            y.Start();
+            y.Tick+=new EventHandler(y_Tick);
+        }
+
+        void y_Tick(Object sender, EventArgs e)
+        {
+            for (int i = 0; i < dataGRID.Rows.Count - 1; i++)
+            {
+                try
+                {
+                    String status = dataGRID.Rows[i].Cells[5].Value.ToString();
+
+                    if (status == "NEW")
+                    {
+                        dataGRID.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(169, 223, 191);
+
+                    }
+
+                    else
+                    {
+                        dataGRID.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb (249, 231, 159);
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+            }
+
+            
+        }
+
+    
+
+       
 
         private void txtSEARCH_TextChanged(object sender, EventArgs e)
         {
