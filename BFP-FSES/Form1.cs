@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace BFP_FSES
 {
     public partial class MainForm : Form
     {
+        OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\BFP-FSES\\BFP-FSES.accdb;Persist Security Info=False;");
         public MainForm()
         {
             InitializeComponent();
@@ -110,6 +112,9 @@ namespace BFP_FSES
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //SHOW DATA FROM LABEL
+            showTOTAL_ESTABLISHMENT();
+            //END......
             time.Text = DateTime.Now.ToLongTimeString();
             Timer timez = new Timer();
             timez.Interval = 1000;
@@ -126,6 +131,20 @@ namespace BFP_FSES
         private void panel29_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void showTOTAL_ESTABLISHMENT() 
+        {
+            con.Open();
+            String query = "SELECT COUNT(*) as `COUNT` FROM establishment_table";
+            OleDbCommand Adpt = new OleDbCommand(query, con);
+            OleDbDataReader reader = Adpt.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lblESTABLISHMENT.Text = reader["COUNT"].ToString();
+            }
+            con.Close();
         }
 
     }

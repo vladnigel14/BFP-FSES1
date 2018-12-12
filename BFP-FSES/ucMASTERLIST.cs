@@ -33,6 +33,10 @@ namespace BFP_FSES
         {
             showData();
             RowsColor();
+            foreach (DataGridViewColumn dgvc in dataGRID.Columns)
+            {
+                dgvc.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
            
         }
         public void showData()
@@ -108,6 +112,11 @@ namespace BFP_FSES
         private void button1_Click(object sender, EventArgs e)
         {
             dataGRID.Refresh();
+        }
+
+        private void dataGRID_DoubleClick(object sender, EventArgs e)
+        {
+            MessageBox.Show("LANGAW NI MARC");
         }
     }
 }

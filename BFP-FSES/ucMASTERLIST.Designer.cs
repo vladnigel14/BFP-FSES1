@@ -76,6 +76,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGRID.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGRID.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGRID.Location = new System.Drawing.Point(0, 91);
             this.dataGRID.Name = "dataGRID";
             this.dataGRID.ReadOnly = true;
@@ -83,6 +84,7 @@
             this.dataGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGRID.Size = new System.Drawing.Size(1129, 671);
             this.dataGRID.TabIndex = 1;
+            this.dataGRID.DoubleClick += new System.EventHandler(this.dataGRID_DoubleClick);
             // 
             // panel1
             // 
@@ -101,7 +103,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(8, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 16);
+            this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "MASTER LIST:";
             // 
@@ -198,7 +200,7 @@
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(868, 32);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
+            this.label2.Size = new System.Drawing.Size(57, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "SORT BY:";
             // 
