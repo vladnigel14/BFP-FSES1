@@ -127,7 +127,8 @@ namespace BFP_FSES
 
         private void dataGRID_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show("LANGAW NI MARC");
+            dataINFO info = new dataINFO();
+            info.ShowDialog();
         }
     }
 }

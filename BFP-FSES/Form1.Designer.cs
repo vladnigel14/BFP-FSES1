@@ -84,13 +84,13 @@
             this.panel20 = new System.Windows.Forms.Panel();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblNOTINSPECTED = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblINSPECTED = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
@@ -703,7 +703,7 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel16.Controls.Add(this.label7);
+            this.panel16.Controls.Add(this.lblNOTINSPECTED);
             this.panel16.Controls.Add(this.label8);
             this.panel16.Controls.Add(this.panel17);
             this.panel16.Controls.Add(this.panel18);
@@ -712,16 +712,16 @@
             this.panel16.Size = new System.Drawing.Size(299, 116);
             this.panel16.TabIndex = 2;
             // 
-            // label7
+            // lblNOTINSPECTED
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(116, 43);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 58);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "0";
+            this.lblNOTINSPECTED.AutoSize = true;
+            this.lblNOTINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNOTINSPECTED.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNOTINSPECTED.Location = new System.Drawing.Point(116, 43);
+            this.lblNOTINSPECTED.Name = "lblNOTINSPECTED";
+            this.lblNOTINSPECTED.Size = new System.Drawing.Size(51, 58);
+            this.lblNOTINSPECTED.TabIndex = 4;
+            this.lblNOTINSPECTED.Text = "0";
             // 
             // label8
             // 
@@ -730,9 +730,9 @@
             this.label8.ForeColor = System.Drawing.Color.Gray;
             this.label8.Location = new System.Drawing.Point(119, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 16);
+            this.label8.Size = new System.Drawing.Size(101, 16);
             this.label8.TabIndex = 3;
-            this.label8.Text = "TITLE:";
+            this.label8.Text = "NOT INSPECTED";
             // 
             // panel17
             // 
@@ -761,7 +761,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel12.Controls.Add(this.label5);
+            this.panel12.Controls.Add(this.lblINSPECTED);
             this.panel12.Controls.Add(this.label6);
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Controls.Add(this.panel14);
@@ -770,16 +770,16 @@
             this.panel12.Size = new System.Drawing.Size(299, 116);
             this.panel12.TabIndex = 1;
             // 
-            // label5
+            // lblINSPECTED
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(116, 43);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 58);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "0";
+            this.lblINSPECTED.AutoSize = true;
+            this.lblINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblINSPECTED.ForeColor = System.Drawing.Color.DimGray;
+            this.lblINSPECTED.Location = new System.Drawing.Point(116, 43);
+            this.lblINSPECTED.Name = "lblINSPECTED";
+            this.lblINSPECTED.Size = new System.Drawing.Size(51, 58);
+            this.lblINSPECTED.TabIndex = 4;
+            this.lblINSPECTED.Text = "0";
             // 
             // label6
             // 
@@ -788,9 +788,9 @@
             this.label6.ForeColor = System.Drawing.Color.Gray;
             this.label6.Location = new System.Drawing.Point(119, 6);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 16);
+            this.label6.Size = new System.Drawing.Size(79, 16);
             this.label6.TabIndex = 3;
-            this.label6.Text = "TITLE:";
+            this.label6.Text = "INSPECTED:";
             // 
             // panel13
             // 
@@ -940,13 +940,13 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblNOTINSPECTED;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblINSPECTED;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;

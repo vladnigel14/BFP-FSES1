@@ -114,6 +114,11 @@ namespace BFP_FSES
         private void e(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }   
     }
 }

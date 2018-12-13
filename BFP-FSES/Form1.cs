@@ -114,7 +114,10 @@ namespace BFP_FSES
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //SHOW DATA FROM LABEL
+            //SHOW DATA FROM LABEL INSPECTED
+            showTOTAL_INSPECTED();
+            //END
+            //SHOW DATA FROM LABEL ESTABLISHMENT
             showTOTAL_ESTABLISHMENT();
             //END......
             time.Text = DateTime.Now.ToLongTimeString();
@@ -135,6 +138,34 @@ namespace BFP_FSES
 
         }
 
+        public void showTOTAL_NOTINSPECTED()
+        {
+            con.Open();
+            String query = "SELECT COUNT(inspected='NO') AS `COUNT` FROM establishment_table;";
+            OleDbCommand Adpt = new OleDbCommand(query, con);
+            OleDbDataReader reader = Adpt.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lblNOTINSPECTED.Text = reader["COUNT"].ToString();
+            }
+            con.Close();
+        }
+
+        public void showTOTAL_INSPECTED()
+        {
+            con.Open();
+            String query = "SELECT COUNT(inspected='YES') AS `COUNT` FROM establishment_table;";
+            OleDbCommand Adpt = new OleDbCommand(query, con);
+            OleDbDataReader reader = Adpt.ExecuteReader();
+
+            while (reader.Read())
+            {
+                lblINSPECTED.Text = reader["COUNT"].ToString();
+            }
+            con.Close();
+        }
+
         public void showTOTAL_ESTABLISHMENT() 
         {
             con.Open();
@@ -148,6 +179,7 @@ namespace BFP_FSES
             }
             con.Close();
         }
+
 
     }
 }
