@@ -106,16 +106,14 @@ namespace BFP_FSES
             adapter.Fill(ds);
         }
 
-        private void ucREGISTER_Load(object sender, EventArgs e)
+        private void kD(object sender, KeyEventArgs e)
         {
-            cbappstatus.DisplayMember = "Bababa";
-            cbappstatus.ValueMember = "aad";
-            cbappstatus.Refresh();
+            e.SuppressKeyPress = true;
         }
 
-        private void cbstatus_SelectedIndexChanged(object sender, EventArgs e)
+        private void e(object sender, KeyEventArgs e)
         {
-           
+            e.SuppressKeyPress = true;
         }   
     }
 }

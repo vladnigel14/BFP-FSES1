@@ -139,11 +139,17 @@
             // cbeststatus
             // 
             this.cbeststatus.FormattingEnabled = true;
+            this.cbeststatus.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.cbeststatus.Items.AddRange(new object[] {
+            "INSPECTION",
+            "ISSUANCE OF FSIC",
+            "ISSUANCE OF NTC"});
             this.cbeststatus.Location = new System.Drawing.Point(197, 203);
             this.cbeststatus.Name = "cbeststatus";
             this.cbeststatus.Size = new System.Drawing.Size(319, 27);
             this.cbeststatus.TabIndex = 16;
             this.cbeststatus.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbeststatus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.kD);
             // 
             // txtBIN
             // 
@@ -257,11 +263,15 @@
             // cbappstatus
             // 
             this.cbappstatus.FormattingEnabled = true;
+            this.cbappstatus.Items.AddRange(new object[] {
+            "NEW",
+            "RENEW"});
             this.cbappstatus.Location = new System.Drawing.Point(197, 66);
             this.cbappstatus.Name = "cbappstatus";
             this.cbappstatus.Size = new System.Drawing.Size(319, 27);
             this.cbappstatus.TabIndex = 21;
             this.cbappstatus.SelectedIndexChanged += new System.EventHandler(this.cbstatus_SelectedIndexChanged);
+            this.cbappstatus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.e);
             // 
             // label20
             // 

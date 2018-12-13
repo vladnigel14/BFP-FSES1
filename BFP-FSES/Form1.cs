@@ -64,10 +64,12 @@ namespace BFP_FSES
             {
                 panel.Controls.Add(ucMASTERLIST.Instance);
                 ucMASTERLIST.Instance.Dock = DockStyle.Fill;
+                ucMASTERLIST.Instance.showData();
                 ucMASTERLIST.Instance.BringToFront();
             }
             else
             {
+                ucMASTERLIST.Instance.showData();
                 ucMASTERLIST.Instance.BringToFront();
             }
             

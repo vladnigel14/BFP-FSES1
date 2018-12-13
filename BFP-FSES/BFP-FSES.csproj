@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dataINFO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dataINFO.Designer.cs">
+      <DependentUpon>dataINFO.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +80,9 @@
     <Compile Include="ucREGISTER.Designer.cs">
       <DependentUpon>ucREGISTER.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="dataINFO.resx">
+      <DependentUpon>dataINFO.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

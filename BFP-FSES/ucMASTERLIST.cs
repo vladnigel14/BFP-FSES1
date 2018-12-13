@@ -92,9 +92,20 @@ namespace BFP_FSES
             
         }
 
-    
 
-       
+
+        private void RefreshGridView()
+        {
+            if (dataGRID.InvokeRequired)
+            {
+                dataGRID.Invoke((MethodInvoker)delegate()
+                {
+                    RefreshGridView();
+                });
+            }
+            else
+                dataGRID.Refresh();
+        }
 
         private void txtSEARCH_TextChanged(object sender, EventArgs e)
         {
