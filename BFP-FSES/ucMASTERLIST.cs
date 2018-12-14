@@ -37,6 +37,8 @@ namespace BFP_FSES
             {
                 dgvc.SortMode = DataGridViewColumnSortMode.NotSortable;
             }
+
+          
            
         }
         public void showData()
@@ -65,9 +67,9 @@ namespace BFP_FSES
             {
                 try
                 {
-                    String status = dataGRID.Rows[i].Cells[5].Value.ToString();
+                    String status = dataGRID.Rows[i].Cells[10].Value.ToString();
 
-                    if (status == "NEW")
+                    if (status == "YES")
                     {
                         dataGRID.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(169, 223, 191);
 
@@ -127,8 +129,46 @@ namespace BFP_FSES
 
         private void dataGRID_DoubleClick(object sender, EventArgs e)
         {
+
+
+            int row = dataGRID.SelectedRows[0].Index;
+
+            String fsic = dataGRID.Rows[row].Cells[0].Value.ToString();
+            String BIN = dataGRID.Rows[row].Cells[1].Value.ToString();
+            String ESTABLISHMENTNAME = dataGRID.Rows[row].Cells[2].Value.ToString();
+            String ADDRESS = dataGRID.Rows[row].Cells[3].Value.ToString();
+            String OWNER = dataGRID.Rows[row].Cells[4].Value.ToString();
+            String STATUS = dataGRID.Rows[row].Cells[5].Value.ToString();
+            String NATURE = dataGRID.Rows[row].Cells[6].Value.ToString();
+            String STOREY = dataGRID.Rows[row].Cells[7].Value.ToString();
+            String PORTOCC = dataGRID.Rows[row].Cells[8].Value.ToString();
+            String FLOORAREA = dataGRID.Rows[row].Cells[9].Value.ToString();
+            String INSPECTED = dataGRID.Rows[row].Cells[10].Value.ToString();
+
+
             dataINFO info = new dataINFO();
+            info.txtFSIC.Text = fsic;
+            info.txtBIN.Text = BIN;
+            info.txtname.Text = ESTABLISHMENTNAME;
+            info.txtaddress.Text = ADDRESS;
+            info.txtowner.Text = OWNER;
+            info.cbeststatus.Text = STATUS;
+            info.txtNOB.Text = NATURE;
+            info.txtSTONUM.Text = STOREY;
+            info.txtPOROCC.Text = PORTOCC;
+            info.txtFLAREA.Text = FLOORAREA;
+            info.cbinspected.Text = INSPECTED;
             info.ShowDialog();
+        }
+
+        private void dataGRID_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void binded(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGRID.ClearSelection();
         }
     }
 }

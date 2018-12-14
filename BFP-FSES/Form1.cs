@@ -38,17 +38,32 @@ namespace BFP_FSES
             btnMASTERLIST.Font = new Font("Bahnschrift", 9, FontStyle.Bold);
             if (!panel.Controls.Contains(ucREGISTER.Instance))
             {
+                popCom();
                 panel.Controls.Add(ucREGISTER.Instance);
                 ucREGISTER.Instance.Dock = DockStyle.Fill;
                 ucREGISTER.Instance.BringToFront();
             }
             else
             {
+                popCom();
                 ucREGISTER.Instance.BringToFront();
             }
             Sidepanel1.BackColor = Color.FromArgb(120, 40, 31);
             Sidepanel2.BackColor = Color.FromArgb(39, 55, 70);
 
+
+        }
+
+        public void popCom()
+        {
+
+            String query = "Select * from establishment_type_table";
+            OleDbDataAdapter u = new OleDbDataAdapter(query,con);
+            DataSet ds = new DataSet();
+            u.Fill(ds);
+            ucREGISTER.Instance.comboBox1.DisplayMember = "type";
+            ucREGISTER.Instance.comboBox1.ValueMember = "ID";
+            ucREGISTER.Instance.comboBox1.DataSource = ds.Tables[0];
 
         }
 

@@ -40,8 +40,8 @@ namespace BFP_FSES
                 else
                 {
                     con.Open();
-
-                    OleDbCommand x = new OleDbCommand("insert into establishment_table(BIN,establishment_name,establishment_address,establishment_owner,establishment_status,nob,occupancy_id,storey_no,portion_occupied,floor_area,violation_id) values (@bin,@establishment_name,@establishment_address,@establishment_owner,@establishment_status,@nob,@occupancy_id,@storey_no,@portion_occupied,@floor_area,@violation_id)", con);
+                    
+                    OleDbCommand x = new OleDbCommand("insert into establishment_table(BIN,establishment_name,establishment_address,establishment_owner,establishment_status,nob,occupancy_id,storey_no,portion_occupied,floor_area,violation_id,inspected) values (@bin,@establishment_name,@establishment_address,@establishment_owner,@establishment_status,@nob,@occupancy_id,@storey_no,@portion_occupied,@floor_area,@violation_id,@inspected)", con);
                     x.Parameters.AddWithValue("@bin", txtBIN.Text);
                     x.Parameters.AddWithValue("@establishment_name", txtname.Text);
                     x.Parameters.AddWithValue("@establishment_address", txtaddress.Text);
@@ -53,11 +53,11 @@ namespace BFP_FSES
                     x.Parameters.AddWithValue("@portion_occupied", txtPOROCC.Text);
                     x.Parameters.AddWithValue("@floor_area", txtFLAREA.Text);
                     x.Parameters.AddWithValue("@violation_id", txtNOV.Text);
+                    x.Parameters.AddWithValue("@inspected", "NO");
 
                     x.ExecuteNonQuery();
 
-                    OleDbCommand y = new OleDbCommand("insert into fire_inspector_table(fsiid,inspectors)values(@fsiid,@inspectors)", con);
-                    y.Parameters.AddWithValue("@fsiid", txtFSIC.Text);
+                    OleDbCommand y = new OleDbCommand("insert into fire_inspector_table(inspectors)values(@inspectors)", con);
                     y.Parameters.AddWithValue("@inspectors", txtFSI.Text);
                     y.ExecuteNonQuery();
 
@@ -65,8 +65,9 @@ namespace BFP_FSES
                     DateTime date = DateTime.Parse(dtpDATE.Text);
                     DateTime dateInspected = DateTime.Parse(dtpINSPECTED.Text);
 
-                    String queryToFsic = "INSERT INTO fsic_table (`BIN`,`date`,`application_status`,`amount`,`date_inspected`) VALUES (@BIN,@date,@as,@amt,@datei)";
+                    String queryToFsic = "INSERT INTO fsic_table (`fsic_no`,`BIN`,`date`,`application_status`,`amount`,`date_inspected`) VALUES (@fsic,@BIN,@date,@as,@amt,@datei)";
                     OleDbCommand toFsic = new OleDbCommand(queryToFsic, con);
+                    toFsic.Parameters.AddWithValue("@fsic", txtFSIC.Text);
                     toFsic.Parameters.AddWithValue("@BIN", txtBIN.Text);
                     toFsic.Parameters.AddWithValue("@date", date);
                     toFsic.Parameters.AddWithValue("@as", cbappstatus.Text);
@@ -83,8 +84,6 @@ namespace BFP_FSES
                      new ucMASTERLIST().dataGRID.DataSource = ds;
 
                 MessageBox.Show("Create Successfully!", "System", MessageBoxButtons.OK);
-
-              
                 }
             }
             catch (Exception ex)
@@ -99,11 +98,7 @@ namespace BFP_FSES
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string comboquery = "Select status from establisments_status_table";
-            //OleDbCommand combo = new OleDbCommand(comboquery,con);
-            OleDbDataAdapter adapter = new OleDbDataAdapter(comboquery,con);
-            DataSet ds = new DataSet();
-            adapter.Fill(ds);
+           
         }
 
         private void kD(object sender, KeyEventArgs e)

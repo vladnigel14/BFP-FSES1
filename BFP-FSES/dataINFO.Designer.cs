@@ -29,26 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbappstatus = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtAMOUNT = new System.Windows.Forms.TextBox();
-            this.dtpINSPECTED = new System.Windows.Forms.DateTimePicker();
-            this.dtpDATE = new System.Windows.Forms.DateTimePicker();
-            this.cbeststatus = new System.Windows.Forms.ComboBox();
-            this.txtBIN = new System.Windows.Forms.TextBox();
-            this.txtowner = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtaddress = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtname = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cbinspected = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.txtIO = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label16 = new System.Windows.Forms.Label();
@@ -71,20 +57,37 @@
             this.txtNOB = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtFSIC = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.cbappstatus = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtAMOUNT = new System.Windows.Forms.TextBox();
+            this.dtpINSPECTED = new System.Windows.Forms.DateTimePicker();
+            this.dtpDATE = new System.Windows.Forms.DateTimePicker();
+            this.cbeststatus = new System.Windows.Forms.ComboBox();
+            this.txtBIN = new System.Windows.Forms.TextBox();
+            this.txtowner = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtaddress = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtname = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.cbinspected);
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label22);
@@ -138,6 +141,297 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DarkRed;
+            this.button2.Location = new System.Drawing.Point(872, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(76, 29);
+            this.button2.TabIndex = 93;
+            this.button2.Text = "CANCEL";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cbinspected
+            // 
+            this.cbinspected.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbinspected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbinspected.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbinspected.FormattingEnabled = true;
+            this.cbinspected.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.cbinspected.Items.AddRange(new object[] {
+            "YES",
+            "NO"});
+            this.cbinspected.Location = new System.Drawing.Point(105, 11);
+            this.cbinspected.Name = "cbinspected";
+            this.cbinspected.Size = new System.Drawing.Size(165, 21);
+            this.cbinspected.TabIndex = 92;
+            this.cbinspected.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.Color.Transparent;
+            this.label24.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(24, 12);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(79, 16);
+            this.label24.TabIndex = 91;
+            this.label24.Text = "INSPECTED:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Mall",
+            "Appartment",
+            "Store"});
+            this.comboBox1.Location = new System.Drawing.Point(196, 246);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(294, 21);
+            this.comboBox1.TabIndex = 90;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(24, 248);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(141, 16);
+            this.label22.TabIndex = 89;
+            this.label22.Text = "ESTABLISHMENT TYPE:";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(790, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(76, 29);
+            this.button1.TabIndex = 87;
+            this.button1.Text = "UPDATE";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(634, 443);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(26, 16);
+            this.label17.TabIndex = 86;
+            this.label17.Text = "I.O:";
+            // 
+            // txtIO
+            // 
+            this.txtIO.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtIO.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIO.Location = new System.Drawing.Point(687, 436);
+            this.txtIO.Name = "txtIO";
+            this.txtIO.Size = new System.Drawing.Size(261, 23);
+            this.txtIO.TabIndex = 85;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(632, 414);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(30, 16);
+            this.label16.TabIndex = 84;
+            this.label16.Text = "O.R:";
+            // 
+            // txtOR
+            // 
+            this.txtOR.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtOR.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOR.Location = new System.Drawing.Point(688, 407);
+            this.txtOR.Name = "txtOR";
+            this.txtOR.Size = new System.Drawing.Size(261, 23);
+            this.txtOR.TabIndex = 83;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(509, 79);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 16);
+            this.label15.TabIndex = 82;
+            this.label15.Text = "FSIC NUMBER:";
+            // 
+            // txtCONMAT
+            // 
+            this.txtCONMAT.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtCONMAT.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCONMAT.Location = new System.Drawing.Point(689, 354);
+            this.txtCONMAT.Multiline = true;
+            this.txtCONMAT.Name = "txtCONMAT";
+            this.txtCONMAT.Size = new System.Drawing.Size(261, 47);
+            this.txtCONMAT.TabIndex = 81;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(510, 357);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(171, 16);
+            this.label14.TabIndex = 80;
+            this.label14.Text = "CONSTRUCTION MATERIALS:";
+            // 
+            // txtFSI
+            // 
+            this.txtFSI.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtFSI.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFSI.Location = new System.Drawing.Point(688, 301);
+            this.txtFSI.Multiline = true;
+            this.txtFSI.Name = "txtFSI";
+            this.txtFSI.Size = new System.Drawing.Size(261, 47);
+            this.txtFSI.TabIndex = 79;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(509, 304);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(161, 16);
+            this.label13.TabIndex = 78;
+            this.label13.Text = "FIRE SAFETY INSPECTORS:";
+            // 
+            // txtNOV
+            // 
+            this.txtNOV.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtNOV.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNOV.Location = new System.Drawing.Point(688, 250);
+            this.txtNOV.Multiline = true;
+            this.txtNOV.Name = "txtNOV";
+            this.txtNOV.Size = new System.Drawing.Size(261, 47);
+            this.txtNOV.TabIndex = 77;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(509, 255);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(131, 16);
+            this.label12.TabIndex = 76;
+            this.label12.Text = "NOTES OF VIOLATION:";
+            // 
+            // txtFLAREA
+            // 
+            this.txtFLAREA.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtFLAREA.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFLAREA.Location = new System.Drawing.Point(687, 221);
+            this.txtFLAREA.Name = "txtFLAREA";
+            this.txtFLAREA.Size = new System.Drawing.Size(261, 23);
+            this.txtFLAREA.TabIndex = 75;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(509, 227);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 16);
+            this.label11.TabIndex = 74;
+            this.label11.Text = "FLOOR AREA:";
+            // 
+            // txtPOROCC
+            // 
+            this.txtPOROCC.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtPOROCC.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPOROCC.Location = new System.Drawing.Point(688, 192);
+            this.txtPOROCC.Name = "txtPOROCC";
+            this.txtPOROCC.Size = new System.Drawing.Size(261, 23);
+            this.txtPOROCC.TabIndex = 73;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(509, 192);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(126, 16);
+            this.label10.TabIndex = 72;
+            this.label10.Text = "PORTION OCCUPIED:";
+            // 
+            // txtSTONUM
+            // 
+            this.txtSTONUM.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtSTONUM.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTONUM.Location = new System.Drawing.Point(688, 163);
+            this.txtSTONUM.Name = "txtSTONUM";
+            this.txtSTONUM.Size = new System.Drawing.Size(261, 23);
+            this.txtSTONUM.TabIndex = 71;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(509, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 16);
+            this.label9.TabIndex = 70;
+            this.label9.Text = "STOREY NUMBER:";
+            // 
+            // txtOID
+            // 
+            this.txtOID.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtOID.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOID.Location = new System.Drawing.Point(688, 134);
+            this.txtOID.Name = "txtOID";
+            this.txtOID.Size = new System.Drawing.Size(261, 23);
+            this.txtOID.TabIndex = 69;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(509, 137);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.TabIndex = 68;
+            this.label8.Text = "OCCUPANCY ID:";
+            // 
+            // txtNOB
+            // 
+            this.txtNOB.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtNOB.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNOB.Location = new System.Drawing.Point(688, 105);
+            this.txtNOB.Name = "txtNOB";
+            this.txtNOB.Size = new System.Drawing.Size(261, 23);
+            this.txtNOB.TabIndex = 67;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(509, 106);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(140, 16);
+            this.label21.TabIndex = 65;
+            this.label21.Text = "NATURE OF BUSINESS:";
+            // 
+            // txtFSIC
+            // 
+            this.txtFSIC.BorderColor = System.Drawing.Color.SeaGreen;
+            this.txtFSIC.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFSIC.Location = new System.Drawing.Point(688, 76);
+            this.txtFSIC.Name = "txtFSIC";
+            this.txtFSIC.Size = new System.Drawing.Size(261, 23);
+            this.txtFSIC.TabIndex = 66;
+            // 
             // cbappstatus
             // 
             this.cbappstatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -158,7 +452,7 @@
             this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(24, 384);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 16);
+            this.label20.Size = new System.Drawing.Size(61, 16);
             this.label20.TabIndex = 33;
             this.label20.Text = "AMOUNT:";
             // 
@@ -334,7 +628,7 @@
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 19);
+            this.label1.Size = new System.Drawing.Size(259, 19);
             this.label1.TabIndex = 11;
             this.label1.Text = "ESTABLISHMENT INFORMATION";
             // 
@@ -350,294 +644,19 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // label17
+            // pictureBox1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(634, 443);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(26, 16);
-            this.label17.TabIndex = 86;
-            this.label17.Text = "I.O:";
-            // 
-            // txtIO
-            // 
-            this.txtIO.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtIO.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIO.Location = new System.Drawing.Point(687, 436);
-            this.txtIO.Name = "txtIO";
-            this.txtIO.Size = new System.Drawing.Size(261, 23);
-            this.txtIO.TabIndex = 85;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(632, 414);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(30, 16);
-            this.label16.TabIndex = 84;
-            this.label16.Text = "O.R:";
-            // 
-            // txtOR
-            // 
-            this.txtOR.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtOR.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOR.Location = new System.Drawing.Point(688, 407);
-            this.txtOR.Name = "txtOR";
-            this.txtOR.Size = new System.Drawing.Size(261, 23);
-            this.txtOR.TabIndex = 83;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(509, 79);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(92, 16);
-            this.label15.TabIndex = 82;
-            this.label15.Text = "FSIC NUMBER:";
-            // 
-            // txtCONMAT
-            // 
-            this.txtCONMAT.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtCONMAT.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCONMAT.Location = new System.Drawing.Point(689, 354);
-            this.txtCONMAT.Multiline = true;
-            this.txtCONMAT.Name = "txtCONMAT";
-            this.txtCONMAT.Size = new System.Drawing.Size(261, 47);
-            this.txtCONMAT.TabIndex = 81;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(510, 357);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(171, 16);
-            this.label14.TabIndex = 80;
-            this.label14.Text = "CONSTRUCTION MATERIALS:";
-            // 
-            // txtFSI
-            // 
-            this.txtFSI.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFSI.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFSI.Location = new System.Drawing.Point(688, 301);
-            this.txtFSI.Multiline = true;
-            this.txtFSI.Name = "txtFSI";
-            this.txtFSI.Size = new System.Drawing.Size(261, 47);
-            this.txtFSI.TabIndex = 79;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(509, 304);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(162, 16);
-            this.label13.TabIndex = 78;
-            this.label13.Text = "FIRE SAFETY INSPECTORS:";
-            // 
-            // txtNOV
-            // 
-            this.txtNOV.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtNOV.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNOV.Location = new System.Drawing.Point(688, 250);
-            this.txtNOV.Multiline = true;
-            this.txtNOV.Name = "txtNOV";
-            this.txtNOV.Size = new System.Drawing.Size(261, 47);
-            this.txtNOV.TabIndex = 77;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(509, 255);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 16);
-            this.label12.TabIndex = 76;
-            this.label12.Text = "NOTES OF VIOLATION:";
-            // 
-            // txtFLAREA
-            // 
-            this.txtFLAREA.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFLAREA.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFLAREA.Location = new System.Drawing.Point(687, 221);
-            this.txtFLAREA.Name = "txtFLAREA";
-            this.txtFLAREA.Size = new System.Drawing.Size(261, 23);
-            this.txtFLAREA.TabIndex = 75;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(509, 227);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 16);
-            this.label11.TabIndex = 74;
-            this.label11.Text = "FLOOR AREA:";
-            // 
-            // txtPOROCC
-            // 
-            this.txtPOROCC.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtPOROCC.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPOROCC.Location = new System.Drawing.Point(688, 192);
-            this.txtPOROCC.Name = "txtPOROCC";
-            this.txtPOROCC.Size = new System.Drawing.Size(261, 23);
-            this.txtPOROCC.TabIndex = 73;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(509, 192);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 16);
-            this.label10.TabIndex = 72;
-            this.label10.Text = "PORTION OCCUPIED:";
-            // 
-            // txtSTONUM
-            // 
-            this.txtSTONUM.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtSTONUM.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSTONUM.Location = new System.Drawing.Point(688, 163);
-            this.txtSTONUM.Name = "txtSTONUM";
-            this.txtSTONUM.Size = new System.Drawing.Size(261, 23);
-            this.txtSTONUM.TabIndex = 71;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(509, 163);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 16);
-            this.label9.TabIndex = 70;
-            this.label9.Text = "STOREY NUMBER:";
-            // 
-            // txtOID
-            // 
-            this.txtOID.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtOID.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOID.Location = new System.Drawing.Point(688, 134);
-            this.txtOID.Name = "txtOID";
-            this.txtOID.Size = new System.Drawing.Size(261, 23);
-            this.txtOID.TabIndex = 69;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(509, 137);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 16);
-            this.label8.TabIndex = 68;
-            this.label8.Text = "OCCUPANCY ID:";
-            // 
-            // txtNOB
-            // 
-            this.txtNOB.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtNOB.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNOB.Location = new System.Drawing.Point(688, 105);
-            this.txtNOB.Name = "txtNOB";
-            this.txtNOB.Size = new System.Drawing.Size(261, 23);
-            this.txtNOB.TabIndex = 67;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(509, 106);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(140, 16);
-            this.label21.TabIndex = 65;
-            this.label21.Text = "NATURE OF BUSINESS:";
-            // 
-            // txtFSIC
-            // 
-            this.txtFSIC.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFSIC.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFSIC.Location = new System.Drawing.Point(688, 76);
-            this.txtFSIC.Name = "txtFSIC";
-            this.txtFSIC.Size = new System.Drawing.Size(261, 23);
-            this.txtFSIC.TabIndex = 66;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(790, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 29);
-            this.button1.TabIndex = 87;
-            this.button1.Text = "SUBMIT";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Mall",
-            "Appartment",
-            "Store"});
-            this.comboBox1.Location = new System.Drawing.Point(196, 246);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(294, 21);
-            this.comboBox1.TabIndex = 90;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(24, 248);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(142, 16);
-            this.label22.TabIndex = 89;
-            this.label22.Text = "ESTABLISHMENT TYPE:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox2.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.comboBox2.Items.AddRange(new object[] {
-            "YES",
-            "NO"});
-            this.comboBox2.Location = new System.Drawing.Point(105, 11);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(165, 21);
-            this.comboBox2.TabIndex = 92;
-            this.comboBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.A);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(24, 12);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(79, 16);
-            this.label24.TabIndex = 91;
-            this.label24.Text = "INSPECTED:";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkRed;
-            this.button2.Location = new System.Drawing.Point(872, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 29);
-            this.button2.TabIndex = 93;
-            this.button2.Text = "CANCEL";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::BFP_FSES.Properties.Resources.okstamp;
+            this.pictureBox1.Location = new System.Drawing.Point(91, 397);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(90, 78);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 95;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+           // this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // dataINFO
             // 
@@ -652,6 +671,7 @@
             this.Load += new System.EventHandler(this.dataINFO_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -661,52 +681,53 @@
         private System.Windows.Forms.Panel panel1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbeststatus;
-        private System.Windows.Forms.TextBox txtBIN;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtowner;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtaddress;
         private System.Windows.Forms.Label label5;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtname;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbappstatus;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox txtAMOUNT;
-        private System.Windows.Forms.DateTimePicker dtpINSPECTED;
-        private System.Windows.Forms.DateTimePicker dtpDATE;
         private System.Windows.Forms.Label label17;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtIO;
         private System.Windows.Forms.Label label16;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtOR;
         private System.Windows.Forms.Label label15;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtCONMAT;
         private System.Windows.Forms.Label label14;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtFSI;
         private System.Windows.Forms.Label label13;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNOV;
         private System.Windows.Forms.Label label12;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtFLAREA;
         private System.Windows.Forms.Label label11;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtPOROCC;
         private System.Windows.Forms.Label label10;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSTONUM;
         private System.Windows.Forms.Label label9;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtOID;
         private System.Windows.Forms.Label label8;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNOB;
         private System.Windows.Forms.Label label21;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtFSIC;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label24;
+        public System.Windows.Forms.TextBox txtBIN;
+        public System.Windows.Forms.ComboBox cbeststatus;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtowner;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtaddress;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtname;
+        public System.Windows.Forms.ComboBox cbappstatus;
+        public System.Windows.Forms.TextBox txtAMOUNT;
+        public System.Windows.Forms.DateTimePicker dtpINSPECTED;
+        public System.Windows.Forms.DateTimePicker dtpDATE;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtIO;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtOR;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtCONMAT;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtFSI;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtNOV;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtFLAREA;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtPOROCC;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtSTONUM;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtOID;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtNOB;
+        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtFSIC;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cbinspected;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
     }
 }

@@ -32,6 +32,8 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.cbeststatus = new System.Windows.Forms.ComboBox();
             this.txtBIN = new System.Windows.Forms.TextBox();
             this.txtowner = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -76,8 +78,6 @@
             this.txtFSIC = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label21 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -90,7 +90,7 @@
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(457, 33);
+            this.label1.Size = new System.Drawing.Size(487, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRATION OF ESTABLISHMENTS";
             // 
@@ -114,7 +114,7 @@
             this.label22.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label22.Location = new System.Drawing.Point(481, 51);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(164, 13);
+            this.label22.Size = new System.Drawing.Size(189, 13);
             this.label22.TabIndex = 10;
             this.label22.Text = "ESTABLISHMENT INFORMATION";
             // 
@@ -140,6 +140,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ESTABLISHMENT INFORMATION";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.comboBox1.Location = new System.Drawing.Point(197, 236);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(319, 27);
+            this.comboBox1.TabIndex = 19;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(25, 238);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(141, 16);
+            this.label21.TabIndex = 18;
+            this.label21.Text = "ESTABLISHMENT TYPE:";
             // 
             // cbeststatus
             // 
@@ -284,7 +304,7 @@
             this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(25, 129);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 16);
+            this.label20.Size = new System.Drawing.Size(61, 16);
             this.label20.TabIndex = 20;
             this.label20.Text = "AMOUNT:";
             // 
@@ -463,7 +483,7 @@
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(34, 309);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(162, 16);
+            this.label13.Size = new System.Drawing.Size(161, 16);
             this.label13.TabIndex = 34;
             this.label13.Text = "FIRE SAFETY INSPECTORS:";
             // 
@@ -559,7 +579,7 @@
             this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(34, 98);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(98, 16);
+            this.label8.Size = new System.Drawing.Size(99, 16);
             this.label8.TabIndex = 24;
             this.label8.Text = "OCCUPANCY ID:";
             // 
@@ -611,30 +631,6 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "RESET";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(25, 238);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(142, 16);
-            this.label21.TabIndex = 18;
-            this.label21.Text = "ESTABLISHMENT TYPE:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Mall",
-            "Appartment",
-            "Store"});
-            this.comboBox1.Location = new System.Drawing.Point(197, 236);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(319, 27);
-            this.comboBox1.TabIndex = 19;
             // 
             // ucREGISTER
             // 
@@ -714,8 +710,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cbeststatus;
         private System.Windows.Forms.ComboBox cbappstatus;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label21;
+        public System.Windows.Forms.ComboBox comboBox1;
 
 
 
