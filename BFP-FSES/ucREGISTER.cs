@@ -36,7 +36,7 @@ namespace BFP_FSES
 
                     String addRecordQuery;
 
-                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected)";
+                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`,`est_type`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected,@est_type)";
 
                     OleDbCommand addRecordCommand = new OleDbCommand(addRecordQuery,con);
                     addRecordCommand.Parameters.AddWithValue("@bin",txtBIN.Text);
@@ -47,7 +47,7 @@ namespace BFP_FSES
                     addRecordCommand.Parameters.AddWithValue("@fsic_exp_date",DateTime.Parse(dtpDATE.Text));
                     addRecordCommand.Parameters.AddWithValue("@date_issued", DateTime.Parse(dtpDATE.Text));
                     addRecordCommand.Parameters.AddWithValue("@fsic_number",txtFSIC.Text);
-                    addRecordCommand.Parameters.AddWithValue("@status_of_application",cbeststatus.Text);
+                    addRecordCommand.Parameters.AddWithValue("@status_of_application",cbappstatus.Text);
                     addRecordCommand.Parameters.AddWithValue("@amount",txtAMOUNT.Text);
                     addRecordCommand.Parameters.AddWithValue("@or",txtOR.Text);
                     addRecordCommand.Parameters.AddWithValue("@_date",DateTime.Parse(dtpDATE.Text));
@@ -62,6 +62,7 @@ namespace BFP_FSES
                     addRecordCommand.Parameters.AddWithValue("@floor_area",txtFLAREA.Text);
                     addRecordCommand.Parameters.AddWithValue("@noted_violation",txtNOV.Text);
                     addRecordCommand.Parameters.AddWithValue("@inspected", false);
+                    addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
 
                     addRecordCommand.ExecuteNonQuery();
                     MessageBox.Show("Record Inserted");
@@ -90,6 +91,51 @@ namespace BFP_FSES
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
-        }   
+        }
+
+        private void ucREGISTER_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (comboBox1.Text == "ADD NEW TYPE")
+            {
+                comboBox1.Text = null;
+            }
+
+
+        }
+
+        private void entere(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                con.Open();
+                String query = "INSERT INTO e_type (title) VALUES (@type)";
+                OleDbCommand cmd = new OleDbCommand(query,con);
+                cmd.Parameters.AddWithValue("@type",comboBox1.Text);
+                cmd.ExecuteNonQuery();
+                comboBox1.Text = null;
+                popCom();
+                comboBox1.Text = null;
+                con.Close();
+            }
+        }
+
+        private void popCom()
+        {
+            String query = "SELECT * FROM e_type";
+            OleDbDataAdapter u = new OleDbDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            u.Fill(ds);
+            ucREGISTER.Instance.comboBox1.DisplayMember = "title";
+            ucREGISTER.Instance.comboBox1.ValueMember = "ID";
+            ucREGISTER.Instance.comboBox1.DataSource = ds.Tables[0];
+           
+        }
+
+       
     }
 }

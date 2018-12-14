@@ -57,11 +57,11 @@ namespace BFP_FSES
         public void popCom()
         {
 
-            String query = "SELECT * FROM record";
+            String query = "SELECT * FROM e_type";
             OleDbDataAdapter u = new OleDbDataAdapter(query,con);
             DataSet ds = new DataSet();
             u.Fill(ds);
-            ucREGISTER.Instance.comboBox1.DisplayMember = "type";
+            ucREGISTER.Instance.comboBox1.DisplayMember = "title";
             ucREGISTER.Instance.comboBox1.ValueMember = "ID";
             ucREGISTER.Instance.comboBox1.DataSource = ds.Tables[0];
 

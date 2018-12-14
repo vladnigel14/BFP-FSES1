@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpINSPECTED = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.cbinspected = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -52,18 +55,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtSTONUM = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtOID = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNOB = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtFSIC = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.cbappstatus = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.txtAMOUNT = new System.Windows.Forms.TextBox();
-            this.dtpINSPECTED = new System.Windows.Forms.DateTimePicker();
             this.dtpDATE = new System.Windows.Forms.DateTimePicker();
             this.cbeststatus = new System.Windows.Forms.ComboBox();
             this.txtBIN = new System.Windows.Forms.TextBox();
@@ -77,14 +77,26 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.dtpISSUED = new System.Windows.Forms.DateTimePicker();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dtpEXPIREDATE = new System.Windows.Forms.DateTimePicker();
+            this.cbOCCTYPE = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cbOCCTYPE);
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.dtpEXPIREDATE);
+            this.panel1.Controls.Add(this.label25);
+            this.panel1.Controls.Add(this.dtpISSUED);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.dtpINSPECTED);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.cbinspected);
@@ -109,18 +121,15 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.txtSTONUM);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.txtOID);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtNOB);
             this.panel1.Controls.Add(this.label21);
             this.panel1.Controls.Add(this.txtFSIC);
             this.panel1.Controls.Add(this.cbappstatus);
             this.panel1.Controls.Add(this.label20);
-            this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.label18);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.txtAMOUNT);
-            this.panel1.Controls.Add(this.dtpINSPECTED);
             this.panel1.Controls.Add(this.dtpDATE);
             this.panel1.Controls.Add(this.cbeststatus);
             this.panel1.Controls.Add(this.txtBIN);
@@ -134,12 +143,46 @@
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.bunifuSeparator1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(969, 495);
+            this.panel1.Size = new System.Drawing.Size(969, 657);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 402);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "DATE INSPECTED:";
+            // 
+            // dtpINSPECTED
+            // 
+            this.dtpINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpINSPECTED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpINSPECTED.Location = new System.Drawing.Point(196, 399);
+            this.dtpINSPECTED.Name = "dtpINSPECTED";
+            this.dtpINSPECTED.Size = new System.Drawing.Size(294, 23);
+            this.dtpINSPECTED.TabIndex = 96;
+            this.dtpINSPECTED.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::BFP_FSES.Properties.Resources.okstamp;
+            this.pictureBox1.Location = new System.Drawing.Point(605, 468);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(345, 164);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 95;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // button2
             // 
@@ -187,10 +230,6 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Mall",
-            "Appartment",
-            "Store"});
             this.comboBox1.Location = new System.Drawing.Point(196, 246);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(294, 21);
@@ -385,24 +424,15 @@
             this.label9.TabIndex = 70;
             this.label9.Text = "STOREY NUMBER:";
             // 
-            // txtOID
-            // 
-            this.txtOID.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtOID.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOID.Location = new System.Drawing.Point(688, 134);
-            this.txtOID.Name = "txtOID";
-            this.txtOID.Size = new System.Drawing.Size(261, 23);
-            this.txtOID.TabIndex = 69;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(509, 137);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.Size = new System.Drawing.Size(132, 16);
             this.label8.TabIndex = 68;
-            this.label8.Text = "OCCUPANCY ID:";
+            this.label8.Text = "TYPE OF OCCUPANCY:";
             // 
             // txtNOB
             // 
@@ -440,7 +470,7 @@
             this.cbappstatus.Items.AddRange(new object[] {
             "NEW",
             "RENEW"});
-            this.cbappstatus.Location = new System.Drawing.Point(196, 330);
+            this.cbappstatus.Location = new System.Drawing.Point(196, 308);
             this.cbappstatus.Name = "cbappstatus";
             this.cbappstatus.Size = new System.Drawing.Size(294, 21);
             this.cbappstatus.TabIndex = 34;
@@ -450,29 +480,18 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(24, 384);
+            this.label20.Location = new System.Drawing.Point(24, 341);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(61, 16);
             this.label20.TabIndex = 33;
             this.label20.Text = "AMOUNT:";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(24, 357);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(112, 16);
-            this.label19.TabIndex = 32;
-            this.label19.Text = "DATE INSPECTED:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(24, 331);
+            this.label18.Location = new System.Drawing.Point(24, 309);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(136, 16);
             this.label18.TabIndex = 31;
@@ -483,7 +502,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(24, 308);
+            this.label23.Location = new System.Drawing.Point(24, 373);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(42, 16);
             this.label23.TabIndex = 30;
@@ -492,25 +511,16 @@
             // txtAMOUNT
             // 
             this.txtAMOUNT.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAMOUNT.Location = new System.Drawing.Point(196, 381);
+            this.txtAMOUNT.Location = new System.Drawing.Point(196, 338);
             this.txtAMOUNT.Name = "txtAMOUNT";
             this.txtAMOUNT.Size = new System.Drawing.Size(294, 23);
             this.txtAMOUNT.TabIndex = 29;
-            // 
-            // dtpINSPECTED
-            // 
-            this.dtpINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpINSPECTED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpINSPECTED.Location = new System.Drawing.Point(196, 354);
-            this.dtpINSPECTED.Name = "dtpINSPECTED";
-            this.dtpINSPECTED.Size = new System.Drawing.Size(294, 23);
-            this.dtpINSPECTED.TabIndex = 28;
             // 
             // dtpDATE
             // 
             this.dtpDATE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDATE.Location = new System.Drawing.Point(196, 303);
+            this.dtpDATE.Location = new System.Drawing.Point(196, 368);
             this.dtpDATE.Name = "dtpDATE";
             this.dtpDATE.Size = new System.Drawing.Size(294, 23);
             this.dtpDATE.TabIndex = 27;
@@ -644,25 +654,67 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // pictureBox1
+            // label25
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::BFP_FSES.Properties.Resources.okstamp;
-            this.pictureBox1.Location = new System.Drawing.Point(91, 397);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(90, 78);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 95;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
-           // this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(24, 436);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(90, 16);
+            this.label25.TabIndex = 99;
+            this.label25.Text = "DATE ISSUED:";
+            // 
+            // dtpISSUED
+            // 
+            this.dtpISSUED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpISSUED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpISSUED.Location = new System.Drawing.Point(196, 433);
+            this.dtpISSUED.Name = "dtpISSUED";
+            this.dtpISSUED.Size = new System.Drawing.Size(294, 23);
+            this.dtpISSUED.TabIndex = 98;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(24, 469);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(115, 16);
+            this.label26.TabIndex = 101;
+            this.label26.Text = "FSIC EXPIRY DATE:";
+            // 
+            // dtpEXPIREDATE
+            // 
+            this.dtpEXPIREDATE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEXPIREDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEXPIREDATE.Location = new System.Drawing.Point(196, 469);
+            this.dtpEXPIREDATE.Name = "dtpEXPIREDATE";
+            this.dtpEXPIREDATE.Size = new System.Drawing.Size(294, 23);
+            this.dtpEXPIREDATE.TabIndex = 100;
+            // 
+            // cbOCCTYPE
+            // 
+            this.cbOCCTYPE.BackColor = System.Drawing.Color.White;
+            this.cbOCCTYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOCCTYPE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbOCCTYPE.FormattingEnabled = true;
+            this.cbOCCTYPE.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.cbOCCTYPE.Items.AddRange(new object[] {
+            "Mall",
+            "Appartment",
+            "Store"});
+            this.cbOCCTYPE.Location = new System.Drawing.Point(689, 138);
+            this.cbOCCTYPE.Name = "cbOCCTYPE";
+            this.cbOCCTYPE.Size = new System.Drawing.Size(259, 21);
+            this.cbOCCTYPE.TabIndex = 102;
             // 
             // dataINFO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 495);
+            this.ClientSize = new System.Drawing.Size(969, 659);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dataINFO";
@@ -687,7 +739,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label17;
@@ -712,7 +763,6 @@
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtname;
         public System.Windows.Forms.ComboBox cbappstatus;
         public System.Windows.Forms.TextBox txtAMOUNT;
-        public System.Windows.Forms.DateTimePicker dtpINSPECTED;
         public System.Windows.Forms.DateTimePicker dtpDATE;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtIO;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtOR;
@@ -722,12 +772,18 @@
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtFLAREA;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtPOROCC;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtSTONUM;
-        public WindowsFormsControlLibrary1.BunifuCustomTextbox txtOID;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtNOB;
         public WindowsFormsControlLibrary1.BunifuCustomTextbox txtFSIC;
         public System.Windows.Forms.ComboBox comboBox1;
         public System.Windows.Forms.ComboBox cbinspected;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.DateTimePicker dtpINSPECTED;
+        private System.Windows.Forms.Label label26;
+        public System.Windows.Forms.DateTimePicker dtpEXPIREDATE;
+        private System.Windows.Forms.Label label25;
+        public System.Windows.Forms.DateTimePicker dtpISSUED;
+        public System.Windows.Forms.ComboBox cbOCCTYPE;
 
     }
 }

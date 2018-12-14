@@ -22,7 +22,11 @@ namespace BFP_FSES
         private void dataINFO_Load(object sender, EventArgs e)
         {
             pictureBox1.BackColor = Color.Transparent;
+          
+
         }
+
+       
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -53,7 +57,7 @@ namespace BFP_FSES
         {
             con.Open();
             String updateQuery;
-            updateQuery = "UPDATE record SET `bin`=@bin,`est_name`= @est_name,`est_address` =@est_address, `est_owner` =@est_owner,`est_status`= @est_status,`fsic_exp_date` =@fsic_exp_date,`date_issued`=@date_issued,`fsic_number`= @fsic_number,`status_of_application`= @status_of_application,`amount`= @amount,`or`= @or, `_date`= @_date,`io_number` =@io_number, `date_inspected`= @date_inspected, `nature_of_business`= @nature_of_business,`occupancy_type`= @occupancy_type,`safety_inspectors` =@safety_inspectors, `cons_materials`=@cons_materials, `storey_no`= @storey_no,`portion_occupied` =@portion_occupied, `floor_area` =@floor_area, `noted_violation` =@noted_violation,`inspected`=@inspected";
+            updateQuery = "UPDATE record SET `bin`=@bin,`est_name`= @est_name,`est_address` =@est_address, `est_owner` =@est_owner,`est_status`= @est_status,`fsic_exp_date` =@fsic_exp_date,`date_issued`=@date_issued,`fsic_number`= @fsic_number,`status_of_application`= @status_of_application,`amount`= @amount,`or`= @or, `_date`= @_date,`io_number` =@io_number, `date_inspected`= @date_inspected, `nature_of_business`= @nature_of_business,`occupancy_type`= @occupancy_type,`safety_inspectors` =@safety_inspectors, `cons_materials`=@cons_materials, `storey_no`= @storey_no,`portion_occupied` =@portion_occupied, `floor_area` =@floor_area, `noted_violation` =@noted_violation,`inspected`=@inspected, `est_type`= @est_type where bin=@bin";
 
 
             OleDbCommand addRecordCommand = new OleDbCommand(updateQuery,con);
@@ -66,14 +70,14 @@ namespace BFP_FSES
             addRecordCommand.Parameters.AddWithValue("@fsic_exp_date", DateTime.Parse(dtpDATE.Text));
             addRecordCommand.Parameters.AddWithValue("@date_issued", DateTime.Parse(dtpDATE.Text));
             addRecordCommand.Parameters.AddWithValue("@fsic_number", txtFSIC.Text);
-            addRecordCommand.Parameters.AddWithValue("@status_of_application", cbeststatus.Text);
+            addRecordCommand.Parameters.AddWithValue("@status_of_application", cbappstatus.Text);
             addRecordCommand.Parameters.AddWithValue("@amount", txtAMOUNT.Text);
             addRecordCommand.Parameters.AddWithValue("@or", txtOR.Text);
             addRecordCommand.Parameters.AddWithValue("@_date", DateTime.Parse(dtpDATE.Text));
             addRecordCommand.Parameters.AddWithValue("@io_number", txtIO.Text);
             addRecordCommand.Parameters.AddWithValue("@date_inspected", DateTime.Parse(dtpINSPECTED.Text));
             addRecordCommand.Parameters.AddWithValue("@nature_of_business", txtNOB.Text);
-            addRecordCommand.Parameters.AddWithValue("@occupancy_type", txtOID.Text);
+            addRecordCommand.Parameters.AddWithValue("@occupancy_type", cbOCCTYPE.Text);
             addRecordCommand.Parameters.AddWithValue("@safety_inspectors", txtFSI.Text);
             addRecordCommand.Parameters.AddWithValue("@cons_materials", txtCONMAT.Text);
             addRecordCommand.Parameters.AddWithValue("@storey_no", txtSTONUM.Text);
@@ -81,6 +85,7 @@ namespace BFP_FSES
             addRecordCommand.Parameters.AddWithValue("@floor_area", txtFLAREA.Text);
             addRecordCommand.Parameters.AddWithValue("@noted_violation", txtNOV.Text);
             addRecordCommand.Parameters.AddWithValue("@inspected", cbinspected.Text=="YES"?true:false);
+            addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
 
             pictureBox1.Visible = true;
 
@@ -100,6 +105,11 @@ namespace BFP_FSES
         {
             ot.Stop();
             pictureBox1.Visible = false;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

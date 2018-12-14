@@ -145,10 +145,14 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ADD NEW TYPE"});
             this.comboBox1.Location = new System.Drawing.Point(197, 236);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(319, 27);
             this.comboBox1.TabIndex = 19;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
+            this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.entere);
             // 
             // label21
             // 
@@ -649,6 +653,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucREGISTER";
             this.Size = new System.Drawing.Size(1128, 708);
+            this.Load += new System.EventHandler(this.ucREGISTER_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -659,6 +664,8 @@
             this.PerformLayout();
 
         }
+
+        
 
         #endregion
 
