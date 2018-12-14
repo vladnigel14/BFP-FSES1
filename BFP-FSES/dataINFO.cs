@@ -51,49 +51,40 @@ namespace BFP_FSES
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String query = "Update establishment_table set BIN = @txtBIN, establishment_name = @txtNAME, establishment_address=@txtaddress, establishment_owner=@txtowner, establishment_status=@cbstatus, nob=@txtNOB, occupancy_id=@txtOID, storey_no=@txtSTONUM, portion_occupied=@txtPOROCC, floor_area= @txtFLAREA, violation_id=@txtNOV, inspected= @cbinspected";
             con.Open();
-            OleDbCommand M = new OleDbCommand(query,con);
-            M.Parameters.AddWithValue("@txtBIN", txtBIN.Text);
-            M.Parameters.AddWithValue("@txtNAME", txtname.Text);
-            M.Parameters.AddWithValue("@txtaddress", txtaddress.Text);
-            M.Parameters.AddWithValue("@txtowner", txtowner.Text);
-            M.Parameters.AddWithValue("@cbstatus", cbeststatus.Text);
-            M.Parameters.AddWithValue("@txtNOB", txtNOB.Text);
-            M.Parameters.AddWithValue("@txtOID", txtOID.Text);
-            M.Parameters.AddWithValue("@txtSTONUM", txtSTONUM.Text);
-            M.Parameters.AddWithValue("@txtPOROCC", txtPOROCC.Text);
-            M.Parameters.AddWithValue("@txtFLAREA", txtFLAREA.Text);
-            M.Parameters.AddWithValue("@txtNOV", txtNOV.Text);
-            M.Parameters.AddWithValue("@cbinspected", cbinspected.Text);
-
-            String query2 = "Update fire_inspector_table set inspectors=@txtFSI";
-            OleDbCommand N = new OleDbCommand(query2,con);
-            N.Parameters.AddWithValue("@txtFSI", txtFSI.Text);
-
-            DateTime date = DateTime.Parse(dtpDATE.Text);
-            DateTime dateInspected = DateTime.Parse(dtpINSPECTED.Text);
+            String updateQuery;
+            updateQuery = "UPDATE record SET `bin`=@bin,`est_name`= @est_name,`est_address` =@est_address, `est_owner` =@est_owner,`est_status`= @est_status,`fsic_exp_date` =@fsic_exp_date,`date_issued`=@date_issued,`fsic_number`= @fsic_number,`status_of_application`= @status_of_application,`amount`= @amount,`or`= @or, `_date`= @_date,`io_number` =@io_number, `date_inspected`= @date_inspected, `nature_of_business`= @nature_of_business,`occupancy_type`= @occupancy_type,`safety_inspectors` =@safety_inspectors, `cons_materials`=@cons_materials, `storey_no`= @storey_no,`portion_occupied` =@portion_occupied, `floor_area` =@floor_area, `noted_violation` =@noted_violation,`inspected`=@inspected";
 
 
-            //String query3 = "UPDATE fsic_table SET fsic_no=@txtFSIC,BIN=@txtBIN ,date=@dtpDATE,application_status=@cbappstatus,amount=@txtAMOUNT,date_inspected=@dtpINSPECTED";
-            //OleDbCommand P = new OleDbCommand(query3,con);
-            //P.Parameters.AddWithValue("@txtFSIC", txtFSIC.Text);
-            //P.Parameters.AddWithValue("@txtBIN", txtBIN.Text);
-            //P.Parameters.AddWithValue("@dtpDATE", date);
-            //P.Parameters.AddWithValue("@cbappstatus", cbappstatus.Text);
-            //P.Parameters.AddWithValue("@txtAMOUNT", txtAMOUNT.Text);
-            //P.Parameters.AddWithValue("@dtpINSPECTED", dateInspected);
+            OleDbCommand addRecordCommand = new OleDbCommand(updateQuery,con);
 
-
-            
-            
-            M.ExecuteNonQuery();
-            N.ExecuteNonQuery();
-            //P.ExecuteNonQuery();
-
+            addRecordCommand.Parameters.AddWithValue("@bin", txtBIN.Text);
+            addRecordCommand.Parameters.AddWithValue("@est_name", txtname.Text);
+            addRecordCommand.Parameters.AddWithValue("@est_address", txtaddress.Text);
+            addRecordCommand.Parameters.AddWithValue("@est_owner", txtowner.Text);
+            addRecordCommand.Parameters.AddWithValue("@est_status", cbeststatus.Text);
+            addRecordCommand.Parameters.AddWithValue("@fsic_exp_date", DateTime.Parse(dtpDATE.Text));
+            addRecordCommand.Parameters.AddWithValue("@date_issued", DateTime.Parse(dtpDATE.Text));
+            addRecordCommand.Parameters.AddWithValue("@fsic_number", txtFSIC.Text);
+            addRecordCommand.Parameters.AddWithValue("@status_of_application", cbeststatus.Text);
+            addRecordCommand.Parameters.AddWithValue("@amount", txtAMOUNT.Text);
+            addRecordCommand.Parameters.AddWithValue("@or", txtOR.Text);
+            addRecordCommand.Parameters.AddWithValue("@_date", DateTime.Parse(dtpDATE.Text));
+            addRecordCommand.Parameters.AddWithValue("@io_number", txtIO.Text);
+            addRecordCommand.Parameters.AddWithValue("@date_inspected", DateTime.Parse(dtpINSPECTED.Text));
+            addRecordCommand.Parameters.AddWithValue("@nature_of_business", txtNOB.Text);
+            addRecordCommand.Parameters.AddWithValue("@occupancy_type", txtOID.Text);
+            addRecordCommand.Parameters.AddWithValue("@safety_inspectors", txtFSI.Text);
+            addRecordCommand.Parameters.AddWithValue("@cons_materials", txtCONMAT.Text);
+            addRecordCommand.Parameters.AddWithValue("@storey_no", txtSTONUM.Text);
+            addRecordCommand.Parameters.AddWithValue("@portion_occupied", txtPOROCC.Text);
+            addRecordCommand.Parameters.AddWithValue("@floor_area", txtFLAREA.Text);
+            addRecordCommand.Parameters.AddWithValue("@noted_violation", txtNOV.Text);
+            addRecordCommand.Parameters.AddWithValue("@inspected", cbinspected.Text=="YES"?true:false);
 
             pictureBox1.Visible = true;
 
+            addRecordCommand.ExecuteNonQuery();
             
             ot.Interval = 1250;
             ot.Start();
@@ -110,9 +101,5 @@ namespace BFP_FSES
             ot.Stop();
             pictureBox1.Visible = false;
         }
-
-        
-
-
     }
 }

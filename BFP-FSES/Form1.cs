@@ -57,7 +57,7 @@ namespace BFP_FSES
         public void popCom()
         {
 
-            String query = "Select * from establishment_type_table";
+            String query = "SELECT * FROM record";
             OleDbDataAdapter u = new OleDbDataAdapter(query,con);
             DataSet ds = new DataSet();
             u.Fill(ds);
@@ -170,7 +170,7 @@ namespace BFP_FSES
         public void showTOTAL_INSPECTED()
         {
             con.Open();
-            String query = "SELECT COUNT(inspected='YES') AS `COUNT` FROM establishment_table;";
+            String query = "SELECT COUNT(inspected=true) AS `COUNT` FROM record;";
             OleDbCommand Adpt = new OleDbCommand(query, con);
             OleDbDataReader reader = Adpt.ExecuteReader();
 
@@ -184,7 +184,7 @@ namespace BFP_FSES
         public void showTOTAL_ESTABLISHMENT() 
         {
             con.Open();
-            String query = "SELECT COUNT(*) as `COUNT` FROM establishment_table";
+            String query = "SELECT COUNT(*) as `COUNT` FROM record";
             OleDbCommand Adpt = new OleDbCommand(query, con);
             OleDbDataReader reader = Adpt.ExecuteReader();
 

@@ -43,8 +43,8 @@ namespace BFP_FSES
         }
         public void showData()
         {
-
-            String query = "Select fsic_table.fsic_no as  `FSIC`,establishment_table.BIN, establishment_name as  `ESTABLISHMENT NAME`,establishment_address as `ADDRESS`,establishment_owner as `OWNER`, establishment_status as `STATUS`, nob as `NATURE`, storey_no as `STOREY`, portion_occupied as `PORTION OCCUPIED`, floor_area as `FLOOR AREA`, inspected as `INSPECTED` from establishment_table INNER JOIN fsic_table on establishment_table.BIN = fsic_table.BIN";
+            //String query = "SELECT * from record";
+            String query = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED from record";
             OleDbDataAdapter x = new OleDbDataAdapter(query, con);
             DataTable dt = new DataTable();
             x.Fill(dt);

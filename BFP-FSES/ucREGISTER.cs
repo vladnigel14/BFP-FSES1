@@ -31,69 +31,45 @@ namespace BFP_FSES
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if ((txtBIN.Text == "" || txtname.Text == "" || txtaddress.Text == "" || txtowner.Text == "" || cbappstatus.Text == ""))
-                {
-                    MessageBox.Show("Please Fill up the blank!", "System", MessageBoxButtons.OK);
-                }
-                else
-                {
+          
                     con.Open();
+
+                    String addRecordQuery;
+
+                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected)";
+
+                    OleDbCommand addRecordCommand = new OleDbCommand(addRecordQuery,con);
+                    addRecordCommand.Parameters.AddWithValue("@bin",txtBIN.Text);
+                    addRecordCommand.Parameters.AddWithValue("@est_name",txtname.Text);
+                    addRecordCommand.Parameters.AddWithValue("@est_address", txtaddress.Text);
+                    addRecordCommand.Parameters.AddWithValue("@est_owner",txtowner.Text);
+                    addRecordCommand.Parameters.AddWithValue("@est_status",cbeststatus.Text);
+                    addRecordCommand.Parameters.AddWithValue("@fsic_exp_date",DateTime.Parse(dtpDATE.Text));
+                    addRecordCommand.Parameters.AddWithValue("@date_issued", DateTime.Parse(dtpDATE.Text));
+                    addRecordCommand.Parameters.AddWithValue("@fsic_number",txtFSIC.Text);
+                    addRecordCommand.Parameters.AddWithValue("@status_of_application",cbeststatus.Text);
+                    addRecordCommand.Parameters.AddWithValue("@amount",txtAMOUNT.Text);
+                    addRecordCommand.Parameters.AddWithValue("@or",txtOR.Text);
+                    addRecordCommand.Parameters.AddWithValue("@_date",DateTime.Parse(dtpDATE.Text));
+                    addRecordCommand.Parameters.AddWithValue("@io_number",txtIO.Text);
+                    addRecordCommand.Parameters.AddWithValue("@date_inspected",DateTime.Parse(dtpINSPECTED.Text));
+                    addRecordCommand.Parameters.AddWithValue("@nature_of_business",txtNOB.Text);
+                    addRecordCommand.Parameters.AddWithValue("@occupancy_type",txtOID.Text);
+                    addRecordCommand.Parameters.AddWithValue("@safety_inspectors",txtFSI.Text);
+                    addRecordCommand.Parameters.AddWithValue("@cons_materials",txtCONMAT.Text);
+                    addRecordCommand.Parameters.AddWithValue("@storey_no",txtSTONUM.Text);
+                    addRecordCommand.Parameters.AddWithValue("@portion_occupied",txtPOROCC.Text);
+                    addRecordCommand.Parameters.AddWithValue("@floor_area",txtFLAREA.Text);
+                    addRecordCommand.Parameters.AddWithValue("@noted_violation",txtNOV.Text);
+                    addRecordCommand.Parameters.AddWithValue("@inspected", false);
+
+                    addRecordCommand.ExecuteNonQuery();
+                    MessageBox.Show("Record Inserted");
                     
-                    OleDbCommand x = new OleDbCommand("insert into establishment_table(BIN,establishment_name,establishment_address,establishment_owner,establishment_status,nob,occupancy_id,storey_no,portion_occupied,floor_area,violation_id,inspected) values (@bin,@establishment_name,@establishment_address,@establishment_owner,@establishment_status,@nob,@occupancy_id,@storey_no,@portion_occupied,@floor_area,@violation_id,@inspected)", con);
-                    x.Parameters.AddWithValue("@bin", txtBIN.Text);
-                    x.Parameters.AddWithValue("@establishment_name", txtname.Text);
-                    x.Parameters.AddWithValue("@establishment_address", txtaddress.Text);
-                    x.Parameters.AddWithValue("@establishment_owner", txtowner.Text);
-                    x.Parameters.AddWithValue("@establishment_status", cbeststatus.Text);
-                    x.Parameters.AddWithValue("@nob", txtNOB.Text);
-                    x.Parameters.AddWithValue("@occupancy_id", txtOID.Text);
-                    x.Parameters.AddWithValue("@storey_no", txtSTONUM.Text);
-                    x.Parameters.AddWithValue("@portion_occupied", txtPOROCC.Text);
-                    x.Parameters.AddWithValue("@floor_area", txtFLAREA.Text);
-                    x.Parameters.AddWithValue("@violation_id", txtNOV.Text);
-                    x.Parameters.AddWithValue("@inspected", "NO");
-
-                    x.ExecuteNonQuery();
-
-                    OleDbCommand y = new OleDbCommand("insert into fire_inspector_table(inspectors)values(@inspectors)", con);
-                    y.Parameters.AddWithValue("@inspectors", txtFSI.Text);
-                    y.ExecuteNonQuery();
-
-
-                    DateTime date = DateTime.Parse(dtpDATE.Text);
-                    DateTime dateInspected = DateTime.Parse(dtpINSPECTED.Text);
-
-                    String queryToFsic = "INSERT INTO fsic_table (`fsic_no`,`BIN`,`date`,`application_status`,`amount`,`date_inspected`) VALUES (@fsic,@BIN,@date,@as,@amt,@datei)";
-                    OleDbCommand toFsic = new OleDbCommand(queryToFsic, con);
-                    toFsic.Parameters.AddWithValue("@fsic", txtFSIC.Text);
-                    toFsic.Parameters.AddWithValue("@BIN", txtBIN.Text);
-                    toFsic.Parameters.AddWithValue("@date", date);
-                    toFsic.Parameters.AddWithValue("@as", cbappstatus.Text);
-                    toFsic.Parameters.AddWithValue("@amt", txtAMOUNT.Text);
-                    toFsic.Parameters.AddWithValue("@datei",dateInspected);
-
-                    toFsic.ExecuteNonQuery();
 
                     con.Close();
-                    String query = "Select * from establishment_table ";
-                    OleDbDataAdapter xz = new OleDbDataAdapter(query, con);
-                     DataSet ds = new DataSet();
-                     xz.Fill(ds, "establishment_table");
-                     new ucMASTERLIST().dataGRID.DataSource = ds;
-
-                MessageBox.Show("Create Successfully!", "System", MessageBoxButtons.OK);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+                   
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
