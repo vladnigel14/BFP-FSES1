@@ -176,9 +176,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::BFP_FSES.Properties.Resources.okstamp;
-            this.pictureBox1.Location = new System.Drawing.Point(605, 468);
+            this.pictureBox1.Location = new System.Drawing.Point(537, 465);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(345, 164);
+            this.pictureBox1.Size = new System.Drawing.Size(413, 194);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 95;
             this.pictureBox1.TabStop = false;
