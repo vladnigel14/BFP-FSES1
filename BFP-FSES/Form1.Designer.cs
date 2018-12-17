@@ -53,30 +53,30 @@
             this.panel29 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lblSTORE = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblAPARTMENT = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblHOTEL = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblMALL = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel30 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel25 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblRENEW = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblNEWAPP = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
@@ -127,7 +127,7 @@
             this.btnMASTERLIST.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMASTERLIST.FlatAppearance.BorderSize = 0;
             this.btnMASTERLIST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMASTERLIST.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMASTERLIST.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMASTERLIST.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMASTERLIST.Location = new System.Drawing.Point(10, 237);
             this.btnMASTERLIST.Name = "btnMASTERLIST";
@@ -185,7 +185,6 @@
             this.label1.Size = new System.Drawing.Size(33, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "EXIT";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel8
             // 
@@ -198,7 +197,6 @@
             this.panel8.Size = new System.Drawing.Size(36, 27);
             this.panel8.TabIndex = 6;
             this.panel8.Click += new System.EventHandler(this.panel8_Click);
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // panel7
             // 
@@ -214,7 +212,7 @@
             this.btnREGISTER.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnREGISTER.FlatAppearance.BorderSize = 0;
             this.btnREGISTER.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnREGISTER.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnREGISTER.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnREGISTER.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnREGISTER.Location = new System.Drawing.Point(10, 182);
             this.btnREGISTER.Name = "btnREGISTER";
@@ -299,7 +297,6 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1130, 764);
             this.panel.TabIndex = 5;
-            this.panel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Paint);
             // 
             // label22
             // 
@@ -341,19 +338,19 @@
             this.panel29.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel29.Controls.Add(this.label27);
             this.panel29.Controls.Add(this.label28);
-            this.panel29.Controls.Add(this.label29);
+            this.panel29.Controls.Add(this.lblSTORE);
             this.panel29.Controls.Add(this.label30);
             this.panel29.Controls.Add(this.label23);
             this.panel29.Controls.Add(this.label24);
-            this.panel29.Controls.Add(this.label25);
+            this.panel29.Controls.Add(this.lblAPARTMENT);
             this.panel29.Controls.Add(this.label26);
             this.panel29.Controls.Add(this.label18);
             this.panel29.Controls.Add(this.label19);
-            this.panel29.Controls.Add(this.label20);
+            this.panel29.Controls.Add(this.lblHOTEL);
             this.panel29.Controls.Add(this.label21);
             this.panel29.Controls.Add(this.label16);
             this.panel29.Controls.Add(this.label17);
-            this.panel29.Controls.Add(this.label15);
+            this.panel29.Controls.Add(this.lblMALL);
             this.panel29.Controls.Add(this.label14);
             this.panel29.Controls.Add(this.panel30);
             this.panel29.Controls.Add(this.label2);
@@ -361,7 +358,6 @@
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(677, 244);
             this.panel29.TabIndex = 6;
-            this.panel29.Paint += new System.Windows.Forms.PaintEventHandler(this.panel29_Paint);
             // 
             // label27
             // 
@@ -385,16 +381,16 @@
             this.label28.TabIndex = 20;
             this.label28.Text = "TITLE";
             // 
-            // label29
+            // lblSTORE
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.Gray;
-            this.label29.Location = new System.Drawing.Point(499, 94);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(15, 16);
-            this.label29.TabIndex = 19;
-            this.label29.Text = "0";
+            this.lblSTORE.AutoSize = true;
+            this.lblSTORE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSTORE.ForeColor = System.Drawing.Color.Gray;
+            this.lblSTORE.Location = new System.Drawing.Point(499, 94);
+            this.lblSTORE.Name = "lblSTORE";
+            this.lblSTORE.Size = new System.Drawing.Size(15, 16);
+            this.lblSTORE.TabIndex = 19;
+            this.lblSTORE.Text = "0";
             // 
             // label30
             // 
@@ -403,9 +399,9 @@
             this.label30.ForeColor = System.Drawing.Color.Gray;
             this.label30.Location = new System.Drawing.Point(499, 78);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(39, 16);
+            this.label30.Size = new System.Drawing.Size(46, 16);
             this.label30.TabIndex = 18;
-            this.label30.Text = "TITLE";
+            this.label30.Text = "STORE";
             // 
             // label23
             // 
@@ -429,16 +425,16 @@
             this.label24.TabIndex = 16;
             this.label24.Text = "TITLE";
             // 
-            // label25
+            // lblAPARTMENT
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Gray;
-            this.label25.Location = new System.Drawing.Point(334, 94);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(15, 16);
-            this.label25.TabIndex = 15;
-            this.label25.Text = "0";
+            this.lblAPARTMENT.AutoSize = true;
+            this.lblAPARTMENT.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAPARTMENT.ForeColor = System.Drawing.Color.Gray;
+            this.lblAPARTMENT.Location = new System.Drawing.Point(334, 94);
+            this.lblAPARTMENT.Name = "lblAPARTMENT";
+            this.lblAPARTMENT.Size = new System.Drawing.Size(15, 16);
+            this.lblAPARTMENT.TabIndex = 15;
+            this.lblAPARTMENT.Text = "0";
             // 
             // label26
             // 
@@ -447,9 +443,9 @@
             this.label26.ForeColor = System.Drawing.Color.Gray;
             this.label26.Location = new System.Drawing.Point(334, 78);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(39, 16);
+            this.label26.Size = new System.Drawing.Size(78, 16);
             this.label26.TabIndex = 14;
-            this.label26.Text = "TITLE";
+            this.label26.Text = "APARTMENT";
             // 
             // label18
             // 
@@ -473,16 +469,16 @@
             this.label19.TabIndex = 12;
             this.label19.Text = "TITLE";
             // 
-            // label20
+            // lblHOTEL
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.Gray;
-            this.label20.Location = new System.Drawing.Point(172, 94);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(15, 16);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "0";
+            this.lblHOTEL.AutoSize = true;
+            this.lblHOTEL.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHOTEL.ForeColor = System.Drawing.Color.Gray;
+            this.lblHOTEL.Location = new System.Drawing.Point(172, 94);
+            this.lblHOTEL.Name = "lblHOTEL";
+            this.lblHOTEL.Size = new System.Drawing.Size(15, 16);
+            this.lblHOTEL.TabIndex = 11;
+            this.lblHOTEL.Text = "0";
             // 
             // label21
             // 
@@ -491,9 +487,9 @@
             this.label21.ForeColor = System.Drawing.Color.Gray;
             this.label21.Location = new System.Drawing.Point(172, 78);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(39, 16);
+            this.label21.Size = new System.Drawing.Size(46, 16);
             this.label21.TabIndex = 10;
-            this.label21.Text = "TITLE";
+            this.label21.Text = "HOTEL";
             // 
             // label16
             // 
@@ -517,16 +513,16 @@
             this.label17.TabIndex = 8;
             this.label17.Text = "TITLE";
             // 
-            // label15
+            // lblMALL
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Gray;
-            this.label15.Location = new System.Drawing.Point(20, 94);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 16);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "0";
+            this.lblMALL.AutoSize = true;
+            this.lblMALL.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMALL.ForeColor = System.Drawing.Color.Gray;
+            this.lblMALL.Location = new System.Drawing.Point(20, 94);
+            this.lblMALL.Name = "lblMALL";
+            this.lblMALL.Size = new System.Drawing.Size(15, 16);
+            this.lblMALL.TabIndex = 7;
+            this.lblMALL.Text = "0";
             // 
             // label14
             // 
@@ -535,9 +531,9 @@
             this.label14.ForeColor = System.Drawing.Color.Gray;
             this.label14.Location = new System.Drawing.Point(20, 78);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(39, 16);
+            this.label14.Size = new System.Drawing.Size(40, 16);
             this.label14.TabIndex = 6;
-            this.label14.Text = "TITLE";
+            this.label14.Text = "MALL";
             // 
             // panel30
             // 
@@ -561,7 +557,7 @@
             // panel25
             // 
             this.panel25.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel25.Controls.Add(this.label11);
+            this.panel25.Controls.Add(this.lblRENEW);
             this.panel25.Controls.Add(this.label12);
             this.panel25.Controls.Add(this.panel26);
             this.panel25.Controls.Add(this.panel27);
@@ -570,16 +566,16 @@
             this.panel25.Size = new System.Drawing.Size(299, 116);
             this.panel25.TabIndex = 5;
             // 
-            // label11
+            // lblRENEW
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DimGray;
-            this.label11.Location = new System.Drawing.Point(116, 43);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 58);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "0";
+            this.lblRENEW.AutoSize = true;
+            this.lblRENEW.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRENEW.ForeColor = System.Drawing.Color.DimGray;
+            this.lblRENEW.Location = new System.Drawing.Point(116, 43);
+            this.lblRENEW.Name = "lblRENEW";
+            this.lblRENEW.Size = new System.Drawing.Size(51, 58);
+            this.lblRENEW.TabIndex = 4;
+            this.lblRENEW.Text = "0";
             // 
             // label12
             // 
@@ -588,9 +584,9 @@
             this.label12.ForeColor = System.Drawing.Color.Gray;
             this.label12.Location = new System.Drawing.Point(119, 6);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 16);
+            this.label12.Size = new System.Drawing.Size(135, 16);
             this.label12.TabIndex = 3;
-            this.label12.Text = "TITLE:";
+            this.label12.Text = "RENEW APPLICATION:";
             // 
             // panel26
             // 
@@ -602,6 +598,7 @@
             // 
             // panel27
             // 
+            this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(231)))), ((int)(((byte)(159)))));
             this.panel27.Controls.Add(this.panel28);
             this.panel27.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel27.Location = new System.Drawing.Point(0, 0);
@@ -619,7 +616,7 @@
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel21.Controls.Add(this.label9);
+            this.panel21.Controls.Add(this.lblNEWAPP);
             this.panel21.Controls.Add(this.label10);
             this.panel21.Controls.Add(this.panel22);
             this.panel21.Controls.Add(this.panel23);
@@ -628,16 +625,16 @@
             this.panel21.Size = new System.Drawing.Size(299, 116);
             this.panel21.TabIndex = 4;
             // 
-            // label9
+            // lblNEWAPP
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(116, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 58);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "0";
+            this.lblNEWAPP.AutoSize = true;
+            this.lblNEWAPP.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNEWAPP.ForeColor = System.Drawing.Color.DimGray;
+            this.lblNEWAPP.Location = new System.Drawing.Point(116, 43);
+            this.lblNEWAPP.Name = "lblNEWAPP";
+            this.lblNEWAPP.Size = new System.Drawing.Size(51, 58);
+            this.lblNEWAPP.TabIndex = 4;
+            this.lblNEWAPP.Text = "0";
             // 
             // label10
             // 
@@ -646,9 +643,9 @@
             this.label10.ForeColor = System.Drawing.Color.Gray;
             this.label10.Location = new System.Drawing.Point(119, 6);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 16);
+            this.label10.Size = new System.Drawing.Size(119, 16);
             this.label10.TabIndex = 3;
-            this.label10.Text = "TITLE:";
+            this.label10.Text = "NEW APPLICATION:";
             // 
             // panel22
             // 
@@ -660,6 +657,7 @@
             // 
             // panel23
             // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(231)))), ((int)(((byte)(159)))));
             this.panel23.Controls.Add(this.panel24);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel23.Location = new System.Drawing.Point(0, 0);
@@ -691,8 +689,11 @@
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(36, 26);
             this.chart1.Name = "chart1";
+            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(223)))), ((int)(((byte)(191)))));
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
@@ -744,6 +745,7 @@
             // 
             // panel18
             // 
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(231)))), ((int)(((byte)(159)))));
             this.panel18.Controls.Add(this.panel19);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel18.Location = new System.Drawing.Point(0, 0);
@@ -802,6 +804,7 @@
             // 
             // panel14
             // 
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(231)))), ((int)(((byte)(159)))));
             this.panel14.Controls.Add(this.panel15);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel14.Location = new System.Drawing.Point(0, 0);
@@ -860,6 +863,7 @@
             // 
             // panel9
             // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(231)))), ((int)(((byte)(159)))));
             this.panel9.Controls.Add(this.panel11);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel9.Location = new System.Drawing.Point(0, 0);
@@ -954,13 +958,13 @@
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblRENEW;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblNEWAPP;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Panel panel23;
@@ -968,7 +972,6 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Label label2;
@@ -976,17 +979,18 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblSTORE;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblAPARTMENT;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblHOTEL;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        public System.Windows.Forms.Label lblMALL;
 
 
     }
