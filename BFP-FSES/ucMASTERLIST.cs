@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace BFP_FSES
 {
@@ -237,24 +239,59 @@ namespace BFP_FSES
                 for (int j = 0; j < dataGRID.Columns.Count; j++)
                 {
                     worksheet.Cells[i + 2, j + 1] = dataGRID.Rows[i].Cells[j].Value.ToString();
-                   
-                }
 
-                if (Convert.ToBoolean(dataGRID.Rows[i].Cells[22].Value.ToString()) == true)
-                {
-                    worksheet.Rows.Interior.Color = Color.Green;
-
-                }
-
-                else
-                {
-                    worksheet.Rows.Interior.Color = Color.Red;
                 }
             }
             // save the application  
-            workbook.SaveAs("c:\\MasterList.xls", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            workbook.SaveAs("c:\\MasterList.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+
+
+    //        //REOPEN AND RECOLOR
+
+
+            Excel.Application application = new Excel.Application();
+            Excel.Workbook workbook1 = application.Workbooks.Open("c:\\MasterList.xlsx");
+            Excel.Worksheet worksheet1 = workbook1.ActiveSheet;
+
+            Excel.Range usedRange = worksheet1.UsedRange;
+
+            Excel.Range rows = usedRange.Rows;
+
+            int count = 0;
+
+            foreach (Excel.Range row in rows)
+            {
+
+                Excel.Range firstCell = row.Cells[23];
+
+               // String y = firstCell.Value as String;
+
+
+
+                if (count>0)
+                {
+                    if (Boolean.Parse(firstCell.Value.ToString()))
+                    {
+                        row.Interior.Color = Color.FromArgb(169,223,191);
+                    }
+                    else
+                    {
+                        row.Interior.Color = Color.FromArgb(249,231,159);
+                    }
+                }
+
+                count++;
+            }
+
+           
+
+            workbook.Save();
+            workbook.Close();
+
+
             // Exit from the application  
-            app.Quit();  
+            app.Quit();
         }
     }
 }
