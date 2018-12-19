@@ -22,15 +22,6 @@ namespace BFP_FSES
         private void dataINFO_Load(object sender, EventArgs e)
         {
             pictureBox1.BackColor = Color.Transparent;
-          
-
-        }
-
-       
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void panel2_Click(object sender, EventArgs e)
@@ -46,11 +37,6 @@ namespace BFP_FSES
         private void A(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -108,6 +94,11 @@ namespace BFP_FSES
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -157,10 +157,13 @@ namespace BFP_FSES
             String FLOORAREA = dataGRID.Rows[row].Cells[20].Value.ToString();
             String VIOLATION = dataGRID.Rows[row].Cells[21].Value.ToString();
             String ESTABLISHMENTTYPE = dataGRID.Rows[row].Cells[22].Value.ToString();
-
+            Boolean cbi = Convert.ToBoolean(dataGRID.Rows[row].Cells[22].Value.ToString());
+           // MessageBox.Show(dataGRID.Rows[row].Cells[23].Value.ToString());
+            //Boolean cbi = true;
 
             dataINFO info = new dataINFO();
             info.txtFSIC.Text = fsic;
+            info.cbinspected.Text = cbi?"YES":"NO";
             info.txtBIN.Text = BIN;
             info.txtname.Text = ESTABLISHMENTNAME;
             info.txtaddress.Text = ADDRESS;

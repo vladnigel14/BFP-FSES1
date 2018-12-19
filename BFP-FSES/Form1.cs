@@ -12,10 +12,12 @@ namespace BFP_FSES
 {
     public partial class MainForm : Form
     {
+
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\BFP-FSES\\BFP-FSES.accdb;Persist Security Info=False;");
         public MainForm()
         {
             InitializeComponent();
+
         }
 
         private void btnREGISTER_Click(object sender, EventArgs e)
@@ -92,7 +94,22 @@ namespace BFP_FSES
 
         private void panellogo_Click(object sender, EventArgs e)
         {
-            
+            countESTABLISHMENT();
+            //SHOW CODE FOR COUNT ALL NEW APPLICATION
+            countNEWAPP();
+            //END......
+            //SHOW CODE FOR COUNT ALL RENEW APPLICATION
+            countRENEW();
+            //END......
+            //SHOW CODE FOR COUNT ALL INSPECTED
+            countNOTINSPECTED();
+            //END......
+            //SHOW CODE FOR COUNT ALL INSPECTED
+            countINSPECTED();
+            //END......
+            //SHOW DATA FROM LABEL ESTABLISHMENT
+            showTOTAL_ESTABLISHMENT();
+            //END......
             btnREGISTER.Font = new Font("Bahnschrift", 9, FontStyle.Bold);
             btnMASTERLIST.Font = new Font("Bahnschrift", 9, FontStyle.Bold);
             btnREGISTER.BackColor = Color.FromArgb(39, 55, 70);
@@ -110,18 +127,8 @@ namespace BFP_FSES
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            //SHOW CODE FOR COUNT ALL APARTMENT
-            countSTORE();
-            //END......
-            //SHOW CODE FOR COUNT ALL APARTMENT
-            countAPARTMENT();
-            //END......
-            //SHOW CODE FOR COUNT ALL HOTEL
-            countHOTEL();
-            //END......
-            //SHOW CODE FOR COUNT ALL MALL
-            countMALL();
-            //END......
+
+            countESTABLISHMENT();
             //SHOW CODE FOR COUNT ALL NEW APPLICATION
             countNEWAPP();
             //END......
@@ -152,7 +159,25 @@ namespace BFP_FSES
             
             time.Text = DateTime.Now.ToLongTimeString();
         }
+        public void countESTABLISHMENT()
+        {
+            listView1.Items.Clear();
+            con.Open();
+            ListView lv = new ListView();
+            String query = "SELECT est_type AS `TYPE`, COUNT(*) AS `COUNT` FROM record GROUP BY est_type;";
+            OleDbCommand Adpt = new OleDbCommand(query, con);
+            OleDbDataReader reader = Adpt.ExecuteReader();
+            
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["TYPE"].ToString());
+                item.SubItems.Add(reader["COUNT"].ToString());
+                listView1.Items.Add(item); //Add this row to the ListView
+            }
 
+            
+            con.Close();
+        }
         //CODE FOR COUNT ALL ESTABLISHMENTS.....................
         public void showTOTAL_ESTABLISHMENT() 
         {
@@ -179,6 +204,7 @@ namespace BFP_FSES
             while (reader.Read())
             {
                 lblINSPECTED.Text = reader["COUNT"].ToString();
+                
             }
             con.Close();
         }
@@ -227,65 +253,12 @@ namespace BFP_FSES
             }
             con.Close();
         }
-        //END HERE ..............................................
-        //CODE FOR COUNT ALL ESTABLISHMENT TYPE = MALL...........
-        public void countMALL() 
-        {
-                con.Open();
-                String query = "SELECT COUNT(est_type) as `COUNT` FROM record WHERE est_type = 'MALL'";
-                OleDbCommand Adpt = new OleDbCommand(query, con);
-                OleDbDataReader reader = Adpt.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    lblMALL.Text = reader["COUNT"].ToString();
-                }
-                con.Close();
-        }
-        //END HERE.................................................
-        //CODE FOR COUNT ALL ESTABLISHMENT TYPE = HOTEL...........
-        public void countHOTEL()
-        {
-            con.Open();
-            String query = "SELECT COUNT(est_type) as `COUNT` FROM record WHERE est_type = 'HOTEL'";
-            OleDbCommand Adpt = new OleDbCommand(query, con);
-            OleDbDataReader reader = Adpt.ExecuteReader();
 
-            while (reader.Read())
-            {
-                lblHOTEL.Text = reader["COUNT"].ToString();
-            }
-            con.Close();
-        }
-        //END HERE................................................
-        //CODE FOR COUNT ALL ESTABLISHMENT TYPE = APARTMENT...........
-        public void countAPARTMENT()
-        {
-            con.Open();
-            String query = "SELECT COUNT(est_type) as `COUNT` FROM record WHERE est_type = 'APARTMENT'";
-            OleDbCommand Adpt = new OleDbCommand(query, con);
-            OleDbDataReader reader = Adpt.ExecuteReader();
 
-            while (reader.Read())
-            {
-                lblAPARTMENT.Text = reader["COUNT"].ToString();
-            }
-            con.Close();
-        }
-        //END HERE................................................
-        //CODE FOR COUNT ALL ESTABLISHMENT TYPE = STORE...........
-        public void countSTORE()
+        private void panellogo_Paint(object sender, PaintEventArgs e)
         {
-            con.Open();
-            String query = "SELECT COUNT(est_type) as `COUNT` FROM record WHERE est_type = 'STORE'";
-            OleDbCommand Adpt = new OleDbCommand(query, con);
-            OleDbDataReader reader = Adpt.ExecuteReader();
 
-            while (reader.Read())
-            {
-                lblSTORE.Text = reader["COUNT"].ToString();
-            }
-            con.Close();
         }
 
         //END HERE................................................

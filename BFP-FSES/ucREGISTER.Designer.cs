@@ -54,6 +54,7 @@
             this.dtpINSPECTED = new System.Windows.Forms.DateTimePicker();
             this.dtpDATE = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtOID = new System.Windows.Forms.ComboBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtIO = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label16 = new System.Windows.Forms.Label();
@@ -77,7 +78,6 @@
             this.txtFSIC = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtOID = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -90,7 +90,7 @@
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(487, 33);
+            this.label1.Size = new System.Drawing.Size(457, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRATION OF ESTABLISHMENTS";
             // 
@@ -114,7 +114,7 @@
             this.label22.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label22.Location = new System.Drawing.Point(481, 51);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(189, 13);
+            this.label22.Size = new System.Drawing.Size(164, 13);
             this.label22.TabIndex = 10;
             this.label22.Text = "ESTABLISHMENT INFORMATION";
             // 
@@ -161,12 +161,13 @@
             this.label21.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(25, 238);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(141, 16);
+            this.label21.Size = new System.Drawing.Size(142, 16);
             this.label21.TabIndex = 18;
             this.label21.Text = "ESTABLISHMENT TYPE:";
             // 
             // cbeststatus
             // 
+            this.cbeststatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbeststatus.FormattingEnabled = true;
             this.cbeststatus.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.cbeststatus.Items.AddRange(new object[] {
@@ -308,7 +309,7 @@
             this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(25, 129);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 16);
+            this.label20.Size = new System.Drawing.Size(60, 16);
             this.label20.TabIndex = 20;
             this.label20.Text = "AMOUNT:";
             // 
@@ -403,6 +404,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ADDITIONAL INFORMATION";
             // 
+            // txtOID
+            // 
+            this.txtOID.FormattingEnabled = true;
+            this.txtOID.Items.AddRange(new object[] {
+            "BUSINESS",
+            "MERCANTILE",
+            "PUBLIC ASSEMBLY",
+            "STORAGE"});
+            this.txtOID.Location = new System.Drawing.Point(204, 87);
+            this.txtOID.Name = "txtOID";
+            this.txtOID.Size = new System.Drawing.Size(283, 31);
+            this.txtOID.TabIndex = 43;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -487,7 +501,7 @@
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(34, 309);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(161, 16);
+            this.label13.Size = new System.Drawing.Size(162, 16);
             this.label13.TabIndex = 34;
             this.label13.Text = "FIRE SAFETY INSPECTORS:";
             // 
@@ -626,19 +640,6 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "RESET";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // txtOID
-            // 
-            this.txtOID.FormattingEnabled = true;
-            this.txtOID.Items.AddRange(new object[] {
-            "BUSINESS",
-            "MERCANTILE",
-            "PUBLIC ASSEMBLY",
-            "STORAGE"});
-            this.txtOID.Location = new System.Drawing.Point(204, 87);
-            this.txtOID.Name = "txtOID";
-            this.txtOID.Size = new System.Drawing.Size(283, 31);
-            this.txtOID.TabIndex = 43;
             // 
             // ucREGISTER
             // 

@@ -148,7 +148,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(969, 687);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cbOCCTYPE
             // 
@@ -231,8 +230,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.ErrorImage = null;
             this.pictureBox1.Image = global::BFP_FSES.Properties.Resources.okstamp;
-            this.pictureBox1.Location = new System.Drawing.Point(637, 461);
+            this.pictureBox1.Location = new System.Drawing.Point(610, 461);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(293, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -290,7 +290,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(294, 21);
             this.comboBox1.TabIndex = 90;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -299,7 +298,7 @@
             this.label22.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(24, 248);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(141, 16);
+            this.label22.Size = new System.Drawing.Size(142, 16);
             this.label22.TabIndex = 89;
             this.label22.Text = "ESTABLISHMENT TYPE:";
             // 
@@ -399,7 +398,7 @@
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(509, 304);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(161, 16);
+            this.label13.Size = new System.Drawing.Size(162, 16);
             this.label13.TabIndex = 78;
             this.label13.Text = "FIRE SAFETY INSPECTORS:";
             // 
@@ -486,7 +485,7 @@
             this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(509, 137);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 16);
+            this.label8.Size = new System.Drawing.Size(131, 16);
             this.label8.TabIndex = 68;
             this.label8.Text = "TYPE OF OCCUPANCY:";
             // 
@@ -538,7 +537,7 @@
             this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(24, 341);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 16);
+            this.label20.Size = new System.Drawing.Size(60, 16);
             this.label20.TabIndex = 33;
             this.label20.Text = "AMOUNT:";
             // 
@@ -694,7 +693,7 @@
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 19);
+            this.label1.Size = new System.Drawing.Size(234, 19);
             this.label1.TabIndex = 11;
             this.label1.Text = "ESTABLISHMENT INFORMATION";
             // 
