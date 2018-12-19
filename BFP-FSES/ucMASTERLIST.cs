@@ -214,7 +214,7 @@ namespace BFP_FSES
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // creating Excel Application  
+             // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
@@ -242,16 +242,19 @@ namespace BFP_FSES
 
                 }
             }
+
             // save the application  
-            workbook.SaveAs("c:\\MasterList.xlsx", Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-
-
+            app.DisplayAlerts = false;
+            workbook.SaveAs("D:\\MasterList.xlsx");
+            app.Quit();
 
     //        //REOPEN AND RECOLOR
 
+            
+
 
             Excel.Application application = new Excel.Application();
-            Excel.Workbook workbook1 = application.Workbooks.Open("c:\\MasterList.xlsx");
+            Excel.Workbook workbook1 = application.Workbooks.Open("D:\\MasterList.xlsx");
             Excel.Worksheet worksheet1 = workbook1.ActiveSheet;
 
             Excel.Range usedRange = worksheet1.UsedRange;
@@ -284,14 +287,20 @@ namespace BFP_FSES
                 count++;
             }
 
-           
 
-            workbook.Save();
-            workbook.Close();
+            application.DisplayAlerts = false;
+
+            workbook1.Save();
+            application.Quit();
+
+            AfterSaved execute = new AfterSaved();
+            execute.ShowDialog();
+           
+            
 
 
             // Exit from the application  
-            app.Quit();
+           
         }
     }
 }

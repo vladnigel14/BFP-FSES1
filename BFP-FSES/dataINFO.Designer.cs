@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbOCCTYPE = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.dtpEXPIREDATE = new System.Windows.Forms.DateTimePicker();
+            this.label25 = new System.Windows.Forms.Label();
+            this.dtpISSUED = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpINSPECTED = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -77,11 +82,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label25 = new System.Windows.Forms.Label();
-            this.dtpISSUED = new System.Windows.Forms.DateTimePicker();
-            this.label26 = new System.Windows.Forms.Label();
-            this.dtpEXPIREDATE = new System.Windows.Forms.DateTimePicker();
-            this.cbOCCTYPE = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -146,9 +146,65 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(969, 657);
+            this.panel1.Size = new System.Drawing.Size(969, 687);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // cbOCCTYPE
+            // 
+            this.cbOCCTYPE.BackColor = System.Drawing.Color.White;
+            this.cbOCCTYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOCCTYPE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbOCCTYPE.FormattingEnabled = true;
+            this.cbOCCTYPE.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.cbOCCTYPE.Items.AddRange(new object[] {
+            "Mall",
+            "Appartment",
+            "Store"});
+            this.cbOCCTYPE.Location = new System.Drawing.Point(689, 135);
+            this.cbOCCTYPE.Name = "cbOCCTYPE";
+            this.cbOCCTYPE.Size = new System.Drawing.Size(259, 21);
+            this.cbOCCTYPE.TabIndex = 102;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.Color.Transparent;
+            this.label26.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(24, 469);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(115, 16);
+            this.label26.TabIndex = 101;
+            this.label26.Text = "FSIC EXPIRY DATE:";
+            // 
+            // dtpEXPIREDATE
+            // 
+            this.dtpEXPIREDATE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEXPIREDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEXPIREDATE.Location = new System.Drawing.Point(196, 469);
+            this.dtpEXPIREDATE.Name = "dtpEXPIREDATE";
+            this.dtpEXPIREDATE.Size = new System.Drawing.Size(294, 23);
+            this.dtpEXPIREDATE.TabIndex = 100;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(24, 436);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(90, 16);
+            this.label25.TabIndex = 99;
+            this.label25.Text = "DATE ISSUED:";
+            // 
+            // dtpISSUED
+            // 
+            this.dtpISSUED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpISSUED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpISSUED.Location = new System.Drawing.Point(196, 433);
+            this.dtpISSUED.Name = "dtpISSUED";
+            this.dtpISSUED.Size = new System.Drawing.Size(294, 23);
+            this.dtpISSUED.TabIndex = 98;
             // 
             // label2
             // 
@@ -176,9 +232,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::BFP_FSES.Properties.Resources.okstamp;
-            this.pictureBox1.Location = new System.Drawing.Point(537, 465);
+            this.pictureBox1.Location = new System.Drawing.Point(637, 461);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(413, 194);
+            this.pictureBox1.Size = new System.Drawing.Size(293, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 95;
             this.pictureBox1.TabStop = false;
@@ -192,7 +248,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 29);
             this.button2.TabIndex = 93;
-            this.button2.Text = "CANCEL";
+            this.button2.Text = "CLOSE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -654,67 +710,11 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(24, 436);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(90, 16);
-            this.label25.TabIndex = 99;
-            this.label25.Text = "DATE ISSUED:";
-            // 
-            // dtpISSUED
-            // 
-            this.dtpISSUED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpISSUED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpISSUED.Location = new System.Drawing.Point(196, 433);
-            this.dtpISSUED.Name = "dtpISSUED";
-            this.dtpISSUED.Size = new System.Drawing.Size(294, 23);
-            this.dtpISSUED.TabIndex = 98;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(24, 469);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(115, 16);
-            this.label26.TabIndex = 101;
-            this.label26.Text = "FSIC EXPIRY DATE:";
-            // 
-            // dtpEXPIREDATE
-            // 
-            this.dtpEXPIREDATE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpEXPIREDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEXPIREDATE.Location = new System.Drawing.Point(196, 469);
-            this.dtpEXPIREDATE.Name = "dtpEXPIREDATE";
-            this.dtpEXPIREDATE.Size = new System.Drawing.Size(294, 23);
-            this.dtpEXPIREDATE.TabIndex = 100;
-            // 
-            // cbOCCTYPE
-            // 
-            this.cbOCCTYPE.BackColor = System.Drawing.Color.White;
-            this.cbOCCTYPE.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbOCCTYPE.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbOCCTYPE.FormattingEnabled = true;
-            this.cbOCCTYPE.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.cbOCCTYPE.Items.AddRange(new object[] {
-            "Mall",
-            "Appartment",
-            "Store"});
-            this.cbOCCTYPE.Location = new System.Drawing.Point(689, 138);
-            this.cbOCCTYPE.Name = "cbOCCTYPE";
-            this.cbOCCTYPE.Size = new System.Drawing.Size(259, 21);
-            this.cbOCCTYPE.TabIndex = 102;
-            // 
             // dataINFO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 659);
+            this.ClientSize = new System.Drawing.Size(969, 687);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "dataINFO";

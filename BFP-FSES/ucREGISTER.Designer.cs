@@ -71,13 +71,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtSTONUM = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtOID = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtNOB = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtFSIC = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtOID = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -373,6 +373,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtOID);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.txtIO);
             this.groupBox3.Controls.Add(this.label16);
@@ -390,7 +391,6 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtSTONUM);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.txtOID);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.txtNOB);
             this.groupBox3.Controls.Add(this.label7);
@@ -568,24 +568,15 @@
             this.label9.TabIndex = 26;
             this.label9.Text = "STOREY NUMBER:";
             // 
-            // txtOID
-            // 
-            this.txtOID.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtOID.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOID.Location = new System.Drawing.Point(204, 91);
-            this.txtOID.Name = "txtOID";
-            this.txtOID.Size = new System.Drawing.Size(283, 23);
-            this.txtOID.TabIndex = 25;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(34, 98);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(99, 16);
+            this.label8.Size = new System.Drawing.Size(115, 16);
             this.label8.TabIndex = 24;
-            this.label8.Text = "OCCUPANCY ID:";
+            this.label8.Text = "OCCUPANCY TYPE:";
             // 
             // txtNOB
             // 
@@ -635,6 +626,19 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "RESET";
             this.button2.UseVisualStyleBackColor = true;
+            // 
+            // txtOID
+            // 
+            this.txtOID.FormattingEnabled = true;
+            this.txtOID.Items.AddRange(new object[] {
+            "BUSINESS",
+            "MERCANTILE",
+            "PUBLIC ASSEMBLY",
+            "STORAGE"});
+            this.txtOID.Location = new System.Drawing.Point(204, 87);
+            this.txtOID.Name = "txtOID";
+            this.txtOID.Size = new System.Drawing.Size(283, 31);
+            this.txtOID.TabIndex = 43;
             // 
             // ucREGISTER
             // 
@@ -708,7 +712,6 @@
         private System.Windows.Forms.Label label10;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtSTONUM;
         private System.Windows.Forms.Label label9;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtOID;
         private System.Windows.Forms.Label label8;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtNOB;
         private System.Windows.Forms.Label label7;
@@ -719,6 +722,7 @@
         private System.Windows.Forms.ComboBox cbappstatus;
         private System.Windows.Forms.Label label21;
         public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txtOID;
 
 
 

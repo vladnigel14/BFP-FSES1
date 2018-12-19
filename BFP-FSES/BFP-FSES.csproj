@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfterSaved.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AfterSaved.Designer.cs">
+      <DependentUpon>AfterSaved.cs</DependentUpon>
+    </Compile>
     <Compile Include="dataINFO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="ucREGISTER.Designer.cs">
       <DependentUpon>ucREGISTER.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AfterSaved.resx">
+      <DependentUpon>AfterSaved.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dataINFO.resx">
       <DependentUpon>dataINFO.cs</DependentUpon>
     </EmbeddedResource>
