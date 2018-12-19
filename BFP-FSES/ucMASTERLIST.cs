@@ -34,6 +34,7 @@ namespace BFP_FSES
         private void ucMASTERLIST_Load(object sender, EventArgs e)
         {
             showData();
+            popME();
             RowsColor();
             foreach (DataGridViewColumn dgvc in dataGRID.Columns)
             {
@@ -81,22 +82,13 @@ namespace BFP_FSES
                     {
                         dataGRID.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb (249, 231, 159);
                     }
-
-
-
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-
-
-            }
-
-            
+            }        
         }
-
-
 
         private void RefreshGridView()
         {
@@ -113,7 +105,14 @@ namespace BFP_FSES
 
         private void txtSEARCH_TextChanged(object sender, EventArgs e)
         {
-
+            String query1 = "Select  `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE from record where est_name like '%"+txtSEARCH.Text+"%' ";
+            OleDbCommand cmd = new OleDbCommand(query1,con);
+            cmd.Parameters.AddWithValue("@search",txtSEARCH.Text);
+            OleDbDataAdapter x = new OleDbDataAdapter(cmd);
+            
+            DataTable dt = new DataTable();
+            x.Fill(dt);
+            dataGRID.DataSource = dt;
         }
 
         private void txtSEARCH_Click(object sender, EventArgs e)
@@ -250,9 +249,6 @@ namespace BFP_FSES
 
     //        //REOPEN AND RECOLOR
 
-            
-
-
             Excel.Application application = new Excel.Application();
             Excel.Workbook workbook1 = application.Workbooks.Open("D:\\MasterList.xlsx");
             Excel.Worksheet worksheet1 = workbook1.ActiveSheet;
@@ -295,12 +291,21 @@ namespace BFP_FSES
 
             AfterSaved execute = new AfterSaved();
             execute.ShowDialog();
-           
-            
-
 
             // Exit from the application  
            
+        }
+
+        private void popME()
+        {
+            String query = "SELECT * FROM e_type";
+            OleDbDataAdapter u = new OleDbDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            u.Fill(ds);
+            ucMASTERLIST.Instance.comboBox1.DisplayMember = "title";
+            ucMASTERLIST.Instance.comboBox1.ValueMember = "ID";
+            ucMASTERLIST.Instance.comboBox1.DataSource = ds.Tables[0];
+
         }
     }
 }
