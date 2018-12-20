@@ -103,5 +103,20 @@ namespace BFP_FSES
         {
 
         }
+
+        private void cboxPAID_CheckedChanged(object sender, EventArgs e)
+        {
+            Boolean state = cboxPAID.Checked;
+
+            if (!state)
+            {
+
+                checkpoint cp = new checkpoint();
+                cp.ShowDialog();
+
+                cboxPAID.CheckState = CheckState.Checked;
+            
+            }
+        }
     }
 }

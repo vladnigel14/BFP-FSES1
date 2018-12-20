@@ -59,6 +59,12 @@
     <Compile Include="AfterSaved.Designer.cs">
       <DependentUpon>AfterSaved.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkpoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkpoint.Designer.cs">
+      <DependentUpon>checkpoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="dataINFO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLOGIN.Designer.cs">
+      <DependentUpon>frmLOGIN.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,11 +107,17 @@
     <EmbeddedResource Include="AfterSaved.resx">
       <DependentUpon>AfterSaved.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="checkpoint.resx">
+      <DependentUpon>checkpoint.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dataINFO.resx">
       <DependentUpon>dataINFO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLOGIN.resx">
+      <DependentUpon>frmLOGIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -157,10 +157,11 @@
             this.cboxPAID.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxPAID.Location = new System.Drawing.Point(295, 14);
             this.cboxPAID.Name = "cboxPAID";
-            this.cboxPAID.Size = new System.Drawing.Size(56, 20);
+            this.cboxPAID.Size = new System.Drawing.Size(55, 20);
             this.cboxPAID.TabIndex = 103;
             this.cboxPAID.Text = "PAID";
             this.cboxPAID.UseVisualStyleBackColor = true;
+            this.cboxPAID.CheckedChanged += new System.EventHandler(this.cboxPAID_CheckedChanged);
             // 
             // cbOCCTYPE
             // 
@@ -311,7 +312,7 @@
             this.label22.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(24, 248);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(141, 16);
+            this.label22.Size = new System.Drawing.Size(142, 16);
             this.label22.TabIndex = 89;
             this.label22.Text = "ESTABLISHMENT TYPE:";
             // 
@@ -411,7 +412,7 @@
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(509, 304);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(161, 16);
+            this.label13.Size = new System.Drawing.Size(162, 16);
             this.label13.TabIndex = 78;
             this.label13.Text = "FIRE SAFETY INSPECTORS:";
             // 
@@ -498,7 +499,7 @@
             this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(509, 137);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(132, 16);
+            this.label8.Size = new System.Drawing.Size(131, 16);
             this.label8.TabIndex = 68;
             this.label8.Text = "TYPE OF OCCUPANCY:";
             // 
@@ -550,7 +551,7 @@
             this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(24, 341);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 16);
+            this.label20.Size = new System.Drawing.Size(60, 16);
             this.label20.TabIndex = 33;
             this.label20.Text = "AMOUNT:";
             // 
@@ -706,7 +707,7 @@
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 19);
+            this.label1.Size = new System.Drawing.Size(234, 19);
             this.label1.TabIndex = 11;
             this.label1.Text = "ESTABLISHMENT INFORMATION";
             // 

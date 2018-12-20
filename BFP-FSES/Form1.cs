@@ -16,6 +16,7 @@ namespace BFP_FSES
     {
 
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\BFP-FSES\\BFP-FSES.accdb;Persist Security Info=False;");
+        public String state = "nk";
         public MainForm()
         {
             InitializeComponent();
@@ -124,12 +125,27 @@ namespace BFP_FSES
 
         private void panel8_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult exit = MessageBox.Show("Logout Program?","Logout Confirmation",MessageBoxButtons.YesNo);
+
+            if (exit == DialogResult.Yes)
+            {
+                frmLOGIN x = new frmLOGIN();
+                x.ShowDialog();
+            }
+
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+
+
+            if (state == "nk")
+            {
+                frmLOGIN login = new frmLOGIN();
+                login.ShowDialog();
+            }
 
 
             System.Threading.Thread initproc = new System.Threading.Thread(new System.Threading.ThreadStart(initiate));
@@ -280,6 +296,16 @@ namespace BFP_FSES
 
 
         private void panellogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

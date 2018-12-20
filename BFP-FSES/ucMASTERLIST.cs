@@ -33,6 +33,8 @@ namespace BFP_FSES
 
         private void ucMASTERLIST_Load(object sender, EventArgs e)
         {
+
+            comboBox1.Text = DateTime.Now.Year.ToString();
             showData();
             popME();
             RowsColor();
@@ -322,6 +324,11 @@ namespace BFP_FSES
             ucMASTERLIST.Instance.comboBox1.DisplayMember = "title";
             ucMASTERLIST.Instance.comboBox1.ValueMember = "ID";
             ucMASTERLIST.Instance.comboBox1.DataSource = ds.Tables[0];
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

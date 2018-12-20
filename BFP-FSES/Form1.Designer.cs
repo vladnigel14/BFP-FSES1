@@ -158,7 +158,7 @@
             this.time.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.time.Location = new System.Drawing.Point(120, 7);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(87, 16);
+            this.time.Size = new System.Drawing.Size(76, 16);
             this.time.TabIndex = 7;
             this.time.Text = "00:00:00 AM";
             // 
@@ -169,9 +169,10 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(37, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 16);
+            this.label1.Size = new System.Drawing.Size(33, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "EXIT";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel8
             // 
@@ -184,6 +185,7 @@
             this.panel8.Size = new System.Drawing.Size(36, 27);
             this.panel8.TabIndex = 6;
             this.panel8.Click += new System.EventHandler(this.panel8_Click);
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // panel7
             // 
@@ -337,7 +339,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(13, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(160, 16);
+            this.label5.Size = new System.Drawing.Size(142, 16);
             this.label5.TabIndex = 10;
             this.label5.Text = "ESTABLISHMENT TYPE:";
             // 
@@ -375,7 +377,7 @@
             this.lblESTABLISHMENT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblESTABLISHMENT.Location = new System.Drawing.Point(115, 44);
             this.lblESTABLISHMENT.Name = "lblESTABLISHMENT";
-            this.lblESTABLISHMENT.Size = new System.Drawing.Size(52, 58);
+            this.lblESTABLISHMENT.Size = new System.Drawing.Size(51, 58);
             this.lblESTABLISHMENT.TabIndex = 7;
             this.lblESTABLISHMENT.Text = "0";
             // 
@@ -404,7 +406,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(118, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(187, 16);
+            this.label3.Size = new System.Drawing.Size(163, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "TOTAL OF ESTABLISHMENT:";
             // 
@@ -442,7 +444,7 @@
             this.lblINSPECTED.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblINSPECTED.Location = new System.Drawing.Point(116, 44);
             this.lblINSPECTED.Name = "lblINSPECTED";
-            this.lblINSPECTED.Size = new System.Drawing.Size(52, 58);
+            this.lblINSPECTED.Size = new System.Drawing.Size(51, 58);
             this.lblINSPECTED.TabIndex = 7;
             this.lblINSPECTED.Text = "0";
             // 
@@ -471,7 +473,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(119, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 16);
+            this.label6.Size = new System.Drawing.Size(79, 16);
             this.label6.TabIndex = 6;
             this.label6.Text = "INSPECTED:";
             // 
@@ -509,7 +511,7 @@
             this.lblNOTINSPECTED.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblNOTINSPECTED.Location = new System.Drawing.Point(116, 43);
             this.lblNOTINSPECTED.Name = "lblNOTINSPECTED";
-            this.lblNOTINSPECTED.Size = new System.Drawing.Size(52, 58);
+            this.lblNOTINSPECTED.Size = new System.Drawing.Size(51, 58);
             this.lblNOTINSPECTED.TabIndex = 11;
             this.lblNOTINSPECTED.Text = "0";
             // 
@@ -521,7 +523,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(119, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 16);
+            this.label8.Size = new System.Drawing.Size(101, 16);
             this.label8.TabIndex = 10;
             this.label8.Text = "NOT INSPECTED";
             // 
@@ -576,7 +578,7 @@
             this.lblRENEW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblRENEW.Location = new System.Drawing.Point(116, 45);
             this.lblRENEW.Name = "lblRENEW";
-            this.lblRENEW.Size = new System.Drawing.Size(52, 58);
+            this.lblRENEW.Size = new System.Drawing.Size(51, 58);
             this.lblRENEW.TabIndex = 11;
             this.lblRENEW.Text = "0";
             // 
@@ -588,7 +590,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Location = new System.Drawing.Point(119, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(153, 16);
+            this.label12.Size = new System.Drawing.Size(135, 16);
             this.label12.TabIndex = 10;
             this.label12.Text = "RENEW APPLICATION:";
             // 
@@ -660,7 +662,7 @@
             this.lblNEWAPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblNEWAPP.Location = new System.Drawing.Point(116, 44);
             this.lblNEWAPP.Name = "lblNEWAPP";
-            this.lblNEWAPP.Size = new System.Drawing.Size(52, 58);
+            this.lblNEWAPP.Size = new System.Drawing.Size(51, 58);
             this.lblNEWAPP.TabIndex = 7;
             this.lblNEWAPP.Text = "0";
             // 
@@ -672,7 +674,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Location = new System.Drawing.Point(116, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(135, 16);
+            this.label10.Size = new System.Drawing.Size(119, 16);
             this.label10.TabIndex = 6;
             this.label10.Text = "NEW APPLICATION:";
             // 
@@ -703,7 +705,7 @@
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(47, 25);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(255, 33);
+            this.label13.Size = new System.Drawing.Size(242, 33);
             this.label13.TabIndex = 10;
             this.label13.Text = "FSES DASHBOARD";
             // 
