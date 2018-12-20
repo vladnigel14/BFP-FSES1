@@ -43,7 +43,7 @@ namespace BFP_FSES
         {
             con.Open();
             String updateQuery;
-            updateQuery = "UPDATE record SET `bin`=@bin,`est_name`= @est_name,`est_address` =@est_address, `est_owner` =@est_owner,`est_status`= @est_status,`fsic_exp_date` =@fsic_exp_date,`date_issued`=@date_issued,`fsic_number`= @fsic_number,`status_of_application`= @status_of_application,`amount`= @amount,`or`= @or, `_date`= @_date,`io_number` =@io_number, `date_inspected`= @date_inspected, `nature_of_business`= @nature_of_business,`occupancy_type`= @occupancy_type,`safety_inspectors` =@safety_inspectors, `cons_materials`=@cons_materials, `storey_no`= @storey_no,`portion_occupied` =@portion_occupied, `floor_area` =@floor_area, `noted_violation` =@noted_violation,`inspected`=@inspected, `est_type`= @est_type where bin=@bin";
+            updateQuery = "UPDATE record SET `bin`=@bin,`est_name`= @est_name,`est_address` =@est_address, `est_owner` =@est_owner,`est_status`= @est_status,`fsic_exp_date` =@fsic_exp_date,`date_issued`=@date_issued,`fsic_number`= @fsic_number,`status_of_application`= @status_of_application,`amount`= @amount,`or`= @or, `_date`= @_date,`io_number` =@io_number, `date_inspected`= @date_inspected, `nature_of_business`= @nature_of_business,`occupancy_type`= @occupancy_type,`safety_inspectors` =@safety_inspectors, `cons_materials`=@cons_materials, `storey_no`= @storey_no,`portion_occupied` =@portion_occupied, `floor_area` =@floor_area, `noted_violation` =@noted_violation,`inspected`=@inspected, `est_type`= @est_type ,`paid` = @paid where bin=@bin";
 
 
             OleDbCommand addRecordCommand = new OleDbCommand(updateQuery,con);
@@ -72,6 +72,7 @@ namespace BFP_FSES
             addRecordCommand.Parameters.AddWithValue("@noted_violation", txtNOV.Text);
             addRecordCommand.Parameters.AddWithValue("@inspected", cbinspected.Text=="YES"?true:false);
             addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
+            addRecordCommand.Parameters.AddWithValue("@paid", cboxPAID.Checked ? true : false);
 
             pictureBox1.Visible = true;
 

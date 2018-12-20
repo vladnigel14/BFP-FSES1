@@ -39,15 +39,12 @@ namespace BFP_FSES
             foreach (DataGridViewColumn dgvc in dataGRID.Columns)
             {
                 dgvc.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }
-
-          
-           
+            }   
         }
         public void showData()
         {
             //String query = "SELECT * from record";
-            String query = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE from record";
+            String query = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID  from record";
             OleDbDataAdapter x = new OleDbDataAdapter(query, con);
             DataTable dt = new DataTable();
             x.Fill(dt);
@@ -158,6 +155,10 @@ namespace BFP_FSES
             String VIOLATION = dataGRID.Rows[row].Cells[21].Value.ToString();
             String ESTABLISHMENTTYPE = dataGRID.Rows[row].Cells[22].Value.ToString();
             Boolean cbi = Convert.ToBoolean(dataGRID.Rows[row].Cells[22].Value.ToString());
+            Boolean paid = Convert.ToBoolean(dataGRID.Rows[row].Cells[24].Value.ToString());
+            //Boolean paid = true;
+            //MessageBox.Show(dataGRID.Rows[row].Cells[23].Value.ToString());
+            
            // MessageBox.Show(dataGRID.Rows[row].Cells[23].Value.ToString());
             //Boolean cbi = true;
 
@@ -186,6 +187,19 @@ namespace BFP_FSES
             info.txtFLAREA.Text = FLOORAREA;
             info.txtNOV.Text = VIOLATION;
             info.comboBox1.Text = ESTABLISHMENTTYPE;
+          
+
+
+            if (paid)
+            {
+                info.cboxPAID.CheckState = CheckState.Checked;
+            }
+
+            if(!paid)
+            {
+                info.cboxPAID.CheckState=CheckState.Unchecked;
+            }
+            
 
             String query = "SELECT * FROM e_type";
             OleDbDataAdapter u = new OleDbDataAdapter(query, con);

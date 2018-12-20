@@ -112,6 +112,11 @@ namespace BFP_FSES
         {
             if (e.KeyCode == Keys.Enter)
             {
+
+                DialogResult ak = MessageBox.Show("Save "+comboBox1.Text+ " ?","Confirm Type",MessageBoxButtons.YesNo);
+                if(ak==DialogResult.Yes)
+                {
+                    
                 con.Open();
                 String query = "INSERT INTO e_type (title) VALUES (@type)";
                 OleDbCommand cmd = new OleDbCommand(query,con);
@@ -121,6 +126,8 @@ namespace BFP_FSES
                 popCom();
                 comboBox1.Text = null;
                 con.Close();
+
+                }
             }
         }
 
@@ -134,8 +141,6 @@ namespace BFP_FSES
             ucREGISTER.Instance.comboBox1.ValueMember = "ID";
             ucREGISTER.Instance.comboBox1.DataSource = ds.Tables[0];
            
-        }
-
-       
+        }  
     }
 }

@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.label22 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -90,7 +89,7 @@
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(457, 33);
+            this.label1.Size = new System.Drawing.Size(487, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRATION OF ESTABLISHMENTS";
             // 
@@ -105,18 +104,6 @@
             this.bunifuSeparator1.TabIndex = 9;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label22.Location = new System.Drawing.Point(481, 51);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(164, 13);
-            this.label22.TabIndex = 10;
-            this.label22.Text = "ESTABLISHMENT INFORMATION";
             // 
             // groupBox1
             // 
@@ -143,13 +130,14 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.comboBox1.Items.AddRange(new object[] {
             "ADD NEW TYPE"});
             this.comboBox1.Location = new System.Drawing.Point(197, 236);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(319, 27);
+            this.comboBox1.Size = new System.Drawing.Size(319, 24);
             this.comboBox1.TabIndex = 19;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged_1);
             this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.entere);
@@ -161,13 +149,15 @@
             this.label21.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(25, 238);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(142, 16);
+            this.label21.Size = new System.Drawing.Size(141, 16);
             this.label21.TabIndex = 18;
             this.label21.Text = "ESTABLISHMENT TYPE:";
             // 
             // cbeststatus
             // 
+            this.cbeststatus.BackColor = System.Drawing.SystemColors.Window;
             this.cbeststatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbeststatus.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbeststatus.FormattingEnabled = true;
             this.cbeststatus.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.cbeststatus.Items.AddRange(new object[] {
@@ -176,7 +166,7 @@
             "ISSUANCE OF NTC"});
             this.cbeststatus.Location = new System.Drawing.Point(197, 203);
             this.cbeststatus.Name = "cbeststatus";
-            this.cbeststatus.Size = new System.Drawing.Size(319, 27);
+            this.cbeststatus.Size = new System.Drawing.Size(319, 24);
             this.cbeststatus.TabIndex = 16;
             this.cbeststatus.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.cbeststatus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.kD);
@@ -292,13 +282,14 @@
             // 
             // cbappstatus
             // 
+            this.cbappstatus.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbappstatus.FormattingEnabled = true;
             this.cbappstatus.Items.AddRange(new object[] {
             "NEW",
             "RENEW"});
             this.cbappstatus.Location = new System.Drawing.Point(197, 66);
             this.cbappstatus.Name = "cbappstatus";
-            this.cbappstatus.Size = new System.Drawing.Size(319, 27);
+            this.cbappstatus.Size = new System.Drawing.Size(319, 24);
             this.cbappstatus.TabIndex = 21;
             this.cbappstatus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.e);
             // 
@@ -309,7 +300,7 @@
             this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(25, 129);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 16);
+            this.label20.Size = new System.Drawing.Size(61, 16);
             this.label20.TabIndex = 20;
             this.label20.Text = "AMOUNT:";
             // 
@@ -406,6 +397,7 @@
             // 
             // txtOID
             // 
+            this.txtOID.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOID.FormattingEnabled = true;
             this.txtOID.Items.AddRange(new object[] {
             "BUSINESS",
@@ -414,7 +406,7 @@
             "STORAGE"});
             this.txtOID.Location = new System.Drawing.Point(204, 87);
             this.txtOID.Name = "txtOID";
-            this.txtOID.Size = new System.Drawing.Size(283, 31);
+            this.txtOID.Size = new System.Drawing.Size(283, 24);
             this.txtOID.TabIndex = 43;
             // 
             // label17
@@ -501,7 +493,7 @@
             this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(34, 309);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(162, 16);
+            this.label13.Size = new System.Drawing.Size(161, 16);
             this.label13.TabIndex = 34;
             this.label13.Text = "FIRE SAFETY INSPECTORS:";
             // 
@@ -652,7 +644,6 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label22);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -676,7 +667,6 @@
 
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtBIN;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox txtowner;

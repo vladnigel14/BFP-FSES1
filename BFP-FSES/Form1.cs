@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
+
+
 namespace BFP_FSES
 {
     public partial class MainForm : Form
@@ -128,6 +130,13 @@ namespace BFP_FSES
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+
+
+            System.Threading.Thread initproc = new System.Threading.Thread(new System.Threading.ThreadStart(initiate));
+            ucLOADING y = new ucLOADING();
+           
+            initproc.Start();
+
             countESTABLISHMENT();
             //SHOW CODE FOR COUNT ALL NEW APPLICATION
             countNEWAPP();
@@ -145,6 +154,15 @@ namespace BFP_FSES
             showTOTAL_ESTABLISHMENT();
             //END......
 
+            initproc.Abort();
+
+
+
+
+
+
+
+
             //THIS FOR TIMER
             time.Text = DateTime.Now.ToLongTimeString();
             Timer timez = new Timer();
@@ -152,6 +170,11 @@ namespace BFP_FSES
             timez.Start();
             timez.Tick += new EventHandler(timer);
             //TIMER CODE END...
+        }
+
+        public void initiate()
+        {
+            
         }
 
         void timer(object sender, EventArgs e)
