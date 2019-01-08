@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("");
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnMASTERLIST = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -114,7 +114,7 @@
             this.btnMASTERLIST.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnMASTERLIST.FlatAppearance.BorderSize = 0;
             this.btnMASTERLIST.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMASTERLIST.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMASTERLIST.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMASTERLIST.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnMASTERLIST.Location = new System.Drawing.Point(10, 237);
             this.btnMASTERLIST.Name = "btnMASTERLIST";
@@ -138,6 +138,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 764);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
@@ -154,22 +155,22 @@
             // time
             // 
             this.time.AutoSize = true;
-            this.time.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.time.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.time.Location = new System.Drawing.Point(120, 7);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(76, 16);
+            this.time.Size = new System.Drawing.Size(90, 16);
             this.time.TabIndex = 7;
             this.time.Text = "00:00:00 AM";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(37, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 16);
+            this.label1.Size = new System.Drawing.Size(41, 16);
             this.label1.TabIndex = 6;
             this.label1.Text = "EXIT";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -201,7 +202,7 @@
             this.btnREGISTER.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnREGISTER.FlatAppearance.BorderSize = 0;
             this.btnREGISTER.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnREGISTER.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnREGISTER.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnREGISTER.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnREGISTER.Location = new System.Drawing.Point(10, 182);
             this.btnREGISTER.Name = "btnREGISTER";
@@ -310,10 +311,10 @@
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listView1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.FullRowSelect = true;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.listView1.Location = new System.Drawing.Point(16, 44);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(641, 172);
@@ -335,11 +336,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label5.Location = new System.Drawing.Point(13, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 16);
+            this.label5.Size = new System.Drawing.Size(182, 16);
             this.label5.TabIndex = 10;
             this.label5.Text = "ESTABLISHMENT TYPE:";
             // 
@@ -373,11 +374,11 @@
             // 
             this.lblESTABLISHMENT.AutoSize = true;
             this.lblESTABLISHMENT.BackColor = System.Drawing.Color.Transparent;
-            this.lblESTABLISHMENT.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblESTABLISHMENT.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblESTABLISHMENT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblESTABLISHMENT.Location = new System.Drawing.Point(115, 44);
             this.lblESTABLISHMENT.Name = "lblESTABLISHMENT";
-            this.lblESTABLISHMENT.Size = new System.Drawing.Size(51, 58);
+            this.lblESTABLISHMENT.Size = new System.Drawing.Size(52, 55);
             this.lblESTABLISHMENT.TabIndex = 7;
             this.lblESTABLISHMENT.Text = "0";
             // 
@@ -402,11 +403,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label3.Location = new System.Drawing.Point(118, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 16);
+            this.label3.Size = new System.Drawing.Size(215, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "TOTAL OF ESTABLISHMENT:";
             // 
@@ -440,11 +441,11 @@
             // 
             this.lblINSPECTED.AutoSize = true;
             this.lblINSPECTED.BackColor = System.Drawing.Color.Transparent;
-            this.lblINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblINSPECTED.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblINSPECTED.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblINSPECTED.Location = new System.Drawing.Point(116, 44);
             this.lblINSPECTED.Name = "lblINSPECTED";
-            this.lblINSPECTED.Size = new System.Drawing.Size(51, 58);
+            this.lblINSPECTED.Size = new System.Drawing.Size(52, 55);
             this.lblINSPECTED.TabIndex = 7;
             this.lblINSPECTED.Text = "0";
             // 
@@ -469,11 +470,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label6.Location = new System.Drawing.Point(119, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.Size = new System.Drawing.Size(98, 16);
             this.label6.TabIndex = 6;
             this.label6.Text = "INSPECTED:";
             // 
@@ -507,11 +508,11 @@
             // 
             this.lblNOTINSPECTED.AutoSize = true;
             this.lblNOTINSPECTED.BackColor = System.Drawing.Color.Transparent;
-            this.lblNOTINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNOTINSPECTED.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNOTINSPECTED.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblNOTINSPECTED.Location = new System.Drawing.Point(116, 43);
             this.lblNOTINSPECTED.Name = "lblNOTINSPECTED";
-            this.lblNOTINSPECTED.Size = new System.Drawing.Size(51, 58);
+            this.lblNOTINSPECTED.Size = new System.Drawing.Size(52, 55);
             this.lblNOTINSPECTED.TabIndex = 11;
             this.lblNOTINSPECTED.Text = "0";
             // 
@@ -519,11 +520,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label8.Location = new System.Drawing.Point(119, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 16);
+            this.label8.Size = new System.Drawing.Size(130, 16);
             this.label8.TabIndex = 10;
             this.label8.Text = "NOT INSPECTED";
             // 
@@ -574,11 +575,11 @@
             // 
             this.lblRENEW.AutoSize = true;
             this.lblRENEW.BackColor = System.Drawing.Color.Transparent;
-            this.lblRENEW.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRENEW.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRENEW.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblRENEW.Location = new System.Drawing.Point(116, 45);
             this.lblRENEW.Name = "lblRENEW";
-            this.lblRENEW.Size = new System.Drawing.Size(51, 58);
+            this.lblRENEW.Size = new System.Drawing.Size(52, 55);
             this.lblRENEW.TabIndex = 11;
             this.lblRENEW.Text = "0";
             // 
@@ -586,11 +587,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label12.Location = new System.Drawing.Point(119, 8);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(135, 16);
+            this.label12.Size = new System.Drawing.Size(170, 16);
             this.label12.TabIndex = 10;
             this.label12.Text = "RENEW APPLICATION:";
             // 
@@ -658,11 +659,11 @@
             // 
             this.lblNEWAPP.AutoSize = true;
             this.lblNEWAPP.BackColor = System.Drawing.Color.Transparent;
-            this.lblNEWAPP.Font = new System.Drawing.Font("Bahnschrift", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNEWAPP.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNEWAPP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblNEWAPP.Location = new System.Drawing.Point(116, 44);
             this.lblNEWAPP.Name = "lblNEWAPP";
-            this.lblNEWAPP.Size = new System.Drawing.Size(51, 58);
+            this.lblNEWAPP.Size = new System.Drawing.Size(52, 55);
             this.lblNEWAPP.TabIndex = 7;
             this.lblNEWAPP.Text = "0";
             // 
@@ -670,11 +671,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label10.Location = new System.Drawing.Point(116, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 16);
+            this.label10.Size = new System.Drawing.Size(149, 16);
             this.label10.TabIndex = 6;
             this.label10.Text = "NEW APPLICATION:";
             // 
@@ -702,10 +703,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(47, 25);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(242, 33);
+            this.label13.Size = new System.Drawing.Size(279, 31);
             this.label13.TabIndex = 10;
             this.label13.Text = "FSES DASHBOARD";
             // 
@@ -720,20 +721,20 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(36, 26);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.BorderWidth = 5;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(223)))), ((int)(((byte)(191)))));
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
+            series1.BorderWidth = 5;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(223)))), ((int)(((byte)(191)))));
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(621, 317);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";

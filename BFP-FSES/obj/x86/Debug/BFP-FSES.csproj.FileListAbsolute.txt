@@ -12,6 +12,6 @@ D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.exe
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.pdb
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.AfterSaved.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.ucLOADING.resources
-D:\BFP-FSES\BFP-FSES\bin\Debug\MySql.Data.dll
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.checkpoint.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.frmLOGIN.resources
+D:\BFP-FSES\BFP-FSES\obj\x86\Debug\Interop.Microsoft.Office.Core.dll

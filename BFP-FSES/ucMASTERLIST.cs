@@ -34,14 +34,50 @@ namespace BFP_FSES
         private void ucMASTERLIST_Load(object sender, EventArgs e)
         {
 
-            comboBox1.Text = DateTime.Now.Year.ToString();
-            showData();
+           
+            
+           
             popME();
             RowsColor();
             foreach (DataGridViewColumn dgvc in dataGRID.Columns)
             {
                 dgvc.SortMode = DataGridViewColumnSortMode.NotSortable;
             }   
+        }
+
+
+        public void loadcbx()
+        {
+            String query = "SELECT * from tbl_year";
+            OleDbDataAdapter load = new OleDbDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            load.Fill(ds);
+            ucMASTERLIST.Instance.comboBox2.DisplayMember = "record_year";
+            ucMASTERLIST.Instance.comboBox2.ValueMember = "id";
+            ucMASTERLIST.Instance.comboBox2.DataSource = ds.Tables[0];
+        }
+
+        public void loadYearData(int sentyear)
+        {
+            
+
+            
+            
+
+            //load records per year
+
+            int year = Convert.ToInt32(DateTime.Now.Year.ToString());
+
+           String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID  from record where YEAR(`_date`)=@date";
+           OleDbCommand y = new OleDbCommand(query1,con);
+           y.Parameters.AddWithValue("@year",sentyear);
+           OleDbDataAdapter latest = new OleDbDataAdapter(y);
+           DataTable dt = new DataTable();
+           latest.Fill(dt);
+           ucMASTERLIST.Instance.dataGRID.DataSource = dt;
+
+           
+
         }
         public void showData()
         {
@@ -327,9 +363,14 @@ namespace BFP_FSES
 
         }
 
+       
+
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            ucMASTERLIST.Instance.loadYearData(Convert.ToInt32(comboBox2.Text));
+            
         }
+
+        
     }
 }

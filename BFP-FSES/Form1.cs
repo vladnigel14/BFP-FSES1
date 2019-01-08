@@ -80,16 +80,19 @@ namespace BFP_FSES
             btnMASTERLIST.Font = new Font("Bahnschrift", 11, FontStyle.Bold);
             btnREGISTER.BackColor = Color.FromArgb(39, 55, 70);
             btnMASTERLIST.BackColor = Color.FromArgb(46, 64, 83);
+            int yr = Convert.ToInt32(DateTime.Now.Year.ToString());
             if (!panel.Controls.Contains(ucMASTERLIST.Instance))
             {
                 panel.Controls.Add(ucMASTERLIST.Instance);
                 ucMASTERLIST.Instance.Dock = DockStyle.Fill;
-                ucMASTERLIST.Instance.showData();
+                ucMASTERLIST.Instance.loadYearData(yr);
+                ucMASTERLIST.Instance.loadcbx();
                 ucMASTERLIST.Instance.BringToFront();
             }
             else
             {
-                ucMASTERLIST.Instance.showData();
+                ucMASTERLIST.Instance.loadYearData(yr);
+                ucMASTERLIST.Instance.loadcbx();
                 ucMASTERLIST.Instance.BringToFront();
             }
             
@@ -306,6 +309,11 @@ namespace BFP_FSES
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

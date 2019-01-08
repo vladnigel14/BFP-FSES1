@@ -74,6 +74,17 @@ namespace BFP_FSES
             addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
             addRecordCommand.Parameters.AddWithValue("@paid", cboxPAID.Checked ? true : false);
 
+
+            if (cboxPAID.Checked)
+            {
+                //duplicate record
+
+                //string query = "CREATE TEMPORARY TABLE temp_table ENGINE=MEMORY;SELECT * FROM record where 1;update temp_table set id=null;insert into record select * from temp_table;drop table temp_table;";
+                //OleDbCommand x = new OleDbCommand(query,con);
+                //x.ExecuteNonQuery();
+
+            }
+
             pictureBox1.Visible = true;
 
             addRecordCommand.ExecuteNonQuery();
