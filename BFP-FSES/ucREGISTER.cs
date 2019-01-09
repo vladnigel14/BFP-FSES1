@@ -66,10 +66,33 @@ namespace BFP_FSES
                     addRecordCommand.Parameters.AddWithValue("@version", DateTime.Now.Year);
 
 
-                    OleDbCommand addyear = new OleDbCommand("insert into tbl_year (`record_year`) values (@version)", con);
-                    addyear.Parameters.AddWithValue("@version", Convert.ToInt32(DateTime.Now.Year));
+                    OleDbCommand yr = new OleDbCommand("select count(*) from tbl_year where record_year=@ryr", con);
+                    yr.Parameters.AddWithValue("@ryr", DateTime.Parse(dtpDATE.Text).Year);
+                    int count = Convert.ToInt32(yr.ExecuteScalar().ToString());
 
-                    if (addyear.ExecuteNonQuery() > 0)
+                    if (count <= 0)
+                    {
+
+
+
+
+
+                        OleDbCommand addyear = new OleDbCommand("insert into tbl_year (`record_year`) values (@version)", con);
+                        addyear.Parameters.AddWithValue("@version", Convert.ToInt32(DateTime.Parse(dtpDATE.Text).Year));
+
+                        if (addyear.ExecuteNonQuery() > 0)
+                        {
+                            if (addRecordCommand.ExecuteNonQuery() > 0)
+                            {
+                                MessageBox.Show("REGISTERED!");
+                            }
+
+                            ucMASTERLIST.Instance.loadcbx();
+
+                        }
+
+                    }
+                    else
                     {
                         if (addRecordCommand.ExecuteNonQuery() > 0)
                         {
@@ -77,7 +100,6 @@ namespace BFP_FSES
                         }
 
                         ucMASTERLIST.Instance.loadcbx();
-
                     }
 
 
