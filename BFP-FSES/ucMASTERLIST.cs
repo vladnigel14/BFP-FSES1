@@ -68,7 +68,7 @@ namespace BFP_FSES
 
             int year = Convert.ToInt32(DateTime.Now.Year.ToString());
 
-           String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID  from record where YEAR(`_date`)=@date";
+           String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION  from record where version=year";
            OleDbCommand y = new OleDbCommand(query1,con);
            y.Parameters.AddWithValue("@year",sentyear);
            OleDbDataAdapter latest = new OleDbDataAdapter(y);
@@ -194,6 +194,8 @@ namespace BFP_FSES
             String ESTABLISHMENTTYPE = dataGRID.Rows[row].Cells[22].Value.ToString();
             Boolean cbi = Convert.ToBoolean(dataGRID.Rows[row].Cells[22].Value.ToString());
             Boolean paid = Convert.ToBoolean(dataGRID.Rows[row].Cells[24].Value.ToString());
+            string version = dataGRID.Rows[row].Cells[25].Value.ToString();
+           
             //Boolean paid = true;
             //MessageBox.Show(dataGRID.Rows[row].Cells[23].Value.ToString());
             
@@ -225,7 +227,9 @@ namespace BFP_FSES
             info.txtFLAREA.Text = FLOORAREA;
             info.txtNOV.Text = VIOLATION;
             info.comboBox1.Text = ESTABLISHMENTTYPE;
-          
+            info.x = paid;
+            info.version = version;
+            info.sync = Convert.ToInt32(comboBox2.Text);
 
 
             if (paid)
@@ -256,10 +260,7 @@ namespace BFP_FSES
            
         }
 
-        private void dataGRID_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
+        
 
         private void binded(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -371,6 +372,14 @@ namespace BFP_FSES
             
         }
 
+        private void dataGRID_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
+
+        
         
     }
 }

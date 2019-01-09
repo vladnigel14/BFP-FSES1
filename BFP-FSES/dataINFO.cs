@@ -14,6 +14,9 @@ namespace BFP_FSES
     {
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\BFP-FSES\\BFP-FSES.accdb;Persist Security Info=False;");
         Timer ot = new Timer();
+        public Boolean x;
+        public String version;
+        public int sync;
         public dataINFO()
         {
             InitializeComponent();
@@ -73,9 +76,9 @@ namespace BFP_FSES
             addRecordCommand.Parameters.AddWithValue("@inspected", cbinspected.Text=="YES"?true:false);
             addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
             addRecordCommand.Parameters.AddWithValue("@paid", cboxPAID.Checked ? true : false);
+            addRecordCommand.ExecuteNonQuery();
 
-
-            if (cboxPAID.Checked)
+            if (cboxPAID.Checked && x!=true)
             {
                 //duplicate record
 
@@ -83,11 +86,82 @@ namespace BFP_FSES
                 //OleDbCommand x = new OleDbCommand(query,con);
                 //x.ExecuteNonQuery();
 
+                String query = "insert into record  (`bin`,`est_name`,`est_address`, `est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`, `nature_of_business`,`occupancy_type`,`safety_inspectors`, `cons_materials`, `storey_no`,`portion_occupied`, `floor_area`, `noted_violation`,`inspected`,`est_type`,`paid`,`version`) values (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected, @est_type ,@paid,@version)";
+
+
+                OleDbCommand addRecordCommand1 = new OleDbCommand(query,con);
+
+             
+
+                addRecordCommand1.Parameters.AddWithValue("@bin", txtBIN.Text);
+                addRecordCommand1.Parameters.AddWithValue("@est_name", txtname.Text);
+                addRecordCommand1.Parameters.AddWithValue("@est_address", txtaddress.Text);
+                addRecordCommand1.Parameters.AddWithValue("@est_owner", txtowner.Text);
+                addRecordCommand1.Parameters.AddWithValue("@est_status", cbeststatus.Text);
+                addRecordCommand1.Parameters.AddWithValue("@fsic_exp_date", DateTime.Parse(dtpDATE.Text));
+                addRecordCommand1.Parameters.AddWithValue("@date_issued", DateTime.Parse(dtpDATE.Text));
+                addRecordCommand1.Parameters.AddWithValue("@fsic_number", txtFSIC.Text);
+                addRecordCommand1.Parameters.AddWithValue("@status_of_application", "RENEW");
+                addRecordCommand1.Parameters.AddWithValue("@amount", txtAMOUNT.Text);
+                addRecordCommand1.Parameters.AddWithValue("@or", txtOR.Text);
+                addRecordCommand1.Parameters.AddWithValue("@_date", DateTime.Parse(dtpDATE.Text));
+                addRecordCommand1.Parameters.AddWithValue("@io_number", txtIO.Text);
+                //addRecordCommand1.Parameters.AddWithValue("@date_inspected", DateTime.Parse(dtpINSPECTED.Text));
+                addRecordCommand1.Parameters.AddWithValue("@nature_of_business", txtNOB.Text);
+                addRecordCommand1.Parameters.AddWithValue("@occupancy_type", cbOCCTYPE.Text);
+                addRecordCommand1.Parameters.AddWithValue("@safety_inspectors", txtFSI.Text);
+                addRecordCommand1.Parameters.AddWithValue("@cons_materials", txtCONMAT.Text);
+                addRecordCommand1.Parameters.AddWithValue("@storey_no", txtSTONUM.Text);
+                addRecordCommand1.Parameters.AddWithValue("@portion_occupied", txtPOROCC.Text);
+                addRecordCommand1.Parameters.AddWithValue("@floor_area", txtFLAREA.Text);
+                addRecordCommand1.Parameters.AddWithValue("@noted_violation", txtNOV.Text);
+                addRecordCommand1.Parameters.AddWithValue("@inspected", false);
+                addRecordCommand1.Parameters.AddWithValue("@est_type", comboBox1.Text);
+                addRecordCommand1.Parameters.AddWithValue("@paid",  false);
+                addRecordCommand1.Parameters.AddWithValue("@version", Convert.ToInt32(version)+1);
+
+                String c = "select count(*) from tbl_year where record_year=@version";
+                OleDbCommand getYear = new OleDbCommand(c, con);
+                getYear.Parameters.AddWithValue("@version",Convert.ToInt32(version)+1);
+                int count = Convert.ToInt32(getYear.ExecuteScalar().ToString());
+
+                if (count > 0)
+                {
+                    if (addRecordCommand1.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("INSERTED!");
+                    }
+
+                }
+                else
+                {
+                    OleDbCommand addyear = new OleDbCommand("insert into tbl_year (`record_year`) values (@version)",con);
+                    addyear.Parameters.AddWithValue("@version",Convert.ToInt32(version)+1);
+
+                    if (addyear.ExecuteNonQuery() > 0)
+                    {
+                        if (addRecordCommand1.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("INSERTED!");
+                        }
+
+                        ucMASTERLIST.Instance.loadcbx();
+
+                    }
+                }
+
+
+                
+
+               
+
+
+
             }
 
             pictureBox1.Visible = true;
 
-            addRecordCommand.ExecuteNonQuery();
+           
             
             ot.Interval = 1250;
             ot.Start();
@@ -95,7 +169,7 @@ namespace BFP_FSES
 
             con.Close();
 
-            ucMASTERLIST.Instance.showData();
+            ucMASTERLIST.Instance.loadYearData(sync);
             
         }
 
@@ -128,6 +202,11 @@ namespace BFP_FSES
                 cboxPAID.CheckState = CheckState.Checked;
             
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

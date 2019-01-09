@@ -150,14 +150,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(969, 687);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cboxPAID
             // 
             this.cboxPAID.AutoSize = true;
-            this.cboxPAID.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboxPAID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboxPAID.Location = new System.Drawing.Point(295, 14);
             this.cboxPAID.Name = "cboxPAID";
-            this.cboxPAID.Size = new System.Drawing.Size(55, 20);
+            this.cboxPAID.Size = new System.Drawing.Size(58, 20);
             this.cboxPAID.TabIndex = 103;
             this.cboxPAID.Text = "PAID";
             this.cboxPAID.UseVisualStyleBackColor = true;
@@ -183,60 +184,60 @@
             // 
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Transparent;
-            this.label26.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(24, 469);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(115, 16);
+            this.label26.Size = new System.Drawing.Size(131, 16);
             this.label26.TabIndex = 101;
             this.label26.Text = "FSIC EXPIRY DATE:";
             // 
             // dtpEXPIREDATE
             // 
-            this.dtpEXPIREDATE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEXPIREDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEXPIREDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEXPIREDATE.Location = new System.Drawing.Point(196, 469);
             this.dtpEXPIREDATE.Name = "dtpEXPIREDATE";
-            this.dtpEXPIREDATE.Size = new System.Drawing.Size(294, 23);
+            this.dtpEXPIREDATE.Size = new System.Drawing.Size(294, 22);
             this.dtpEXPIREDATE.TabIndex = 100;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(24, 436);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(90, 16);
+            this.label25.Size = new System.Drawing.Size(101, 16);
             this.label25.TabIndex = 99;
             this.label25.Text = "DATE ISSUED:";
             // 
             // dtpISSUED
             // 
-            this.dtpISSUED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpISSUED.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpISSUED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpISSUED.Location = new System.Drawing.Point(196, 433);
             this.dtpISSUED.Name = "dtpISSUED";
-            this.dtpISSUED.Size = new System.Drawing.Size(294, 23);
+            this.dtpISSUED.Size = new System.Drawing.Size(294, 22);
             this.dtpISSUED.TabIndex = 98;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(24, 402);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 16);
+            this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 97;
             this.label2.Text = "DATE INSPECTED:";
             // 
             // dtpINSPECTED
             // 
-            this.dtpINSPECTED.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpINSPECTED.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpINSPECTED.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpINSPECTED.Location = new System.Drawing.Point(196, 399);
             this.dtpINSPECTED.Name = "dtpINSPECTED";
-            this.dtpINSPECTED.Size = new System.Drawing.Size(294, 23);
+            this.dtpINSPECTED.Size = new System.Drawing.Size(294, 22);
             this.dtpINSPECTED.TabIndex = 96;
             this.dtpINSPECTED.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -256,7 +257,7 @@
             // 
             // button2
             // 
-            this.button2.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.DarkRed;
             this.button2.Location = new System.Drawing.Point(872, 6);
             this.button2.Name = "button2";
@@ -270,7 +271,7 @@
             // 
             this.cbinspected.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbinspected.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbinspected.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbinspected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbinspected.FormattingEnabled = true;
             this.cbinspected.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.cbinspected.Items.AddRange(new object[] {
@@ -286,10 +287,10 @@
             // 
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.Location = new System.Drawing.Point(24, 12);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(79, 16);
+            this.label24.Size = new System.Drawing.Size(88, 16);
             this.label24.TabIndex = 91;
             this.label24.Text = "INSPECTED:";
             // 
@@ -309,17 +310,17 @@
             // 
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(24, 248);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(142, 16);
+            this.label22.Size = new System.Drawing.Size(163, 16);
             this.label22.TabIndex = 89;
             this.label22.Text = "ESTABLISHMENT TYPE:";
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(790, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(76, 29);
@@ -331,55 +332,55 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(634, 443);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(26, 16);
+            this.label17.Size = new System.Drawing.Size(27, 16);
             this.label17.TabIndex = 86;
             this.label17.Text = "I.O:";
             // 
             // txtIO
             // 
             this.txtIO.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtIO.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIO.Location = new System.Drawing.Point(687, 436);
             this.txtIO.Name = "txtIO";
-            this.txtIO.Size = new System.Drawing.Size(261, 23);
+            this.txtIO.Size = new System.Drawing.Size(261, 22);
             this.txtIO.TabIndex = 85;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(632, 414);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(30, 16);
+            this.label16.Size = new System.Drawing.Size(34, 16);
             this.label16.TabIndex = 84;
             this.label16.Text = "O.R:";
             // 
             // txtOR
             // 
             this.txtOR.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtOR.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtOR.Location = new System.Drawing.Point(688, 407);
             this.txtOR.Name = "txtOR";
-            this.txtOR.Size = new System.Drawing.Size(261, 23);
+            this.txtOR.Size = new System.Drawing.Size(261, 22);
             this.txtOR.TabIndex = 83;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(509, 79);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(92, 16);
+            this.label15.Size = new System.Drawing.Size(102, 16);
             this.label15.TabIndex = 82;
             this.label15.Text = "FSIC NUMBER:";
             // 
             // txtCONMAT
             // 
             this.txtCONMAT.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtCONMAT.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCONMAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCONMAT.Location = new System.Drawing.Point(689, 354);
             this.txtCONMAT.Multiline = true;
             this.txtCONMAT.Name = "txtCONMAT";
@@ -389,17 +390,17 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(510, 357);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(171, 16);
+            this.label14.Size = new System.Drawing.Size(198, 16);
             this.label14.TabIndex = 80;
             this.label14.Text = "CONSTRUCTION MATERIALS:";
             // 
             // txtFSI
             // 
             this.txtFSI.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFSI.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFSI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFSI.Location = new System.Drawing.Point(688, 301);
             this.txtFSI.Multiline = true;
             this.txtFSI.Name = "txtFSI";
@@ -409,17 +410,17 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(509, 304);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(162, 16);
+            this.label13.Size = new System.Drawing.Size(187, 16);
             this.label13.TabIndex = 78;
             this.label13.Text = "FIRE SAFETY INSPECTORS:";
             // 
             // txtNOV
             // 
             this.txtNOV.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtNOV.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNOV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNOV.Location = new System.Drawing.Point(688, 250);
             this.txtNOV.Multiline = true;
             this.txtNOV.Name = "txtNOV";
@@ -429,106 +430,106 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(509, 255);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 16);
+            this.label12.Size = new System.Drawing.Size(152, 16);
             this.label12.TabIndex = 76;
             this.label12.Text = "NOTES OF VIOLATION:";
             // 
             // txtFLAREA
             // 
             this.txtFLAREA.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFLAREA.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFLAREA.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFLAREA.Location = new System.Drawing.Point(687, 221);
             this.txtFLAREA.Name = "txtFLAREA";
-            this.txtFLAREA.Size = new System.Drawing.Size(261, 23);
+            this.txtFLAREA.Size = new System.Drawing.Size(261, 22);
             this.txtFLAREA.TabIndex = 75;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(509, 227);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 16);
+            this.label11.Size = new System.Drawing.Size(96, 16);
             this.label11.TabIndex = 74;
             this.label11.Text = "FLOOR AREA:";
             // 
             // txtPOROCC
             // 
             this.txtPOROCC.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtPOROCC.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPOROCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPOROCC.Location = new System.Drawing.Point(688, 192);
             this.txtPOROCC.Name = "txtPOROCC";
-            this.txtPOROCC.Size = new System.Drawing.Size(261, 23);
+            this.txtPOROCC.Size = new System.Drawing.Size(261, 22);
             this.txtPOROCC.TabIndex = 73;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(509, 192);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 16);
+            this.label10.Size = new System.Drawing.Size(144, 16);
             this.label10.TabIndex = 72;
             this.label10.Text = "PORTION OCCUPIED:";
             // 
             // txtSTONUM
             // 
             this.txtSTONUM.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtSTONUM.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSTONUM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSTONUM.Location = new System.Drawing.Point(688, 163);
             this.txtSTONUM.Name = "txtSTONUM";
-            this.txtSTONUM.Size = new System.Drawing.Size(261, 23);
+            this.txtSTONUM.Size = new System.Drawing.Size(261, 22);
             this.txtSTONUM.TabIndex = 71;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(509, 163);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 16);
+            this.label9.Size = new System.Drawing.Size(129, 16);
             this.label9.TabIndex = 70;
             this.label9.Text = "STOREY NUMBER:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(509, 137);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 16);
+            this.label8.Size = new System.Drawing.Size(155, 16);
             this.label8.TabIndex = 68;
             this.label8.Text = "TYPE OF OCCUPANCY:";
             // 
             // txtNOB
             // 
             this.txtNOB.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtNOB.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNOB.Location = new System.Drawing.Point(688, 105);
             this.txtNOB.Name = "txtNOB";
-            this.txtNOB.Size = new System.Drawing.Size(261, 23);
+            this.txtNOB.Size = new System.Drawing.Size(261, 22);
             this.txtNOB.TabIndex = 67;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(509, 106);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(140, 16);
+            this.label21.Size = new System.Drawing.Size(160, 16);
             this.label21.TabIndex = 65;
             this.label21.Text = "NATURE OF BUSINESS:";
             // 
             // txtFSIC
             // 
             this.txtFSIC.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtFSIC.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFSIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFSIC.Location = new System.Drawing.Point(688, 76);
             this.txtFSIC.Name = "txtFSIC";
-            this.txtFSIC.Size = new System.Drawing.Size(261, 23);
+            this.txtFSIC.Size = new System.Drawing.Size(261, 22);
             this.txtFSIC.TabIndex = 66;
             // 
             // cbappstatus
@@ -548,10 +549,10 @@
             // 
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.Location = new System.Drawing.Point(24, 341);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(60, 16);
+            this.label20.Size = new System.Drawing.Size(70, 16);
             this.label20.TabIndex = 33;
             this.label20.Text = "AMOUNT:";
             // 
@@ -559,10 +560,10 @@
             // 
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(24, 309);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(136, 16);
+            this.label18.Size = new System.Drawing.Size(156, 16);
             this.label18.TabIndex = 31;
             this.label18.Text = "APPLICATION STATUS:";
             // 
@@ -570,28 +571,28 @@
             // 
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.Location = new System.Drawing.Point(24, 373);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(42, 16);
+            this.label23.Size = new System.Drawing.Size(48, 16);
             this.label23.TabIndex = 30;
             this.label23.Text = "DATE:";
             // 
             // txtAMOUNT
             // 
-            this.txtAMOUNT.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAMOUNT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAMOUNT.Location = new System.Drawing.Point(196, 338);
             this.txtAMOUNT.Name = "txtAMOUNT";
-            this.txtAMOUNT.Size = new System.Drawing.Size(294, 23);
+            this.txtAMOUNT.Size = new System.Drawing.Size(294, 22);
             this.txtAMOUNT.TabIndex = 29;
             // 
             // dtpDATE
             // 
-            this.dtpDATE.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDATE.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDATE.Location = new System.Drawing.Point(196, 368);
             this.dtpDATE.Name = "dtpDATE";
-            this.dtpDATE.Size = new System.Drawing.Size(294, 23);
+            this.dtpDATE.Size = new System.Drawing.Size(294, 22);
             this.dtpDATE.TabIndex = 27;
             // 
             // cbeststatus
@@ -611,29 +612,29 @@
             // 
             // txtBIN
             // 
-            this.txtBIN.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBIN.Location = new System.Drawing.Point(196, 77);
             this.txtBIN.Name = "txtBIN";
-            this.txtBIN.Size = new System.Drawing.Size(294, 23);
+            this.txtBIN.Size = new System.Drawing.Size(294, 22);
             this.txtBIN.TabIndex = 21;
             // 
             // txtowner
             // 
             this.txtowner.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtowner.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtowner.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtowner.Location = new System.Drawing.Point(196, 217);
             this.txtowner.Name = "txtowner";
-            this.txtowner.Size = new System.Drawing.Size(294, 23);
+            this.txtowner.Size = new System.Drawing.Size(294, 22);
             this.txtowner.TabIndex = 23;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(24, 138);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 16);
+            this.label4.Size = new System.Drawing.Size(193, 16);
             this.label4.TabIndex = 22;
             this.label4.Text = "ESTABLISHMENT ADDRESS:";
             // 
@@ -641,17 +642,17 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(24, 279);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 16);
+            this.label6.Size = new System.Drawing.Size(182, 16);
             this.label6.TabIndex = 25;
             this.label6.Text = "ESTABLISHMENT STATUS:";
             // 
             // txtaddress
             // 
             this.txtaddress.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtaddress.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtaddress.Location = new System.Drawing.Point(196, 136);
             this.txtaddress.Multiline = true;
             this.txtaddress.Name = "txtaddress";
@@ -662,30 +663,30 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(24, 221);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 16);
+            this.label5.Size = new System.Drawing.Size(179, 16);
             this.label5.TabIndex = 24;
             this.label5.Text = "ESTABLISHMENT OWNER:";
             // 
             // txtname
             // 
             this.txtname.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtname.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtname.Location = new System.Drawing.Point(196, 108);
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(294, 23);
+            this.txtname.Size = new System.Drawing.Size(294, 22);
             this.txtname.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(24, 79);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 16);
+            this.label3.Size = new System.Drawing.Size(187, 16);
             this.label3.TabIndex = 18;
             this.label3.Text = "BUSINESS ID NUMBER(BIN):";
             // 
@@ -693,10 +694,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(24, 110);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 16);
+            this.label7.Size = new System.Drawing.Size(166, 16);
             this.label7.TabIndex = 19;
             this.label7.Text = "ESTABLISHMENT NAME:";
             // 
@@ -704,10 +705,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(234, 19);
+            this.label1.Size = new System.Drawing.Size(283, 20);
             this.label1.TabIndex = 11;
             this.label1.Text = "ESTABLISHMENT INFORMATION";
             // 

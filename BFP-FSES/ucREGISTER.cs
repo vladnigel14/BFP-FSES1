@@ -36,7 +36,7 @@ namespace BFP_FSES
 
                     String addRecordQuery;
 
-                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`,`est_type`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected,@est_type)";
+                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`,`est_type`,`version`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected,@est_type,@version)";
 
                     OleDbCommand addRecordCommand = new OleDbCommand(addRecordQuery,con);
                     addRecordCommand.Parameters.AddWithValue("@bin",txtBIN.Text);
@@ -63,10 +63,23 @@ namespace BFP_FSES
                     addRecordCommand.Parameters.AddWithValue("@noted_violation",txtNOV.Text);
                     addRecordCommand.Parameters.AddWithValue("@inspected", false);
                     addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
+                    addRecordCommand.Parameters.AddWithValue("@version", DateTime.Now.Year);
 
-                    addRecordCommand.ExecuteNonQuery();
-                    MessageBox.Show("Record Inserted");
-                    
+
+                    OleDbCommand addyear = new OleDbCommand("insert into tbl_year (`record_year`) values (@version)", con);
+                    addyear.Parameters.AddWithValue("@version", Convert.ToInt32(DateTime.Now.Year));
+
+                    if (addyear.ExecuteNonQuery() > 0)
+                    {
+                        if (addRecordCommand.ExecuteNonQuery() > 0)
+                        {
+                            MessageBox.Show("REGISTERED!");
+                        }
+
+                        ucMASTERLIST.Instance.loadcbx();
+
+                    }
+
 
                     con.Close();
                    
