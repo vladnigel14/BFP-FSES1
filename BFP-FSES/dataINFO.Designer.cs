@@ -150,13 +150,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(969, 687);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cboxPAID
             // 
             this.cboxPAID.AutoSize = true;
             this.cboxPAID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxPAID.Location = new System.Drawing.Point(295, 14);
+            this.cboxPAID.Location = new System.Drawing.Point(295, 10);
             this.cboxPAID.Name = "cboxPAID";
             this.cboxPAID.Size = new System.Drawing.Size(58, 20);
             this.cboxPAID.TabIndex = 103;
@@ -239,7 +239,7 @@
             this.dtpINSPECTED.Name = "dtpINSPECTED";
             this.dtpINSPECTED.Size = new System.Drawing.Size(294, 22);
             this.dtpINSPECTED.TabIndex = 96;
-            this.dtpINSPECTED.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            //this.dtpINSPECTED.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -381,10 +381,10 @@
             // 
             this.txtCONMAT.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtCONMAT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCONMAT.Location = new System.Drawing.Point(689, 354);
+            this.txtCONMAT.Location = new System.Drawing.Point(714, 354);
             this.txtCONMAT.Multiline = true;
             this.txtCONMAT.Name = "txtCONMAT";
-            this.txtCONMAT.Size = new System.Drawing.Size(261, 47);
+            this.txtCONMAT.Size = new System.Drawing.Size(236, 47);
             this.txtCONMAT.TabIndex = 81;
             // 
             // label14
@@ -401,10 +401,10 @@
             // 
             this.txtFSI.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtFSI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFSI.Location = new System.Drawing.Point(688, 301);
+            this.txtFSI.Location = new System.Drawing.Point(702, 301);
             this.txtFSI.Multiline = true;
             this.txtFSI.Name = "txtFSI";
-            this.txtFSI.Size = new System.Drawing.Size(261, 47);
+            this.txtFSI.Size = new System.Drawing.Size(247, 47);
             this.txtFSI.TabIndex = 79;
             // 
             // label13
@@ -605,26 +605,26 @@
             "INSPECTION",
             "ISSUANCE OF FSIC",
             "ISSUANCE OF NTC"});
-            this.cbeststatus.Location = new System.Drawing.Point(196, 276);
+            this.cbeststatus.Location = new System.Drawing.Point(209, 276);
             this.cbeststatus.Name = "cbeststatus";
-            this.cbeststatus.Size = new System.Drawing.Size(294, 21);
+            this.cbeststatus.Size = new System.Drawing.Size(281, 21);
             this.cbeststatus.TabIndex = 26;
             // 
             // txtBIN
             // 
             this.txtBIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBIN.Location = new System.Drawing.Point(196, 77);
+            this.txtBIN.Location = new System.Drawing.Point(217, 77);
             this.txtBIN.Name = "txtBIN";
-            this.txtBIN.Size = new System.Drawing.Size(294, 22);
+            this.txtBIN.Size = new System.Drawing.Size(273, 22);
             this.txtBIN.TabIndex = 21;
             // 
             // txtowner
             // 
             this.txtowner.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtowner.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtowner.Location = new System.Drawing.Point(196, 217);
+            this.txtowner.Location = new System.Drawing.Point(209, 217);
             this.txtowner.Name = "txtowner";
-            this.txtowner.Size = new System.Drawing.Size(294, 22);
+            this.txtowner.Size = new System.Drawing.Size(281, 22);
             this.txtowner.TabIndex = 23;
             // 
             // label4
@@ -653,10 +653,10 @@
             // 
             this.txtaddress.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress.Location = new System.Drawing.Point(196, 136);
+            this.txtaddress.Location = new System.Drawing.Point(217, 136);
             this.txtaddress.Multiline = true;
             this.txtaddress.Name = "txtaddress";
-            this.txtaddress.Size = new System.Drawing.Size(294, 77);
+            this.txtaddress.Size = new System.Drawing.Size(273, 77);
             this.txtaddress.TabIndex = 20;
             // 
             // label5

@@ -20,10 +20,6 @@ namespace BFP_FSES
             InitializeComponent();
         }
 
-        private void frmLOGIN_Load(object sender, EventArgs e)
-        {
-           
-        }
         private const int CS_DROPSHADOW = 0x00020000;
         protected override CreateParams CreateParams
         {
@@ -34,12 +30,6 @@ namespace BFP_FSES
                 return cp;
             }
         }
-
-        private void panellogo_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void panel1_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -83,6 +73,6 @@ namespace BFP_FSES
         private void button1_Click(object sender, EventArgs e)
         {
             signin();
-        }
+        }  
     }
 }

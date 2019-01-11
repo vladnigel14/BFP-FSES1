@@ -15,3 +15,8 @@ D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.ucLOADING.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.checkpoint.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.frmLOGIN.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\Interop.Microsoft.Office.Core.dll
+D:\BFP-FSES\BFP-FSES\bin\Debug\Bunifu_UI_v1.4.dll
+D:\BFP-FSES\BFP-FSES\bin\Debug\BFP-FSES.exe.manifest
+D:\BFP-FSES\BFP-FSES\bin\Debug\BFP-FSES.application
+D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.exe.manifest
+D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.application

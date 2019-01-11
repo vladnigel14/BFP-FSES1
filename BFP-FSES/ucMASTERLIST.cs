@@ -68,7 +68,7 @@ namespace BFP_FSES
 
             int year = Convert.ToInt32(DateTime.Now.Year.ToString());
 
-            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION,`id` as ID  from record where version=year";
+            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=year";
            OleDbCommand y = new OleDbCommand(query1,con);
            y.Parameters.AddWithValue("@year",sentyear);
            OleDbDataAdapter latest = new OleDbDataAdapter(y);
@@ -140,14 +140,22 @@ namespace BFP_FSES
 
         private void txtSEARCH_TextChanged(object sender, EventArgs e)
         {
-            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION,`id` as ID  from record where `version`=@year and est_name like '%" + txtSEARCH.Text + "%'";
-            OleDbCommand cmd = new OleDbCommand(query1, con);
-            cmd.Parameters.AddWithValue("@year",Convert.ToInt32(comboBox2.Text));
-            OleDbDataAdapter x = new OleDbDataAdapter(cmd);
-            
-            DataTable dt = new DataTable();
-            x.Fill(dt);
-            dataGRID.DataSource = dt;
+            try
+            {
+                String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION,`id` as ID  from record where `version`=@year and est_name like '%" + txtSEARCH.Text + "%'";
+                OleDbCommand cmd = new OleDbCommand(query1, con);
+                cmd.Parameters.AddWithValue("@year", Convert.ToInt32(comboBox2.Text));
+                OleDbDataAdapter x = new OleDbDataAdapter(cmd);
+
+                DataTable dt = new DataTable();
+                x.Fill(dt);
+                dataGRID.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+
+            }
+           
         }
 
         private void txtSEARCH_Click(object sender, EventArgs e)
@@ -374,14 +382,18 @@ namespace BFP_FSES
             
         }
 
-        private void dataGRID_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=@year and _month=@month";
+            OleDbCommand n = new OleDbCommand(query1,con);
+            n.Parameters.AddWithValue("@year",comboBox2.Text);
+            n.Parameters.AddWithValue("@month", comboBox1.Text);
+            OleDbDataAdapter m = new OleDbDataAdapter(n);
+            DataTable l = new DataTable();
+            m.Fill(l);
+            ucMASTERLIST.Instance.dataGRID.DataSource = l;
+       
         }
 
-       
-
-        
-        
     }
 }

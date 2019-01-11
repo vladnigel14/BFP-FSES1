@@ -36,7 +36,7 @@ namespace BFP_FSES
 
                     String addRecordQuery;
 
-                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`,`est_type`,`version`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected,@est_type,@version)";
+                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`,`est_type`,`version`,`_month`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected,@est_type,@version,@_month)";
 
                     OleDbCommand addRecordCommand = new OleDbCommand(addRecordQuery,con);
                     addRecordCommand.Parameters.AddWithValue("@bin",txtBIN.Text);
@@ -64,6 +64,7 @@ namespace BFP_FSES
                     addRecordCommand.Parameters.AddWithValue("@inspected", false);
                     addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
                     addRecordCommand.Parameters.AddWithValue("@version", DateTime.Now.Year);
+                    addRecordCommand.Parameters.AddWithValue("@est_type", cmbmonth.Text);
 
 
                     OleDbCommand yr = new OleDbCommand("select count(*) from tbl_year where record_year=@ryr", con);
@@ -72,9 +73,6 @@ namespace BFP_FSES
 
                     if (count <= 0)
                     {
-
-
-
 
 
                         OleDbCommand addyear = new OleDbCommand("insert into tbl_year (`record_year`) values (@version)", con);
@@ -103,14 +101,7 @@ namespace BFP_FSES
                     }
 
 
-                    con.Close();
-                   
-            
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
+                    con.Close();           
         }
 
         private void kD(object sender, KeyEventArgs e)
@@ -123,24 +114,12 @@ namespace BFP_FSES
             e.SuppressKeyPress = true;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ucREGISTER_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (comboBox1.Text == "ADD NEW TYPE")
             {
                 comboBox1.Text = null;
             }
-
-
         }
 
         private void entere(object sender, KeyEventArgs e)
@@ -176,6 +155,6 @@ namespace BFP_FSES
             ucREGISTER.Instance.comboBox1.ValueMember = "ID";
             ucREGISTER.Instance.comboBox1.DataSource = ds.Tables[0];
            
-        }  
+        }
     }
 }

@@ -82,12 +82,6 @@ namespace BFP_FSES
 
             if (cboxPAID.Checked && x!=true)
             {
-                //duplicate record
-
-                //string query = "CREATE TEMPORARY TABLE temp_table ENGINE=MEMORY;SELECT * FROM record where 1;update temp_table set id=null;insert into record select * from temp_table;drop table temp_table;";
-                //OleDbCommand x = new OleDbCommand(query,con);
-                //x.ExecuteNonQuery();
-
                 String query = "insert into record  (`bin`,`est_name`,`est_address`, `est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`, `nature_of_business`,`occupancy_type`,`safety_inspectors`, `cons_materials`, `storey_no`,`portion_occupied`, `floor_area`, `noted_violation`,`inspected`,`est_type`,`paid`,`version`) values (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected, @est_type ,@paid,@version)";
 
 
@@ -151,44 +145,22 @@ namespace BFP_FSES
 
                     }
                 }
-
-
-                
-
-               
-
-
-
             }
 
             pictureBox1.Visible = true;
-
-           
-            
             ot.Interval = 1250;
             ot.Start();
             ot.Tick += new EventHandler(ot_Tick);
 
             con.Close();
 
-            ucMASTERLIST.Instance.loadYearData(sync);
-            
+            ucMASTERLIST.Instance.loadYearData(sync);   
         }
 
         void ot_Tick(object sender, EventArgs e)
         {
             ot.Stop();
             pictureBox1.Visible = false;
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void cboxPAID_CheckedChanged(object sender, EventArgs e)
@@ -204,11 +176,6 @@ namespace BFP_FSES
                 cboxPAID.CheckState = CheckState.Checked;
             
             }
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
