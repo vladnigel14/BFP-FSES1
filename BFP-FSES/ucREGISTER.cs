@@ -36,7 +36,7 @@ namespace BFP_FSES
 
                     String addRecordQuery;
 
-                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`,`est_type`,`version`,`_month`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected,@est_type,@version,@_month)";
+                    addRecordQuery = "INSERT INTO record (`bin`,`est_name`,`est_address`,`est_owner`,`est_status`,`fsic_exp_date`,`date_issued`,`fsic_number`,`status_of_application`,`amount`,`or`,`_date`,`io_number`,`date_inspected`,`nature_of_business`,`occupancy_type`,`safety_inspectors`,`cons_materials`,`storey_no`,`portion_occupied`,`floor_area`,`noted_violation`,`inspected`,`est_type`,`version`) VALUES (@bin,@est_name,@est_address,@est_owner,@est_status,@fsic_exp_date,@date_issued,@fsic_number,@status_of_application,@amount,@or,@_date,@io_number,@date_inspected,@nature_of_business,@occupancy_type,@safety_inspectors,@cons_materials,@storey_no,@portion_occupied,@floor_area,@noted_violation,@inspected,@est_type,@version)";
 
                     OleDbCommand addRecordCommand = new OleDbCommand(addRecordQuery,con);
                     addRecordCommand.Parameters.AddWithValue("@bin",txtBIN.Text);
@@ -64,7 +64,7 @@ namespace BFP_FSES
                     addRecordCommand.Parameters.AddWithValue("@inspected", false);
                     addRecordCommand.Parameters.AddWithValue("@est_type", comboBox1.Text);
                     addRecordCommand.Parameters.AddWithValue("@version", DateTime.Now.Year);
-                    addRecordCommand.Parameters.AddWithValue("@est_type", cmbmonth.Text);
+                    
 
 
                     OleDbCommand yr = new OleDbCommand("select count(*) from tbl_year where record_year=@ryr", con);

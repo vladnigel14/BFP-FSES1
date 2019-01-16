@@ -83,6 +83,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.cmbmonth1 = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +93,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cmbmonth1);
+            this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.cboxPAID);
             this.panel1.Controls.Add(this.cbOCCTYPE);
             this.panel1.Controls.Add(this.label26);
@@ -150,13 +154,12 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(969, 687);
             this.panel1.TabIndex = 0;
-            //this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cboxPAID
             // 
             this.cboxPAID.AutoSize = true;
             this.cboxPAID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxPAID.Location = new System.Drawing.Point(295, 10);
+            this.cboxPAID.Location = new System.Drawing.Point(595, 12);
             this.cboxPAID.Name = "cboxPAID";
             this.cboxPAID.Size = new System.Drawing.Size(58, 20);
             this.cboxPAID.TabIndex = 103;
@@ -239,7 +242,6 @@
             this.dtpINSPECTED.Name = "dtpINSPECTED";
             this.dtpINSPECTED.Size = new System.Drawing.Size(294, 22);
             this.dtpINSPECTED.TabIndex = 96;
-            //this.dtpINSPECTED.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -277,7 +279,7 @@
             this.cbinspected.Items.AddRange(new object[] {
             "YES",
             "NO"});
-            this.cbinspected.Location = new System.Drawing.Point(105, 11);
+            this.cbinspected.Location = new System.Drawing.Point(110, 11);
             this.cbinspected.Name = "cbinspected";
             this.cbinspected.Size = new System.Drawing.Size(165, 21);
             this.cbinspected.TabIndex = 92;
@@ -724,6 +726,42 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
+            // cmbmonth1
+            // 
+            this.cmbmonth1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbmonth1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbmonth1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbmonth1.FormattingEnabled = true;
+            this.cmbmonth1.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.cmbmonth1.Items.AddRange(new object[] {
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
+            this.cmbmonth1.Location = new System.Drawing.Point(355, 12);
+            this.cmbmonth1.Name = "cmbmonth1";
+            this.cmbmonth1.Size = new System.Drawing.Size(165, 21);
+            this.cmbmonth1.TabIndex = 105;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(289, 15);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(61, 16);
+            this.label19.TabIndex = 104;
+            this.label19.Text = "MONTH:";
+            // 
             // dataINFO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -799,6 +837,8 @@
         public System.Windows.Forms.DateTimePicker dtpISSUED;
         public System.Windows.Forms.ComboBox cbOCCTYPE;
         public System.Windows.Forms.CheckBox cboxPAID;
+        public System.Windows.Forms.ComboBox cmbmonth1;
+        private System.Windows.Forms.Label label19;
 
     }
 }

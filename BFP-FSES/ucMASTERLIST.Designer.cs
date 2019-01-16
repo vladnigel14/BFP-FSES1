@@ -42,6 +42,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGRID)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -52,6 +53,8 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGRID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGRID.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGRID.BackgroundColor = System.Drawing.Color.White;
@@ -73,7 +76,6 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGRID.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGRID.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGRID.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGRID.Location = new System.Drawing.Point(0, 91);
             this.dataGRID.Name = "dataGRID";
@@ -82,16 +84,19 @@
             this.dataGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGRID.Size = new System.Drawing.Size(1129, 671);
             this.dataGRID.TabIndex = 1;
+            this.dataGRID.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.autosize);
+            this.dataGRID.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.numbering);
             this.dataGRID.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.binded);
             this.dataGRID.DoubleClick += new System.EventHandler(this.dataGRID_DoubleClick);
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(55)))), ((int)(((byte)(70)))));
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.comboBox2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1129, 32);
@@ -154,9 +159,9 @@
             this.panel2.Controls.Add(this.txtSEARCH);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(721, 23);
+            this.panel2.Location = new System.Drawing.Point(332, 21);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(407, 29);
+            this.panel2.Size = new System.Drawing.Size(248, 29);
             this.panel2.TabIndex = 5;
             // 
             // txtSEARCH
@@ -167,7 +172,7 @@
             this.txtSEARCH.Location = new System.Drawing.Point(34, 3);
             this.txtSEARCH.Multiline = true;
             this.txtSEARCH.Name = "txtSEARCH";
-            this.txtSEARCH.Size = new System.Drawing.Size(371, 24);
+            this.txtSEARCH.Size = new System.Drawing.Size(212, 24);
             this.txtSEARCH.TabIndex = 2;
             this.txtSEARCH.Text = "Search";
             this.txtSEARCH.Click += new System.EventHandler(this.txtSEARCH_Click);
@@ -178,7 +183,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(34, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(371, 3);
+            this.panel4.Size = new System.Drawing.Size(212, 3);
             this.panel4.TabIndex = 1;
             // 
             // panel3
@@ -204,11 +209,24 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(167, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 30);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "PRINT";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // ucMASTERLIST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -237,5 +255,6 @@
         public System.Windows.Forms.DataGridView dataGRID;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

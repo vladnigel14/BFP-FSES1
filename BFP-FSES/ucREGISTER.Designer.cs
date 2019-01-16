@@ -76,8 +76,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtFSIC = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.button1 = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.cmbmonth = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -263,8 +261,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cmbmonth);
-            this.groupBox2.Controls.Add(this.label22);
             this.groupBox2.Controls.Add(this.cbappstatus);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Controls.Add(this.label19);
@@ -276,7 +272,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(33, 450);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(541, 218);
+            this.groupBox2.Size = new System.Drawing.Size(541, 177);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "STATUS";
@@ -624,40 +620,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(25, 158);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(53, 16);
-            this.label22.TabIndex = 23;
-            this.label22.Text = "MONTH:";
-            // 
-            // cmbmonth
-            // 
-            this.cmbmonth.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbmonth.FormattingEnabled = true;
-            this.cmbmonth.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.cmbmonth.Items.AddRange(new object[] {
-            "January",
-            "February",
-            "March",
-            "April",
-            "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December"});
-            this.cmbmonth.Location = new System.Drawing.Point(197, 155);
-            this.cmbmonth.Name = "cmbmonth";
-            this.cmbmonth.Size = new System.Drawing.Size(319, 24);
-            this.cmbmonth.TabIndex = 20;
-            // 
             // ucREGISTER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -734,7 +696,5 @@
         private System.Windows.Forms.Label label21;
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox txtOID;
-        public System.Windows.Forms.ComboBox cmbmonth;
-        private System.Windows.Forms.Label label22;
     }
 }

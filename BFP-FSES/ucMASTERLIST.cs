@@ -33,18 +33,17 @@ namespace BFP_FSES
 
         private void ucMASTERLIST_Load(object sender, EventArgs e)
         {
-
-           
             
-           
             popME();
             RowsColor();
+
             foreach (DataGridViewColumn dgvc in dataGRID.Columns)
             {
                 dgvc.SortMode = DataGridViewColumnSortMode.NotSortable;
-            }   
+            }    
         }
 
+   
 
         public void loadcbx()
         {
@@ -59,10 +58,6 @@ namespace BFP_FSES
 
         public void loadYearData(int sentyear)
         {
-            
-
-            
-            
 
             //load records per year
 
@@ -76,8 +71,6 @@ namespace BFP_FSES
            latest.Fill(dt);
            ucMASTERLIST.Instance.dataGRID.DataSource = dt;
 
-           
-
         }
         public void showData()
         {
@@ -87,8 +80,6 @@ namespace BFP_FSES
             DataTable dt = new DataTable();
             x.Fill(dt);
             dataGRID.DataSource = dt;
-          
-
         }
 
         public void RowsColor()
@@ -203,13 +194,7 @@ namespace BFP_FSES
             Boolean cbi = Convert.ToBoolean(dataGRID.Rows[row].Cells[22].Value.ToString());
             Boolean paid = Convert.ToBoolean(dataGRID.Rows[row].Cells[24].Value.ToString());
             string version = dataGRID.Rows[row].Cells[25].Value.ToString();
-            string id = dataGRID.Rows[row].Cells[26].Value.ToString();
-           
-            //Boolean paid = true;
-            //MessageBox.Show(dataGRID.Rows[row].Cells[23].Value.ToString());
-            
-           // MessageBox.Show(dataGRID.Rows[row].Cells[23].Value.ToString());
-            //Boolean cbi = true;
+            string id = dataGRID.Rows[row].Cells[27].Value.ToString();
 
             dataINFO info = new dataINFO();
             info.txtFSIC.Text = fsic;
@@ -239,7 +224,7 @@ namespace BFP_FSES
             info.x = paid;
             info.version = version;
             info.sync = Convert.ToInt32(comboBox2.Text);
-            info.id = id;
+            info.id = Convert.ToInt32(id);
 
 
             if (paid)
@@ -269,8 +254,6 @@ namespace BFP_FSES
         {
            
         }
-
-        
 
         private void binded(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -331,9 +314,6 @@ namespace BFP_FSES
                 Excel.Range firstCell = row.Cells[23];
 
                // String y = firstCell.Value as String;
-
-
-
                 if (count>0)
                 {
                     if (Boolean.Parse(firstCell.Value.ToString()))
@@ -348,7 +328,6 @@ namespace BFP_FSES
 
                 count++;
             }
-
 
             application.DisplayAlerts = false;
 
@@ -374,17 +353,14 @@ namespace BFP_FSES
 
         }
 
-       
-
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ucMASTERLIST.Instance.loadYearData(Convert.ToInt32(comboBox2.Text));
-            
+            ucMASTERLIST.Instance.loadYearData(Convert.ToInt32(comboBox2.Text));           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=@year and _month=@month";
+            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where `version`=@year and `_month`=@month";
             OleDbCommand n = new OleDbCommand(query1,con);
             n.Parameters.AddWithValue("@year",comboBox2.Text);
             n.Parameters.AddWithValue("@month", comboBox1.Text);
@@ -395,5 +371,46 @@ namespace BFP_FSES
        
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //print mechanism
+            printMyExcelFile();
+        }
+        private void printMyExcelFile()
+        {
+            Excel.Application application = new Excel.Application();
+            Excel.Workbook workbook1 = application.Workbooks.Open("D:\\MasterList.xlsx");
+            Excel.Worksheet worksheet1 = workbook1.ActiveSheet;
+
+            try
+            {
+                //var print = application.ActivePrinter;
+                //var work = workbook1;
+                //printMyExcelFile();
+
+        worksheet1.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing, 
+        Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            }
+            catch 
+            { 
+            }
+            application.Quit();
+        }
+
+        private void autosize(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
+        {
+            DataGridViewColumn column = dataGRID.Columns[2];
+            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        }
+
+        private void numbering(object sender, DataGridViewColumnEventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGRID.Rows)
+            {
+                row.HeaderCell.Value = row.Index + 1;
+            }
+
+            dataGRID.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+        }
     }
 }
