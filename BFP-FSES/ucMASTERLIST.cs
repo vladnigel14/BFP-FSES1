@@ -32,19 +32,14 @@ namespace BFP_FSES
         }
 
         private void ucMASTERLIST_Load(object sender, EventArgs e)
-        {
-            
+        {        
             popME();
             RowsColor();
-
             foreach (DataGridViewColumn dgvc in dataGRID.Columns)
             {
                 dgvc.SortMode = DataGridViewColumnSortMode.NotSortable;
             }    
         }
-
-   
-
         public void loadcbx()
         {
             String query = "SELECT * from tbl_year";
@@ -58,18 +53,18 @@ namespace BFP_FSES
 
         public void loadYearData(int sentyear)
         {
+           //load records per year
+           int year = Convert.ToInt32(DateTime.Now.Year.ToString());
 
-            //load records per year
-
-            int year = Convert.ToInt32(DateTime.Now.Year.ToString());
-
-            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=year";
+           String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=year";
            OleDbCommand y = new OleDbCommand(query1,con);
            y.Parameters.AddWithValue("@year",sentyear);
            OleDbDataAdapter latest = new OleDbDataAdapter(y);
            DataTable dt = new DataTable();
            latest.Fill(dt);
-           ucMASTERLIST.Instance.dataGRID.DataSource = dt;
+           DataView dview = new DataView();
+           ucMASTERLIST.Instance.dataGRID.DataSource = dview;
+           //ucMASTERLIST.Instance.dataGRID.DataSource = dt;
 
         }
         public void showData()
@@ -81,7 +76,6 @@ namespace BFP_FSES
             x.Fill(dt);
             dataGRID.DataSource = dt;
         }
-
         public void RowsColor()
         {
             Timer y = new Timer();
@@ -89,7 +83,6 @@ namespace BFP_FSES
             y.Start();
             y.Tick+=new EventHandler(y_Tick);
         }
-
         void y_Tick(Object sender, EventArgs e)
         {
             for (int i = 0; i < dataGRID.Rows.Count - 1; i++)
@@ -101,9 +94,7 @@ namespace BFP_FSES
                     if (status == true)
                     {
                         dataGRID.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(169, 223, 191);
-
                     }
-
                     else
                     {
                         dataGRID.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb (249, 231, 159);
@@ -142,11 +133,9 @@ namespace BFP_FSES
                 x.Fill(dt);
                 dataGRID.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
-           
         }
 
         private void txtSEARCH_Click(object sender, EventArgs e)
@@ -164,8 +153,6 @@ namespace BFP_FSES
 
         private void dataGRID_DoubleClick(object sender, EventArgs e)
         {
-
-
             int row = dataGRID.SelectedRows[0].Index;
 
             String fsic = dataGRID.Rows[row].Cells[0].Value.ToString();
@@ -226,7 +213,6 @@ namespace BFP_FSES
             info.sync = Convert.ToInt32(comboBox2.Text);
             info.id = Convert.ToInt32(id);
 
-
             if (paid)
             {
                 info.cboxPAID.CheckState = CheckState.Checked;
@@ -237,7 +223,6 @@ namespace BFP_FSES
                 info.cboxPAID.CheckState=CheckState.Unchecked;
             }
             
-
             String query = "SELECT * FROM e_type";
             OleDbDataAdapter u = new OleDbDataAdapter(query, con);
             DataSet ds = new DataSet();
@@ -245,14 +230,7 @@ namespace BFP_FSES
             info.comboBox1.DisplayMember = "title";
             info.comboBox1.ValueMember = "ID";
             info.comboBox1.DataSource = ds.Tables[0];
-           
-
             info.ShowDialog();
-        }
-
-        private void popCom()
-        {
-           
         }
 
         private void binded(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -262,7 +240,7 @@ namespace BFP_FSES
 
         private void button3_Click(object sender, EventArgs e)
         {
-             // creating Excel Application  
+            // creating Excel Application  
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
             // creating new WorkBook within Excel application  
             Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
@@ -287,30 +265,23 @@ namespace BFP_FSES
                 for (int j = 0; j < dataGRID.Columns.Count; j++)
                 {
                     worksheet.Cells[i + 2, j + 1] = dataGRID.Rows[i].Cells[j].Value.ToString();
-
                 }
             }
-
             // save the application  
             app.DisplayAlerts = false;
             workbook.SaveAs("D:\\MasterList.xlsx");
             app.Quit();
 
-    //        //REOPEN AND RECOLOR
-
+            //REOPEN AND RECOLOR
             Excel.Application application = new Excel.Application();
             Excel.Workbook workbook1 = application.Workbooks.Open("D:\\MasterList.xlsx");
             Excel.Worksheet worksheet1 = workbook1.ActiveSheet;
-
             Excel.Range usedRange = worksheet1.UsedRange;
-
             Excel.Range rows = usedRange.Rows;
 
             int count = 0;
-
             foreach (Excel.Range row in rows)
             {
-
                 Excel.Range firstCell = row.Cells[23];
 
                // String y = firstCell.Value as String;
@@ -325,22 +296,22 @@ namespace BFP_FSES
                         row.Interior.Color = Color.FromArgb(249,231,159);
                     }
                 }
-
                 count++;
             }
-
             application.DisplayAlerts = false;
-
+            worksheet1.Columns.AutoFit();
+            worksheet1.Rows.AutoFit();
+            worksheet1.Cells[28,Type.Missing].EntireColumn.Delete(null);
+            //worksheet1.Columns.Delete(26);
+            worksheet1.PageSetup.CenterHeader = "2019 Masterlist - Bureau of Fire Protection";
             workbook1.Save();
             application.Quit();
 
             AfterSaved execute = new AfterSaved();
             execute.ShowDialog();
 
-            // Exit from the application  
-           
+            // Exit from the application
         }
-
         private void popME()
         {
             //String query = "SELECT * FROM e_type";
@@ -370,7 +341,6 @@ namespace BFP_FSES
             ucMASTERLIST.Instance.dataGRID.DataSource = l;
        
         }
-
         private void button1_Click_1(object sender, EventArgs e)
         {
             //print mechanism
@@ -381,13 +351,13 @@ namespace BFP_FSES
             Excel.Application application = new Excel.Application();
             Excel.Workbook workbook1 = application.Workbooks.Open("D:\\MasterList.xlsx");
             Excel.Worksheet worksheet1 = workbook1.ActiveSheet;
-
             try
             {
                 //var print = application.ActivePrinter;
                 //var work = workbook1;
                 //printMyExcelFile();
 
+        worksheet1.PageSetup.Orientation = Excel.XlPageOrientation.xlLandscape;
         worksheet1.PrintOut(Type.Missing, Type.Missing, Type.Missing, Type.Missing, 
         Type.Missing, Type.Missing, Type.Missing, Type.Missing);
             }
@@ -401,15 +371,16 @@ namespace BFP_FSES
         {
             DataGridViewColumn column = dataGRID.Columns[2];
             column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+           // column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        private void numbering(object sender, DataGridViewColumnEventArgs e)
+        private void numbering(object sender, DataGridViewRowsAddedEventArgs e)
         {
+
             foreach (DataGridViewRow row in dataGRID.Rows)
             {
                 row.HeaderCell.Value = row.Index + 1;
             }
-
             dataGRID.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
         }
     }
