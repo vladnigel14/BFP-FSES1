@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using Excel = Microsoft.Office.Interop.Excel;
+using TR = System.Threading;
 
 
 namespace BFP_FSES
@@ -16,6 +17,11 @@ namespace BFP_FSES
     {
         OleDbConnection con = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\\BFP-FSES\\BFP-FSES.accdb;Persist Security Info=False;");
         public static ucMASTERLIST _instance;
+        public Boolean busy = false;
+        public Loading load = new Loading();
+        public TR.Thread tr;
+
+       
         Timer x = new Timer();
         public static ucMASTERLIST Instance
         {
@@ -32,8 +38,19 @@ namespace BFP_FSES
         }
 
         private void ucMASTERLIST_Load(object sender, EventArgs e)
-        {        
-            popME();
+        {
+
+
+
+            CheckForIllegalCrossThreadCalls = false;
+
+            TR.Thread popper = new TR.Thread(new TR.ThreadStart(this.popME));
+            popper.Start();
+
+            TR.Thread rowscol = new TR.Thread(new TR.ThreadStart(this.RowsColor));
+            rowscol.Start();
+
+            
             
             RowsColor();
             foreach (DataGridViewColumn dgvc in dataGRID.Columns)
@@ -41,6 +58,33 @@ namespace BFP_FSES
                 dgvc.SortMode = DataGridViewColumnSortMode.NotSortable;
             }    
         }
+
+        public void threader()
+        {
+             tr = new TR.Thread(new TR.ThreadStart(this.runAnimation));
+            tr.Start();
+        }
+
+       
+
+        public void runAnimation()
+        {
+           
+           
+
+                
+         
+                if (busy)
+                {
+                    load.ShowDialog();
+                }
+                else
+                {
+                    load.Close();
+                }
+            
+        }
+
         public void loadcbx()
         {
             String query = "SELECT * from tbl_year";
@@ -52,19 +96,29 @@ namespace BFP_FSES
             ucMASTERLIST.Instance.comboBox2.DataSource = ds.Tables[0];
         }
 
+        public void lyr(int sentyear)
+        {
+
+        }
+
         public void loadYearData(int sentyear)
         {
            //load records per year
-           int year = Convert.ToInt32(DateTime.Now.Year.ToString());
+            busy = true;
+            threader();
 
-           String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=year";
-           OleDbCommand y = new OleDbCommand(query1,con);
-           y.Parameters.AddWithValue("@year",sentyear);
-           OleDbDataAdapter latest = new OleDbDataAdapter(y);
-           DataTable dt = new DataTable();
-           latest.Fill(dt);
-           DataView dview = new DataView();
-           ucMASTERLIST.Instance.dataGRID.DataSource = dview;
+            int year = Convert.ToInt32(DateTime.Now.Year.ToString());
+
+            String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=year";
+            OleDbCommand y = new OleDbCommand(query1, con);
+            y.Parameters.AddWithValue("@year", sentyear);
+            OleDbDataAdapter latest = new OleDbDataAdapter(y);
+            DataSet dt = new DataSet();
+            latest.Fill(dt);
+
+            ucMASTERLIST.Instance.dataGRID.DataSource = dt.Tables[0];
+
+           load.Close();
            //ucMASTERLIST.Instance.dataGRID.DataSource = dt;
 
         }
@@ -125,6 +179,9 @@ namespace BFP_FSES
         {
             try
             {
+                busy = true;
+                threader();
+
                 String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION,`id` as ID  from record where `version`=@year and est_name like '%" + txtSEARCH.Text + "%'";
                 OleDbCommand cmd = new OleDbCommand(query1, con);
                 cmd.Parameters.AddWithValue("@year", Convert.ToInt32(comboBox2.Text));
@@ -133,9 +190,12 @@ namespace BFP_FSES
                 DataTable dt = new DataTable();
                 x.Fill(dt);
                 dataGRID.DataSource = dt;
+
+                load.Close();
             }
             catch (Exception)
             {
+                busy = false;
             }
         }
 
@@ -327,11 +387,15 @@ namespace BFP_FSES
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ucMASTERLIST.Instance.loadYearData(Convert.ToInt32(comboBox2.Text));           
+            
+            ucMASTERLIST.Instance.loadYearData(Convert.ToInt32(comboBox2.Text));
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            busy = true;
+            threader();
             String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where `version`=@year and `_month`=@month";
             OleDbCommand n = new OleDbCommand(query1,con);
             n.Parameters.AddWithValue("@year",comboBox2.Text);
@@ -340,6 +404,7 @@ namespace BFP_FSES
             DataTable l = new DataTable();
             m.Fill(l);
             ucMASTERLIST.Instance.dataGRID.DataSource = l;
+            load.Close();
        
         }
         private void button1_Click_1(object sender, EventArgs e)
