@@ -126,13 +126,18 @@ namespace BFP_FSES
         }
         private void popCom()
         {
-            String query = "SELECT * FROM e_type";
+            String query = "SELECT est_type FROM record";
             OleDbDataAdapter u = new OleDbDataAdapter(query, con);
             DataSet ds = new DataSet();
             u.Fill(ds);
-            ucREGISTER.Instance.comboBox1.DisplayMember = "title";
+            ucREGISTER.Instance.comboBox1.DisplayMember = "est_type";
             ucREGISTER.Instance.comboBox1.ValueMember = "ID";
             ucREGISTER.Instance.comboBox1.DataSource = ds.Tables[0];
+        }
+
+        private void ucREGISTER_Load(object sender, EventArgs e)
+        {
+            CheckForIllegalCrossThreadCalls = false;
         }
     }
 }

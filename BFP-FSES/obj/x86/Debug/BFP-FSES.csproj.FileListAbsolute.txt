@@ -1,10 +1,8 @@
-D:\BFP-FSES\BFP-FSES\obj\x86\Debug\Interop.Microsoft.Office.Core.dll
-D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.csproj.ResolveComReference.cache
 D:\BFP-FSES\BFP-FSES\bin\Debug\BFP-FSES.exe.manifest
 D:\BFP-FSES\BFP-FSES\bin\Debug\BFP-FSES.application
 D:\BFP-FSES\BFP-FSES\bin\Debug\BFP-FSES.exe
 D:\BFP-FSES\BFP-FSES\bin\Debug\BFP-FSES.pdb
-D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.csprojResolveAssemblyReference.cache
+D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.csproj.ResolveComReference.cache
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.AfterSaved.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.checkpoint.resources
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.CROSSCHECKER.resources
@@ -22,3 +20,5 @@ D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.exe.manifest
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.application
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.exe
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.pdb
+D:\BFP-FSES\BFP-FSES\bin\Debug\Bunifu_UI_v1.4.dll
+D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.csprojResolveAssemblyReference.cache

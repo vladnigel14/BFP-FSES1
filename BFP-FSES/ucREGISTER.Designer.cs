@@ -635,6 +635,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ucREGISTER";
             this.Size = new System.Drawing.Size(1128, 708);
+            this.Load += new System.EventHandler(this.ucREGISTER_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

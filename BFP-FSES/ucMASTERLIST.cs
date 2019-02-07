@@ -92,7 +92,7 @@ namespace BFP_FSES
             DataSet ds = new DataSet();
             load.Fill(ds);
             ucMASTERLIST.Instance.comboBox2.DisplayMember = "record_year";
-            ucMASTERLIST.Instance.comboBox2.ValueMember = "id";
+            ucMASTERLIST.Instance.comboBox2.ValueMember = "ID";
             ucMASTERLIST.Instance.comboBox2.DataSource = ds.Tables[0];
         }
 
@@ -365,13 +365,15 @@ namespace BFP_FSES
         }
         private void popME()
         {
-            String query = "SELECT * FROM e_type";
+            String query = "SELECT  ID,est_type FROM record";
+            con.Open(); 
             OleDbDataAdapter u = new OleDbDataAdapter(query, con);
             DataSet ds = new DataSet();
             u.Fill(ds);
-            ucMASTERLIST.Instance.sort.DisplayMember = "title";
+            ucMASTERLIST.Instance.sort.DisplayMember = "est_type";
             ucMASTERLIST.Instance.sort.ValueMember = "ID";
             ucMASTERLIST.Instance.sort.DataSource = ds.Tables[0];
+            con.Close();
 
         }
 
@@ -450,10 +452,37 @@ namespace BFP_FSES
 
         private void oya(object sender, KeyEventArgs e)
         {
-            
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    busy = true;
+                    threader();
+
+                    String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION,`id` as ID  from record where `version`=@year and est_name like '%" + txtSEARCH.Text + "%'";
+                    OleDbCommand cmd = new OleDbCommand(query1, con);
+                    cmd.Parameters.AddWithValue("@year", Convert.ToInt32(comboBox2.Text));
+                    OleDbDataAdapter x = new OleDbDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+                    x.Fill(dt);
+                    dataGRID.DataSource = dt;
+
+                    load.Close();
+                }
+                catch (Exception)
+                {
+                    busy = false;
+                }
+            }
         }
 
         private void dataGRID_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void sort_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
