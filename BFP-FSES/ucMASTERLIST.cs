@@ -111,12 +111,19 @@ namespace BFP_FSES
 
             String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION, `_month` as `MONTH` ,`id` as ID  from record where version=year";
             OleDbCommand y = new OleDbCommand(query1, con);
+
             y.Parameters.AddWithValue("@year", sentyear);
             OleDbDataAdapter latest = new OleDbDataAdapter(y);
+
             DataSet dt = new DataSet();
             latest.Fill(dt);
 
+
+            //ucMASTERLIST.Instance.dataGRID.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            //ucMASTERLIST.Instance.dataGRID.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+
             ucMASTERLIST.Instance.dataGRID.DataSource = dt.Tables[0];
+
 
            load.Close();
            //ucMASTERLIST.Instance.dataGRID.DataSource = dt;
@@ -177,26 +184,7 @@ namespace BFP_FSES
 
         private void txtSEARCH_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                busy = true;
-                threader();
-
-                String query1 = "Select `fsic_number` as `FSIC NUMBER`,`bin` as BIN,`est_name` as  `ESTABLISHMENT NAME`,`est_address` as ADDRESS,`est_owner` as OWNER, `est_status` as STATUS,`fsic_exp_date` as `FSIC EXP DATE`,`date_issued` as `DATE ISSUE`, `status_of_application` as `STATUS OF APPLICATION`, `amount` as `AMOUNT`, `or` as `OR`, `_date` as `DATE`,  `io_number` as `IO`, `date_inspected` as `DATE INSPECTED`,`nature_of_business` as `NATURE OF BUSINESS`, `occupancy_type` as OCCUPANCY, `safety_inspectors` as INSPECTORS, `cons_materials` as `MATERIALS`, `storey_no` as STOREY, `portion_occupied` as `PORTION OCCUPIED`, `floor_area` as `FLOOR AREA`, `noted_violation` as VIOLATION, `inspected` as INSPECTED, `est_type` as TYPE, `paid` as PAID,`version` as VERSION,`id` as ID  from record where `version`=@year and est_name like '%" + txtSEARCH.Text + "%'";
-                OleDbCommand cmd = new OleDbCommand(query1, con);
-                cmd.Parameters.AddWithValue("@year", Convert.ToInt32(comboBox2.Text));
-                OleDbDataAdapter x = new OleDbDataAdapter(cmd);
-
-                DataTable dt = new DataTable();
-                x.Fill(dt);
-                dataGRID.DataSource = dt;
-
-                load.Close();
-            }
-            catch (Exception)
-            {
-                busy = false;
-            }
+           
         }
 
         private void txtSEARCH_Click(object sender, EventArgs e)
@@ -297,6 +285,8 @@ namespace BFP_FSES
         private void binded(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             dataGRID.ClearSelection();
+            ucMASTERLIST.Instance.dataGRID.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            ucMASTERLIST.Instance.dataGRID.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -435,9 +425,7 @@ namespace BFP_FSES
 
         private void autosize(object sender, DataGridViewAutoSizeColumnModeEventArgs e)
         {
-            DataGridViewColumn column = dataGRID.Columns[2];
-            column.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-           // column.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            
         }
 
         private void numbering(object sender, DataGridViewRowsAddedEventArgs e)
@@ -459,5 +447,17 @@ namespace BFP_FSES
         {
             lbl_result.Text = "29 RESULTS FOR " + sort.Text;
         }
+
+        private void oya(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void dataGRID_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+      
     }
 }

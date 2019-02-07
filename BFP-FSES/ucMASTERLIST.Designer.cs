@@ -61,8 +61,8 @@
             this.dataGRID.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGRID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGRID.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGRID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGRID.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGRID.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -90,8 +90,8 @@
             this.dataGRID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGRID.Size = new System.Drawing.Size(1129, 671);
             this.dataGRID.TabIndex = 1;
-            this.dataGRID.AutoSizeColumnModeChanged += new System.Windows.Forms.DataGridViewAutoSizeColumnModeEventHandler(this.autosize);
-            this.dataGRID.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.binded);
+            this.dataGRID.VirtualMode = true;
+            this.dataGRID.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGRID_CellContentClick);
             this.dataGRID.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.numbering);
             this.dataGRID.DoubleClick += new System.EventHandler(this.dataGRID_DoubleClick);
             // 
@@ -208,6 +208,7 @@
             this.txtSEARCH.Text = "Search";
             this.txtSEARCH.Click += new System.EventHandler(this.txtSEARCH_Click);
             this.txtSEARCH.TextChanged += new System.EventHandler(this.txtSEARCH_TextChanged);
+            this.txtSEARCH.KeyDown += new System.Windows.Forms.KeyEventHandler(this.oya);
             // 
             // panel4
             // 
