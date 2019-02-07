@@ -34,6 +34,7 @@ namespace BFP_FSES
         private void ucMASTERLIST_Load(object sender, EventArgs e)
         {        
             popME();
+            
             RowsColor();
             foreach (DataGridViewColumn dgvc in dataGRID.Columns)
             {
@@ -314,13 +315,13 @@ namespace BFP_FSES
         }
         private void popME()
         {
-            //String query = "SELECT * FROM e_type";
-            //OleDbDataAdapter u = new OleDbDataAdapter(query, con);
-            //DataSet ds = new DataSet();
-            //u.Fill(ds);
-            //ucMASTERLIST.Instance.comboBox1.DisplayMember = "title";
-            //ucMASTERLIST.Instance.comboBox1.ValueMember = "ID";
-            //ucMASTERLIST.Instance.comboBox1.DataSource = ds.Tables[0];
+            String query = "SELECT * FROM e_type";
+            OleDbDataAdapter u = new OleDbDataAdapter(query, con);
+            DataSet ds = new DataSet();
+            u.Fill(ds);
+            ucMASTERLIST.Instance.sort.DisplayMember = "title";
+            ucMASTERLIST.Instance.sort.ValueMember = "ID";
+            ucMASTERLIST.Instance.sort.DataSource = ds.Tables[0];
 
         }
 
@@ -387,6 +388,11 @@ namespace BFP_FSES
         private void button1_Click_2(object sender, EventArgs e)
         {
             
+        }
+
+        private void sort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lbl_result.Text = "29 RESULTS FOR " + sort.Text;
         }
     }
 }
