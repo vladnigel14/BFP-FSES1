@@ -34,16 +34,16 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.time = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnREGISTER = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Sidepanel2 = new System.Windows.Forms.Panel();
             this.Sidepanel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panellogo = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panellogo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -115,18 +115,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "EXIT";
             // 
-            // panel8
-            // 
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(36, 27);
-            this.panel8.TabIndex = 6;
-            this.panel8.Click += new System.EventHandler(this.panel8_Click);
-            // 
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -164,6 +152,7 @@
             // 
             // Sidepanel2
             // 
+            this.Sidepanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.Sidepanel2.Location = new System.Drawing.Point(0, 55);
             this.Sidepanel2.Name = "Sidepanel2";
             this.Sidepanel2.Size = new System.Drawing.Size(10, 55);
@@ -188,18 +177,6 @@
             this.panel3.Size = new System.Drawing.Size(220, 182);
             this.panel3.TabIndex = 0;
             // 
-            // panellogo
-            // 
-            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.panellogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panellogo.BackgroundImage")));
-            this.panellogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panellogo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panellogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panellogo.Location = new System.Drawing.Point(0, 0);
-            this.panellogo.Name = "panellogo";
-            this.panellogo.Size = new System.Drawing.Size(220, 182);
-            this.panellogo.TabIndex = 11;
-            // 
             // panel5
             // 
             this.panel5.Location = new System.Drawing.Point(220, 0);
@@ -215,6 +192,30 @@
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(1130, 764);
             this.panel.TabIndex = 5;
+            // 
+            // panel8
+            // 
+            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(36, 27);
+            this.panel8.TabIndex = 6;
+            this.panel8.Click += new System.EventHandler(this.panel8_Click);
+            // 
+            // panellogo
+            // 
+            this.panellogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.panellogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panellogo.BackgroundImage")));
+            this.panellogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panellogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panellogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panellogo.Location = new System.Drawing.Point(0, 0);
+            this.panellogo.Name = "panellogo";
+            this.panellogo.Size = new System.Drawing.Size(220, 182);
+            this.panellogo.TabIndex = 11;
             // 
             // MainForm
             // 

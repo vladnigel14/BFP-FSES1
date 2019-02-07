@@ -383,5 +383,10 @@ namespace BFP_FSES
             }
             dataGRID.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -21,3 +21,4 @@ D:\BFP-FSES\BFP-FSES\bin\Debug\BFP-FSES.application
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.exe.manifest
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP-FSES.application
 D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.ucLISTCHECKER.resources
+D:\BFP-FSES\BFP-FSES\obj\x86\Debug\BFP_FSES.CROSSCHECKER.resources

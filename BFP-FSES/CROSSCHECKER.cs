@@ -15,5 +15,10 @@ namespace BFP_FSES
         {
             InitializeComponent();
         }
+
+        private void CROSSCHECKER_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

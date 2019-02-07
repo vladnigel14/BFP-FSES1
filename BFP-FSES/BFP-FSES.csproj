@@ -94,6 +94,12 @@
     <Compile Include="checkpoint.Designer.cs">
       <DependentUpon>checkpoint.cs</DependentUpon>
     </Compile>
+    <Compile Include="CROSSCHECKER.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CROSSCHECKER.Designer.cs">
+      <DependentUpon>CROSSCHECKER.cs</DependentUpon>
+    </Compile>
     <Compile Include="dataINFO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="checkpoint.resx">
       <DependentUpon>checkpoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CROSSCHECKER.resx">
+      <DependentUpon>CROSSCHECKER.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dataINFO.resx">
       <DependentUpon>dataINFO.cs</DependentUpon>
