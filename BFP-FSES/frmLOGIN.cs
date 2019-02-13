@@ -73,6 +73,11 @@ namespace BFP_FSES
         private void button1_Click(object sender, EventArgs e)
         {
             signin();
+        }
+
+        private void frmLOGIN_Load(object sender, EventArgs e)
+        {
+
         }  
     }
 }
