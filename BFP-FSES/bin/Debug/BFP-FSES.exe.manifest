@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BFP-FSES.exe" size="2201088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BFP-FSES.exe" size="2202624">
       <assemblyIdentity name="BFP-FSES" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fDoEIYwzBi45m+d7l7ae0SjzIeU=</dsig:DigestValue>
+        <dsig:DigestValue>r0SuO1MOOx4McXlof+h8wTtGgdA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
